@@ -53,7 +53,20 @@ A tabela a seguir apresenta os requisitos do projeto, identificando a prioridade
 |RF-01| O site deve permitir que o usuário realize o cadastro no sistema e acesse seu perfil | ALTA | 
 |RF-02| O sistema irá permitir o usuário a agendar avaliações com profissionais da academia | BAIXA |
 |RF-03| O site permitirá o acesso à ficha personalizada do usuário | ALTA |
-
+|RF-04| O sistema irá mostrar um ranqueamento das pontuações dos usuários | BAIXA |
+|RF-05| O sistema irá distribuir pontuações de acordo com a finalização de cada exercício | BAIXA |
+|RF-06| O sistema emitirá alertas e dicas sobre exercícios | ALTA |
+|RF-07| O sistema permitirá ao perfil de profissional o cadastro de uma ficha personalizada para cada aluno | ALTA |
+|RF-08| O sistema deve permitir o cadastro de perfis administradores de profissionais da academia | ALTA |
+|RF-09| O sistema exibirá informações de quantidade de pessoas presentes na academia | BAIXA |
+|RF-10| O sistema permitirá a funcionalidade de check-in e checkout  | BAIXA |
+|RF-11| O sistema irá permitir a avaliação de cada exercício  | MÉDIA |
+|RF-12| O sistema dará uma opção de cronometrar os exercícios realizados | BAIXA |
+|RF-13| O sistema exibirá uma listagem de profissionais disponíveis na academia para os usuários | MÉDIA |
+|RF-14| O site irá fornecer ao cliente acesso as promoções da academia  | BAIXA |
+|RF-15| O site irá exibir para cada exercício informações de tempo, carga sugerida e dicas de execução | ALTA |
+|RF-16| O sistema exibirá no perfil do usuário o histórico de exercícios e informações cadastrais | BAIXA |
+|RF-17| O sistema deve exibir informações de contato da academia | BAIXA |
 
 ### Requisitos não Funcionais
 
