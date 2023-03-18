@@ -27,17 +27,6 @@ Apresente também alguns (pelo menos 2) objetivos específicos dependendo de ond
 
 De acordo com o jornal O Hoje apenas no início do ano a procura por academias cresce até 30%, o que causa uma superlotação nas academias, dificuldade em utilizar os aparelhos de musculação e baixo número de profissionais que atendam a demanda, o que faz com que os alunos executem os exercícios sem o acompanhamento adequado. 
 
-> **Links Úteis**:
-> - [Como montar a justificativa](https://guiadamonografia.com.br/como-montar-justificativa-do-tcc/)
-
 ## Público-Alvo
 
 Pessoas que possuem e/ou têm interesse em iniciar o hábito de frequentar academias e precisam de suporte para realização correta dos exercícios, pessoas que querem acompanhar sua evolução na academia. 
-
-Adicione informações sobre o público-alvo por meio de uma descrição textual, diagramas de personas e mapa de stakeholders.
-
-> **Links Úteis**:
-> - [Público-alvo](https://blog.hotmart.com/pt-br/publico-alvo/)
-> - [Como definir o público alvo](https://exame.com/pme/5-dicas-essenciais-para-definir-o-publico-alvo-do-seu-negocio/)
-> - [Público-alvo: o que é, tipos, como definir seu público e exemplos](https://klickpages.com.br/blog/publico-alvo-o-que-e/)
-> - [Qual a diferença entre público-alvo e persona?](https://rockcontent.com/blog/diferenca-publico-alvo-e-persona/)
