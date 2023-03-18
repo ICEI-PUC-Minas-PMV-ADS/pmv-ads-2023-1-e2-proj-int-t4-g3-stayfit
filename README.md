@@ -1,23 +1,25 @@
-# TÍTULO DO PROJETO
+# StayFit
 
-`CURSO`
+` Análise e Desenvolvimento de Sistemas `
 
-`DISCIPLINA`
+`Projeto: Desenvolvimento de uma Aplicação Interativa - Eixo 2`
 
-`SEMESTRE`
+`Grupo 03 - 2023/1`
 
 Descrever resumidamente, em um ou dois parágrafos, o projeto que está sendo desenvolvido.
 
 ## Integrantes
 
-* Nome completo do aluno 1
-* Nome completo do aluno 2
-* Nome completo do aluno 3
-* Nome completo do aluno 4
+* Camila Larissa Gonçalves
+* João Marcos Macedo Gonçalves 
+* Marcos Paulo Garcia Silva 
+* Paulo Silas Barbosa Bandeira 
+* Tauan Gonçalves Silva 
+* Thais Menezes Alves de Souza
 
 ## Orientador
 
-* Nome completo do professor 1
+* Carlos Alberto Marques Pietrobon
 
 ## Instruções de utilização
 
