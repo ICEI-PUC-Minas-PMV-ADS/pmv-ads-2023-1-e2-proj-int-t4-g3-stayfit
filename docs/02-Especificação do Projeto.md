@@ -10,26 +10,26 @@ A definição exata do problema e os pontos mais relevantes a serem tratados nes
   <img src="img/personas/Anderson.png" width="600">
 </p>
 
-##### _Figura 1- ANDERSON SILVA_
+##### _Figura 1- Persona: ANDERSON SILVA_
 
 
 <p align="center"> 
   <img src="img/personas/Tamiris.png" width="600">
 </p>
 
-##### _Figura 2- TAMIRIS FERREIRA_
+##### _Figura 2- Persona: TAMIRIS FERREIRA_
 
 <p align="center"> 
   <img src="img/personas/Julio.png" width="600">
 </p>
 
-##### _Figura 3- JULIO COUTO_
+##### _Figura 3- Persona: JULIO COUTO_
 
 <p align="center"> 
   <img src="img/personas/Tomas.png" width="600">
 </p>
 
-##### _Figura 4- TOMAS SANTOS_
+##### _Figura 4- Persona: TOMAS SANTOS_
 
 ## Histórias de Usuários
 
@@ -50,14 +50,6 @@ A partir da compreensão do dia a dia das pessoas identificadas para o projeto, 
 | Anderson Silva     | Otimizar a construção das fichas (RF-07)             | Agilizar o trabalho                |
 | Anderson Silva     | Sistema de exercícios mais automatizado (RF-05; 06; 15)               | Dar mais atenção aos alunos                  |
 
-Apresente aqui as histórias de usuário que são relevantes para o projeto de sua solução. As Histórias de Usuário consistem em uma ferramenta poderosa para a compreensão e elicitação dos requisitos funcionais e não funcionais da sua aplicação. Se possível, agrupe as histórias de usuário por contexto, para facilitar consultas recorrentes à essa parte do documento.
-
-> **Links Úteis**:
-> - [Histórias de usuários com exemplos e template](https://www.atlassian.com/br/agile/project-management/user-stories)
-> - [Como escrever boas histórias de usuário (User Stories)](https://medium.com/vertice/como-escrever-boas-users-stories-hist%C3%B3rias-de-usu%C3%A1rios-b29c75043fac)
-> - [User Stories: requisitos que humanos entendem](https://www.luiztools.com.br/post/user-stories-descricao-de-requisitos-que-humanos-entendem/)
-> - [Histórias de Usuários: mais exemplos](https://www.reqview.com/doc/user-stories-example.html)
-> - [9 Common User Story Mistakes](https://airfocus.com/blog/user-story-mistakes/)
 
 ## Requisitos
 
