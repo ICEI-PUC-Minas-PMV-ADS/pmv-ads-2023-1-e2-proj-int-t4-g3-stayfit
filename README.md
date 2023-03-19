@@ -6,7 +6,7 @@
 
 `Grupo 03 - 2023/1`
 
-Descrever resumidamente, em um ou dois parágrafos, o projeto que está sendo desenvolvido.
+O objetivo geral do site é desenvolver uma aplicação com recursos para auxiliar na autonomia do aluno na realização dos exercícios na academia, facilitando também para os profissionais. 
 
 ## Integrantes
 
