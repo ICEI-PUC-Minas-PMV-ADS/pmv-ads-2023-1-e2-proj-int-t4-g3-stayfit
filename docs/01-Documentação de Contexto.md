@@ -1,27 +1,28 @@
-# Introdução
+# Documentação de Contexto
 
-Texto descritivo com a visão geral do projeto abordado. Inclui o contexto, o problema, os objetivos, a justificativa e o público-alvo do projeto.
+Academias de grandes ou pequenos portes, tem a necessidade de deixar um professor para supervisionar os usuários, ajudando com os exercícios, cuidando para que os mesmos não se machuquem com os equipamentos, zelando pelo espaço e qualidade dos treinos. Mas por muitas vezes os profissionais não conseguem dá conta dessa demanda, principalmente em horários em que existe um grande volume de pessoas na academia.  
+
+Pesquisadores brasileiros acompanharam, durante dez anos, mais de cinco mil pessoas em uma academia no Rio de Janeiro. O estudo, publicado em 2016, mostrou que desistir da academia é um hábito bastante comum. 
+
+Do total de pessoas observadas, 64% abandonaram os treinamentos ainda no terceiro mês, e a falta de motivação foi uma das principais respostas para porque as pessoas desistem da academia, Falhas de comunicação, atendimento ruim e não personalizado, professores que dão pouca atenção aos alunos, poucas possibilidades de horário, principalmente de aulas coletivas, desorganização, falta de estrutura adequada na academia, entre outros motivos. 
+
+Nosso trabalho tem o intuído de ajudar uma rede de academia, a fornecer um suporte constante a seus clientes durante os treinos, sem precisar contratar mais funcionários, ofertas aos seus usuários uma autonomia, sem perder a segurança.  
 
 ## Problema
-Nesse momento você deve apresentar o problema que a sua aplicação deve  resolver. No entanto, não é a hora de comentar sobre a aplicação.
 
-Descreva também o contexto em que essa aplicação será usada, se  houver: empresa, tecnologias, etc. Novamente, descreva apenas o que de  fato existir, pois ainda não é a hora de apresentar requisitos  detalhados ou projetos.
-
-Nesse momento, o grupo pode optar por fazer uso  de ferramentas como Design Thinking, que permite um olhar de ponta a ponta para o problema.
-
-> **Links Úteis**:
-> - [Objetivos, Problema de pesquisa e Justificativa](https://medium.com/@versioparole/objetivos-problema-de-pesquisa-e-justificativa-c98c8233b9c3)
-> - [Matriz Certezas, Suposições e Dúvidas](https://medium.com/educa%C3%A7%C3%A3o-fora-da-caixa/matriz-certezas-suposi%C3%A7%C3%B5es-e-d%C3%BAvidas-fa2263633655)
-> - [Brainstorming](https://www.euax.com.br/2018/09/brainstorming/)
+O problema que se busca resolver com esse software é necessidade de instrução pessoal de um profissional durante todo o tempo de treino, criando uma rede de apoio para que as pessoas consigam fazer ginástica sem o auxílio do monitor. 
 
 ## Objetivos
 
-Aqui você deve descrever os objetivos do trabalho indicando que o objetivo geral é desenvolver um software para solucionar o problema apresentado acima. 
+### Objetivo Geral
 
-Apresente também alguns (pelo menos 2) objetivos específicos dependendo de onde você vai querer concentrar a sua prática investigativa, ou como você vai aprofundar no seu trabalho.
- 
-> **Links Úteis**:
-> - [Objetivo geral e objetivo específico: como fazer e quais verbos utilizar](https://blog.mettzer.com/diferenca-entre-objetivo-geral-e-objetivo-especifico/)
+O objetivo geral do site é desenvolver uma aplicação com recursos para auxiliar na autonomia do aluno na realização dos exercícios na academia, facilitando também para os profissionais. 
+
+### Objetivos específicos 
+
+* Buscar maneiras de ofertar o auxílio para um treino de qualidade ainda que de maneira virtual  
+
+* Identificar como os usuários reagem aos vídeos ensinando a treinar se eles realmente conseguem realizar os exercícios  
 
 ## Justificativa
 
