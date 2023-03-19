@@ -8,28 +8,40 @@ A definição exata do problema e os pontos mais relevantes a serem tratados nes
 
 <p align="center"> 
   <img src="img/personas/Anderson.png" width="600">
+
+  ##### _Figura 1- Persona: ANDERSON SILVA_
+
 </p>
 
-##### _Figura 1- Persona: ANDERSON SILVA_
+
 
 
 <p align="center"> 
   <img src="img/personas/Tamiris.png" width="600">
+
+  ##### _Figura 2- Persona: TAMIRIS FERREIRA_
+
 </p>
 
-##### _Figura 2- Persona: TAMIRIS FERREIRA_
+
 
 <p align="center"> 
   <img src="img/personas/Julio.png" width="600">
+
+  ##### _Figura 3- Persona: JULIO COUTO_
+
 </p>
 
-##### _Figura 3- Persona: JULIO COUTO_
+
 
 <p align="center"> 
   <img src="img/personas/Tomas.png" width="600">
+
+  ##### _Figura 4- Persona: TOMAS SANTOS_
+
 </p>
 
-##### _Figura 4- Persona: TOMAS SANTOS_
+
 
 ## Histórias de Usuários
 
@@ -109,6 +121,8 @@ O projeto está restrito pelos itens apresentados na tabela a seguir.
 
 <p align="center"> 
   <img src="img/diagrama_caso_de_uso/Diagrama.png" width="800">
+
+  ##### _Figura 5- Diagrama de Caso de Uso_
+  
 </p>
 
-##### _Figura 5- Diagrama de Caso de Uso_
