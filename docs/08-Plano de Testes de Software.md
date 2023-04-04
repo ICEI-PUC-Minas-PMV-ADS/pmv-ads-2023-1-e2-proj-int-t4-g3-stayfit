@@ -1,12 +1,9 @@
 # Plano de Testes de Software
 
-<span style="color:red">Pré-requisitos: <a href="2-Especificação do Projeto.md"> Especificação do Projeto</a></span>, <a href="3-Projeto de Interface.md"> Projeto de Interface</a>
-
-Apresente os cenários de testes utilizados na realização dos testes da sua aplicação. Escolha cenários de testes que demonstrem os requisitos sendo satisfeitos.
-
-Não deixe de enumerar os casos de teste de forma sequencial e de garantir que o(s) requisito(s) associado(s) a cada um deles está(ão) correto(s) - de acordo com o que foi definido na seção "2 - Especificação do Projeto". 
-
-Por exemplo:
+Objetivos do teste:
+Verificar se o software atende às especificações funcionais e de desempenho.
+Verificar se o software é fácil de usar e intuitivo.
+Identificar e corrigir quaisquer erros ou defeitos. 
  
 | **Caso de Teste** 	| **CT-01 – Cadastro de perfil** 	|
 |:---:	|:---:	|
@@ -25,10 +22,10 @@ Por exemplo:
 |Requisito Associado | RF-06	O sistema emitirá alertas e dicas sobre exercícios |
 | Objetivo do Teste 	| Verificar se o usuário possui acesso à sua ficha personalizada. |
 | Passos 	| -  |
-|Critério de Êxito | - O usuário obteve acesso à sua ficha personalizada. |
+|Critério de Êxito | - O site emite alertas e dicas sobre exercícios. |
 |  	|  	|
 | **Caso de Teste** 	| **CT-04 – Exibir informações específicas para cada exercício**	|
 |Requisito Associado | RF-15	O site irá exibir para cada exercício informações de tempo, carga sugerida e dicas de execução |
 | Objetivo do Teste 	| Verificar se o usuário possui acesso à sua ficha personalizada. |
 | Passos 	| -  |
-|Critério de Êxito | - O usuário obteve acesso à sua ficha personalizada. |
+|Critério de Êxito | - O site exibe informações específicas para cada exercício. |
