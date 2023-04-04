@@ -16,19 +16,19 @@ Por exemplo:
 |Critério de Êxito | - O cadastro foi realizado com sucesso. |
 |  	|  	|
 | **Caso de Teste** 	| **CT-02 – Permitir acesso à ficha personalizada do usuário**	|
-|Requisito Associado | RF-03	O site permitirá o acesso à ficha personalizada do usuário. |
+|Requisito Associado | RF-03	O site permitirá o acesso à ficha personalizada do usuário.  <br> RF-07	O sistema permitirá ao perfil de profissional o cadastro de uma ficha personalizada para cada aluno|
 | Objetivo do Teste 	| Verificar se o usuário possui acesso à sua ficha personalizada. |
 | Passos 	| -  |
 |Critério de Êxito | - O usuário obteve acesso à sua ficha personalizada. |
 |  	|  	|
-| **Caso de Teste** 	| **CT-03 – Permitir acesso à ficha personalizada do usuário**	|
-|Requisito Associado | RF-03	O site permitirá o acesso à ficha personalizada do usuário. |
+| **Caso de Teste** 	| **CT-03 – Emitir alertas e dicas sobre exercícios**	|
+|Requisito Associado | RF-06	O sistema emitirá alertas e dicas sobre exercícios |
 | Objetivo do Teste 	| Verificar se o usuário possui acesso à sua ficha personalizada. |
 | Passos 	| -  |
 |Critério de Êxito | - O usuário obteve acesso à sua ficha personalizada. |
 |  	|  	|
-| **Caso de Teste** 	| **CT-04 – Permitir acesso à ficha personalizada do usuário**	|
-|Requisito Associado | RF-03	O site permitirá o acesso à ficha personalizada do usuário. |
+| **Caso de Teste** 	| **CT-04 – Exibir informações específicas para cada exercício**	|
+|Requisito Associado | RF-15	O site irá exibir para cada exercício informações de tempo, carga sugerida e dicas de execução |
 | Objetivo do Teste 	| Verificar se o usuário possui acesso à sua ficha personalizada. |
 | Passos 	| -  |
 |Critério de Êxito | - O usuário obteve acesso à sua ficha personalizada. |
