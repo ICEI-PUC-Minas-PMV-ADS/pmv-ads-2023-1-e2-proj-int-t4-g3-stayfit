@@ -20,11 +20,13 @@ Por exemplo:
 | Objetivo do Teste 	| Verificar se o usuário possui acesso à sua ficha personalizada. |
 | Passos 	| -  |
 |Critério de Êxito | - O usuário obteve acesso à sua ficha personalizada. |
+|  	|  	|
 | **Caso de Teste** 	| **CT-02 – Permitir acesso à ficha personalizada do usuário**	|
 |Requisito Associado | RF-03	O site permitirá o acesso à ficha personalizada do usuário. |
 | Objetivo do Teste 	| Verificar se o usuário possui acesso à sua ficha personalizada. |
 | Passos 	| -  |
 |Critério de Êxito | - O usuário obteve acesso à sua ficha personalizada. |
+|  	|  	|
 | **Caso de Teste** 	| **CT-02 – Permitir acesso à ficha personalizada do usuário**	|
 |Requisito Associado | RF-03	O site permitirá o acesso à ficha personalizada do usuário. |
 | Objetivo do Teste 	| Verificar se o usuário possui acesso à sua ficha personalizada. |
