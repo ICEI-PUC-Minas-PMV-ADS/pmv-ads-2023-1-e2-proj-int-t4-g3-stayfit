@@ -14,7 +14,6 @@ O objetivo geral do site é desenvolver uma aplicação com recursos para auxili
 * João Marcos Macedo Gonçalves 
 * Marcos Paulo Garcia Silva 
 * Paulo Silas Barbosa Bandeira 
-* Tauan Gonçalves Silva 
 * Thais Menezes Alves de Souza
 
 ## Orientador
