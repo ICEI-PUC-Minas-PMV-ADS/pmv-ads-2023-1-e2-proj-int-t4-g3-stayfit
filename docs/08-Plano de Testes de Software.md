@@ -1,9 +1,9 @@
 # Plano de Testes de Software
 
-Objetivos do teste:
-Verificar se o software atende às especificações funcionais e de desempenho.
-Verificar se o software é fácil de usar e intuitivo.
-Identificar e corrigir quaisquer erros ou defeitos. 
+Objetivos do teste: <br>
+Verificar se o software atende às especificações funcionais e de desempenho. <br>
+Verificar se o software é fácil de usar e intuitivo. <br>
+Identificar e corrigir quaisquer erros ou defeitos.
  
 | **Caso de Teste** 	| **CT-01 – Cadastro de perfil** 	|
 |:---:	|:---:	|
