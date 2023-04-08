@@ -43,7 +43,7 @@ Sendo assim a nossa equipe está distribuida da seguinte forma:</p>
 <br/> 
 
 <p align="center"> 
-  <img src="img/backlog1.PNG" width="800">
+  <img src="img/backlog1.png" width="800">
 </p>
  
 ##### _Figura 1_
