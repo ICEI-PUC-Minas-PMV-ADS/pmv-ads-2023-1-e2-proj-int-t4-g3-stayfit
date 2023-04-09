@@ -44,4 +44,4 @@ As referências abaixo irão auxiliá-lo na geração do artefato “Diagramas d
   <img src="img/wireframes/TelaListarClientesInstrutor.png" width="1000">  
 </p>
 
-##### _Figura - Listar Clientes
+##### _Figura - Listar Clientes_
