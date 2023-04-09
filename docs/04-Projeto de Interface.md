@@ -14,7 +14,7 @@ Visão geral da interação do usuário pelas telas do sistema e protótipo inte
 ### Diagrama de Fluxo
 
 <p align="center"> 
-  <img src="img/Diagrama de Fluxo.png" width="1000">  
+  <img src="img/diagramas/Diagrama de Fluxo.png" width="1000">  
 </p>
 
 ##### _Figura - Diagrama de Fluxo_
