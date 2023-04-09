@@ -39,6 +39,6 @@ Equipe de desenvolvimento: responsável por implementar as soluções propostas 
 
 O software deve ser fácil de usar e intuitivo <br />
 Os usuários devem ser capazes de realizar as tarefas propostas com facilidade <br />
-Os usuários devem fornecer feedback positivo sobre a usabilidade do software após os testes
+Os usuários devem fornecer feedback positivo sobre a usabilidade do software após os testes.
 
 
