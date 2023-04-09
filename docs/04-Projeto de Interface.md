@@ -59,11 +59,12 @@ Visão geral da interação do usuário pelas telas do sistema e protótipo inte
   <img src="docs/img/wireframes/Tela Matricula.png" width="1000">  
 </p>
 
-<p>Página Tela home </p>
-<p>Página Tela principal logado sem matricul </p>
-<p>Págin  Tela principal administrador </p>
-<p>Página Tela historico aluno -</p>
 
+### <p>Página: Home</p>
 
-##### _Figura - Listar Clientes_
+<p align="center"> 
+  <img src="img/wireframes/home.jpeg" width="1000">  
+</p>
 
+##### _Figura - Home_
+=======
