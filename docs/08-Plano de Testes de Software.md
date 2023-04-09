@@ -29,3 +29,27 @@ Identificar e corrigir quaisquer erros ou defeitos.
 | Objetivo do Teste 	| Verificar se o usuário possui acesso à sua ficha personalizada. |
 | Passos 	| -  |
 |Critério de Êxito | - O site exibe informações específicas para cada exercício. ||
+|  	|  	|
+| **Caso de Teste** 	| **CT-05 – Agendamento de avaliações com profissionais da academia**	|
+|Requisito Associado | RF-02 O sistema irá permitir o usuário a agendar avaliações com profissionais da academia |
+| Objetivo do Teste 	| Verificar se o usuário consegue fazer o agendamento das avaliações. |
+| Passos 	| -  |
+|Critério de Êxito | - O site permite o usuário agendar avaliações com profissionais da academia. ||
+|  	|  	|
+| **Caso de Teste** 	| **CT-06 – Distribuição pontuações de acordo com a finalização de cada exercício**	|
+|Requisito Associado | RF-05 O sistema irá distribuir pontuações de acordo com a finalização de cada exercício |
+| Objetivo do Teste 	| Verificar se o sistema distribui pontos após a finalização de cada exercício. |
+| Passos 	| -  |
+|Critério de Êxito | - O sistema distribui pontos após a finalização de cada exercício. ||
+|  	|  	|
+| **Caso de Teste** 	| **CT-07 –  Avaliação de cada exercício**	|
+|Requisito Associado | RF-11 O sistema irá permitir a avaliação de cada exercício |
+| Objetivo do Teste 	| Verificar se o usuário pode avaliar cada exercício. |
+| Passos 	| -  |
+|Critério de Êxito | - O site permite o usuário avalie cada exercício. ||
+|  	|  	|
+| **Caso de Teste** 	| **CT-08 – Cronometrar os exercícios realizados**	|
+|Requisito Associado | RF-12 O sistema dará uma opção de cronometrar os exercícios realizados |
+| Objetivo do Teste 	| Verificar se o sistema consegue cronometrar os exercícios realizados. |
+| Passos 	| -  |
+|Critério de Êxito | - O site permite o usuário cronometrar os exercícios. ||
