@@ -13,11 +13,11 @@
 
 | AMBIENTE                          | PLATAFORMA        | LINK DE ACESSO |
 | ----------------------------------|-------------------|----------------|
-| Repositório de código fonte       | GitHub            | [Git.Icei](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-1-e2-proj-int-t4-g3-stayfit)
-| Documentação de contexto          | GitHub            | [Doc.Contexto](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-1-e2-proj-int-t4-g3-stayfit/blob/main/docs/01-Documenta%C3%A7%C3%A3o%20de%20Contexto.md)
-| Especificações do Projeto         | GitHub            | [Esp.Projeto](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-1-e2-proj-int-t4-g3-stayfit/blob/main/docs/02-Especifica%C3%A7%C3%A3o%20do%20Projeto.md)
-| Projeto de Interface e Wireframes | Figma             | https://www.figma.com/file/bVtZWbFrOazzYkKon3pfYU/User-Flow?node-id=0%3A1)-[Wireframes-Iterativo]https://www.figma.com/file/FFJu2SzwhhymVbhERLefjc/App-Fitness-(Copy)?t=ivTvGBM4HDShS4Dw-0
-|Documentos do projeto          | Microsoft Word | https://github.com/orgs/ICEI-PUC-Minas-PMV-ADS/projects/133/views/1](https://sgapucminasbr-my.sharepoint.com/:w:/g/personal/1413347_sga_pucminas_br/Ecs8JEgjMtBJhA-4GRgn6z0BxWrSXwVDlUnUvjpLkStllQ?e=Q52zeY)
+| Repositório de código fonte       | GitHub            | [Código Fonte](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-1-e2-proj-int-t4-g3-stayfit)
+| Documentação de contexto          | GitHub            | [Documentação de Contexto](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-1-e2-proj-int-t4-g3-stayfit/blob/main/docs/01-Documenta%C3%A7%C3%A3o%20de%20Contexto.md)
+| Especificações do Projeto         | GitHub            | [Especificações do Projeto](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-1-e2-proj-int-t4-g3-stayfit/blob/main/docs/02-Especifica%C3%A7%C3%A3o%20do%20Projeto.md)
+| Projeto de Interface e Wireframes | Figma             |[Wireframes](https://www.figma.com/file/FFJu2SzwhhymVbhERLefjc/App-Fitness-(Copy)?t=ivTvGBM4HDShS4Dw-0)
+|Documentos do projeto          | Microsoft Word | [Documentação.Word](https://sgapucminasbr-my.sharepoint.com/:w:/g/personal/1413347_sga_pucminas_br/Ecs8JEgjMtBJhA-4GRgn6z0BxWrSXwVDlUnUvjpLkStllQ?e=Q52zeY)
 
 ## 3.2. Gerenciamento do Projeto
 
