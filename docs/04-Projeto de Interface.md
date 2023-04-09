@@ -11,6 +11,14 @@ Visão geral da interação do usuário pelas telas do sistema e protótipo inte
   <img src="img/fluxograma.jpeg" width="1000">  
 </p>
 
+### Diagrama de Fluxo
+
+<p align="center"> 
+  <img src="img/diagramas/Diagrama de Fluxo.png" width="1000">  
+</p>
+
+##### _Figura - Diagrama de Fluxo_
+
 ## Wireframes
 ### <p>Página: Wirefame Padrão</p>
 
