@@ -28,4 +28,4 @@ Identificar e corrigir quaisquer erros ou defeitos.
 |Requisito Associado | RF-15	O site irá exibir para cada exercício informações de tempo, carga sugerida e dicas de execução |
 | Objetivo do Teste 	| Verificar se o usuário possui acesso à sua ficha personalizada. |
 | Passos 	| -  |
-|Critério de Êxito | - O site exibe informações específicas para cada exercício. |
+|Critério de Êxito | - O site exibe informações específicas para cada exercício. ||
