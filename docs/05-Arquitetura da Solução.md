@@ -25,9 +25,8 @@ O Modelo ER representa através de um diagrama como as entidades (coisas, objeto
 ##### _Figura 2 - Diagrama Entidade Relacionamento_
 
 <p align="center"> 
-
-  <img scr = "img/diagramas/ER2.png" largura ="800" >
-   </p>
+  <img src="img/diagramas/ER2.png" width="800">
+</p>
 
 ##### _Figura 3 - Diagrama Entidade Relacionamento_
 
