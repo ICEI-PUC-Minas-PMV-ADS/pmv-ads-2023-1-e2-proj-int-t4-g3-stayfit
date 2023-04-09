@@ -43,5 +43,11 @@ As referências abaixo irão auxiliá-lo na geração do artefato “Diagramas d
 <p align="center"> 
   <img src="img/wireframes/TelaListarClientesInstrutor.png" width="1000">  
 </p>
+<p>Página Tela matricula  </p>
+<p>Página Tela home </p>
+<p>Página Tela principal logado sem matricul </p>
+<p>Págin  Tela principal administrador </p>
+<p>Página Tela historico aluno -</p>
+
 
 ##### _Figura - Listar Clientes_
