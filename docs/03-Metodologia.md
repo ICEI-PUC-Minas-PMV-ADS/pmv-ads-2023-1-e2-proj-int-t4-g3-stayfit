@@ -69,6 +69,6 @@ O quadro kanban do grupo desenvolvido na ferramenta de gerenciamento de projetos
   <img src="img/backlog2.png" width="800">
 </p>
  
-##### _Figura 1_
+##### _Figura 2 Backlog Git_
 
 <br/>
