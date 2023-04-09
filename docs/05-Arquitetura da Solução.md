@@ -26,7 +26,7 @@ O Modelo ER representa através de um diagrama como as entidades (coisas, objeto
 
 <p align="center"> 
 
-  <img  scr = "https://user-images.githubusercontent.com/114198140/230735169-c585ef7d-2e68-464b-ba0e-5442fa8282ec.jpg" largura ="800" >
+  <img scr = "img/diagramas/ER2.png" largura ="800" >
    </p>
 
 ##### _Figura 3 - Diagrama Entidade Relacionamento_
@@ -39,7 +39,7 @@ O projeto da base de dados corresponde à representação das entidades e relaci
   <img src="img/diagramas/Logico.png" width="800">
 </p>
  
-##### _Figura 3. Entidades(Tabelas) indentificadas no Modelo ER_
+##### _Figura 4. Entidades(Tabelas) indentificadas no Modelo ER_
 
 ## Tecnologias Utilizadas
 
