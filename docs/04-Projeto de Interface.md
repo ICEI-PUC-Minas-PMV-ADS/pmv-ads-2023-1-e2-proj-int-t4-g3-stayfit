@@ -12,7 +12,13 @@ Visão geral da interação do usuário pelas telas do sistema e protótipo inte
 </p>
 
 ## Wireframes
+### <p>Página: Wirefame Padrão</p>
 
+<p align="center"> 
+  <img src="img/template.jpeg" width="1000">  
+</p>
+
+##### _Figura - WireFrame Padrão_
 ### <p>Página: Criar/Editar Ficha do Cliente</p>
 
 <p align="center"> 
@@ -34,8 +40,6 @@ Visão geral da interação do usuário pelas telas do sistema e protótipo inte
 <p align="center"> 
   <img src="img/wireframes/TelaListarClientesInstrutor.png" width="1000">  
 </p>
-<p>Página Tela matricula  </p>
-
 
 ##### _Figura - Listar Clientes_
 
