@@ -63,4 +63,12 @@ O quadro kanban do grupo desenvolvido na ferramenta de gerenciamento de projetos
 
 <br/>
 
+<p>Também utilizamos a ferramenta do GitHub para gerenciar nosso Product Backlog</p>
 
+<p align="center"> 
+  <img src="img/backlog2.png" width="800">
+</p>
+ 
+##### _Figura 1_
+
+<br/>
