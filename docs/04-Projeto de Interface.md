@@ -54,6 +54,23 @@ Visão geral da interação do usuário pelas telas do sistema e protótipo inte
 </p>
 
 ##### _Figura - Exercício_
+
+### <p>Página: Tela Principal Administrador</p>
+
+<p align="center"> 
+  <img src="img/wireframes/TelaPrincipalAdministrador.png" width="1000">  
+</p>
+
+##### _Figura - Tela Principal Administrador_
+
+### <p>Página: Tela Adm Cadastrar Ficha</p>
+
+<p align="center"> 
+  <img src="img/wireframes/TelaAdmCadastrarFicha.png" width="1000">  
+</p>
+
+##### _Figura - Tela Adm Cadastrar Ficha_
+
 =======
 <p align="center"> 
   <img src="docs/img/wireframes/Tela Matricula.png" width="1000">  
