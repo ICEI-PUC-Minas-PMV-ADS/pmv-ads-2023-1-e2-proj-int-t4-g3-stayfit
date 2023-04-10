@@ -5,7 +5,7 @@
 
 Visão geral da interação do usuário pelas telas do sistema e protótipo interativo das telas com as funcionalidades que fazem parte do sistema (wireframes).
 
-## Fluxo
+## Fluxo do usuário
 
 <p align="center"> 
   <img src="img/fluxograma.jpeg" width="1000">  
@@ -97,3 +97,6 @@ Visão geral da interação do usuário pelas telas do sistema e protótipo inte
 
 ##### _Figura - Home_
 =======
+<p>
+As telas interativas e fluxo estão disponíveis no Figmna: https://www.figma.com/file/FFJu2SzwhhymVbhERLefjc/App-Fitness-(Copy)?node-id=0-1&t=rSqTx7LcBVyJ93M7-0
+</p>

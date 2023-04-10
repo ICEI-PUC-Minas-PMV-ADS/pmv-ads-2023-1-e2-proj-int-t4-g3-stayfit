@@ -33,7 +33,7 @@ A equipe está organizada da seguinte maneira:
 <p> Equipe de Desenvolvimento </p>
 
 - João Marcos 
-- Marcos 
+- Marcos Paulo
 - Paulo 
 
   
