@@ -53,5 +53,5 @@ jobs:
         with:
           app-name: 'AppStayFit'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_61C78DBB1C2142EDBB653D8EB01DDD16 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_5CBD12E516AE4EBB826F1692C0BE9A74 }}
           package: .
