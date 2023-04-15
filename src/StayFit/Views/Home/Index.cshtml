@@ -1,8 +1,86 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿
+    <input type="checkbox" id="menu-toggle">
+    <partial name="_SideMenu" />
 
-<div class="text-center">
-    <h1 class="display-4">StayFit</h1>
-    <p>Sobre nosso Projeto <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+    <div class="main-content">
+       <partial name="_Header" />
+      
+       <main>
+            <div class="cards">
+                <div class="card">
+                    <div class="card-icon follow">
+                        <span class="la la-users"></span>
+                    </div>
+                    <div class="card-info">
+                        <h2>661</h2>
+                        <small>Total Followers</small>
+                    </div>
+                    <div class="card-images">
+                        <div style="background-image:url(./img/2.jpg)"></div>
+                        <div style="background-image:url(./img/2.jpg)"></div>
+                        <div style="bbackground-image:url(./img/2.jpg)"></div>
+                        <div style="bbackground-image:url(./img/2.jpg)"></div>
+                        <div style="bbackground-image:url(./img/2.jpg)"></div>
+
+                    </div>
+                </div>
+
+
+                <div class="card">
+                    <div class="card-icon likes">
+                        <span class="la la-heart"></span>
+                    </div>
+                    <div class="card-info">
+                        <h2>19,549</h2>
+                        <small>Total Likes</small>
+                    </div>
+                    <div class="card-images">
+                        <div style="bbackground-image:url(./img/2.jpg)"></div>
+                        <div style="bbackground-image:url(./img/2.jpg)"></div>
+                        <div style="bbackground-image:url(./img/2.jpg)"></div>
+                        <div style="bbackground-image:url(./img/2.jpg)"></div>
+                        <div style="bbackground-image:url(./img/2.jpg)"></div>
+
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon comment">
+                        <span class="la la-comment"></span>
+                    </div>
+                    <div class="card-info">
+                        <h2>661</h2>
+                        <small>Total Comments</small>
+                    </div>
+                    <div class="card-images">
+                        <div style="bbackground-image:url(./img/2.jpg)"></div>
+                        <div style="bbackground-image:url(./img/2.jpg)"></div>
+                        <div style="bbackground-image:url(./img/2.jpg)"></div>
+                        <div style="bbackground-image:url(./img/2.jpg)"></div>
+                        <div style="bbackground-image:url(./img/2.jpg)"></div>
+
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <div class="chart-grid">
+            <div class="chart-follow">
+                <div class="chart-head">
+                    <h3>Followers</h3>
+                    <div class="la la-cog"></div>
+                </div>
+                <div id="myfirstchart" style="height: 350px;"></div>
+            </div>
+            <div class="chart-sales">
+                <div class="chart-head">
+                    <h3>Sales</h3>
+                    <div class="la la-ellipsis-h"></div>
+                </div>
+                <div id="donut-example" style="height: 350px;"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <label class="close-mobile-menu" for="menu-toggle"></label>
