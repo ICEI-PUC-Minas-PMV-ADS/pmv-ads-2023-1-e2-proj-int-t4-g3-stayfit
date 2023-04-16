@@ -13,6 +13,10 @@ namespace StayFit.Repositories
         {
             _context = context; 
         }
+
+        public IEnumerable<Exercicio> Exercicios => _context.Exercicios;
+
+
         public bool Create(Exercicio exercicio)
         {
             try

@@ -40,10 +40,10 @@ namespace StayFit.Models
         public float Weight { get; set; }
 
         public int ExercicioId { get; set; }
-        [ForeignKey("ExercicioId")]
-        public IEnumerable<Exercicio> Exercicios { get; set; }
+        public Exercicio Exercicio { get; set; }
 
     }
 }
 
+//   "DefaultConnection": "Server=localhost,1433; Initial Catalog=LanchesDatabase; User ID=sa ; Password=pauloosilas@1; TrustServerCertificate=True"
 //    "DefaultConnection": "Server=tcp:stayfit.database.windows.net,1433;Initial Catalog=stayfit;Persist Security Info=False;User ID=stayfit;Password=Stay@Fit;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;",
