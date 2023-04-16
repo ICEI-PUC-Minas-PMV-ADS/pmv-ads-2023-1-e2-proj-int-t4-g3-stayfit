@@ -1,6 +1,8 @@
 
 using Microsoft.EntityFrameworkCore;
 using StayFit.Context;
+using StayFit.Repositories;
+using StayFit.Repositories.Interfaces;
 
 namespace StayFit
 {
@@ -17,6 +19,7 @@ namespace StayFit
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<AppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddTransient<IExercicioRepository, ExercicioRepository>();
             services.AddControllersWithViews();
         }
 
