@@ -14,15 +14,14 @@
     <hr />
     <div class="row">
         <div class="col-md-4">
-
             <form asp-action="Create">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-              
+
                 <div class="form-group">
                     <label asp-for="ExercicioId" class="control-label"></label>
                     <select asp-for="ExercicioId" class="form-control" asp-items="@ViewBag.Exercicios"></select>
-                    <span asp-validation-for="ExercicioId" class="text-danger"></span>
                 </div>
+
 
                 <div class="form-group">
                     <label asp-for="RepetitionNumber" class="control-label"></label>
@@ -64,6 +63,7 @@
                     <input asp-for="Weight" class="form-control" />
                     <span asp-validation-for="Weight" class="text-danger"></span>
                 </div>
+               
                 <div class="form-group">
                     <input type="submit" value="Create" class="btn btn-primary" />
                 </div>

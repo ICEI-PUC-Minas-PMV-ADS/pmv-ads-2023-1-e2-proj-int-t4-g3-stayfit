@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace StayFit.Migrations
 {
     /// <inheritdoc />
-    public partial class Micracao0 : Migration
+    public partial class Migracao0 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -38,11 +38,11 @@ namespace StayFit.Migrations
                     RepetitionNumber = table.Column<int>(type: "int", nullable: false),
                     Series = table.Column<int>(type: "int", nullable: false),
                     RestTime = table.Column<int>(type: "int", nullable: false),
-                    DiaSemana = table.Column<int>(type: "int", nullable: false),
-                    DataInicio = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    DataFim = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Distance = table.Column<float>(type: "real", nullable: false),
-                    Weight = table.Column<float>(type: "real", nullable: false),
+                    DiaSemana = table.Column<int>(type: "int", nullable: true),
+                    DataInicio = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    DataFim = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    Distance = table.Column<float>(type: "real", nullable: true),
+                    Weight = table.Column<float>(type: "real", nullable: true),
                     ExercicioId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>

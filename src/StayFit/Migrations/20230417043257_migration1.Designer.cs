@@ -12,8 +12,8 @@ using StayFit.Context;
 namespace StayFit.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20230416214757_Micracao0")]
-    partial class Micracao0
+    [Migration("20230417043257_migration1")]
+    partial class migration1
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -70,19 +70,19 @@ namespace StayFit.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("TreinoId"));
 
-                    b.Property<DateTime>("DataFim")
+                    b.Property<DateTime?>("DataFim")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("DataInicio")
+                    b.Property<DateTime?>("DataInicio")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("DiaSemana")
+                    b.Property<int?>("DiaSemana")
                         .HasColumnType("int");
 
-                    b.Property<float>("Distance")
+                    b.Property<float?>("Distance")
                         .HasColumnType("real");
 
-                    b.Property<int>("ExercicioId")
+                    b.Property<int?>("ExercicioId")
                         .HasColumnType("int");
 
                     b.Property<int>("RepetitionNumber")
@@ -94,7 +94,7 @@ namespace StayFit.Migrations
                     b.Property<int>("Series")
                         .HasColumnType("int");
 
-                    b.Property<float>("Weight")
+                    b.Property<float?>("Weight")
                         .HasColumnType("real");
 
                     b.HasKey("TreinoId");
@@ -108,9 +108,7 @@ namespace StayFit.Migrations
                 {
                     b.HasOne("StayFit.Models.Exercicio", "Exercicio")
                         .WithMany()
-                        .HasForeignKey("ExercicioId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("ExercicioId");
 
                     b.Navigation("Exercicio");
                 });

@@ -1,1 +1,13 @@
-﻿<h1>Index Exercicios</h1>
+﻿@model IEnumerable<StayFit.Models.Exercicio>
+
+@foreach(var exercicio in Model)
+{
+    <div class="col-sm-4 col-md-4 col-lg-4">
+        <h3>Exercicio: @exercicio.Name</h3>
+        <h4>Grupo Muscular: @exercicio.GroupMuscle</h4>
+        <h4>Tipo: @exercicio.TypeExercice</h4>
+    </div>
+    <br />
+}
+
+

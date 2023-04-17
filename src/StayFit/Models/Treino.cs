@@ -12,10 +12,12 @@ namespace StayFit.Models
         
         [Display(Name = "Número de Repetições")]
         [DefaultValue((int)1)]
+        [Required]
         public int RepetitionNumber { get; set; }
 
         [Display(Name = "Número de Séries")]
         [DefaultValue((int)1)]
+        [Required]
         public int Series { get; set; }
 
         [Display(Name = "Tempo de Descanço")]
@@ -23,24 +25,26 @@ namespace StayFit.Models
         public int RestTime { get; set; }
 
         [Display(Name = "Dia da Semana")]
-        public DiaSemana DiaSemana { get; set; }
+        public DiaSemana? DiaSemana { get; set; }
 
         [Display(Name = "Data de Inicio")]
-        public DateTime DataInicio { get; set; }
+        public DateTime? DataInicio { get; set; }
 
         [Display(Name = "Data do Fim")]
-        public DateTime DataFim { get; set; }
+        public DateTime? DataFim { get; set; }
 
         [Display(Name = "Distancia Percorida")]
         [DefaultValue((int)0)]
-        public float Distance { get; set; }
+        public float? Distance { get; set; }
 
         [Display(Name = "Carga Utilizada")]
         [DefaultValue(0)]
-        public float Weight { get; set; }
+        public float? Weight { get; set; }
 
+        [Display(Name ="Exercício")]
+        [Required]
         public int ExercicioId { get; set; }
-        public Exercicio Exercicio { get; set; }
+        public Exercicio? Exercicio { get; set; }
 
     }
 }

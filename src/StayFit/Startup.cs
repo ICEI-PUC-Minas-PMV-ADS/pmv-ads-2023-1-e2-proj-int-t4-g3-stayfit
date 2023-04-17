@@ -20,6 +20,7 @@ namespace StayFit
         {
             services.AddDbContext<AppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddTransient<IExercicioRepository, ExercicioRepository>();
+            services.AddTransient<ITreinoRepository, TreinoRepository>();
             services.AddControllersWithViews();
         }
 

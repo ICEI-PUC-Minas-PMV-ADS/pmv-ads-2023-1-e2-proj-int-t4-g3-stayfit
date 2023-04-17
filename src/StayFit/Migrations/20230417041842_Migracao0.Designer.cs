@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using StayFit.Context;
 
@@ -11,9 +12,11 @@ using StayFit.Context;
 namespace StayFit.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230417041842_Migracao0")]
+    partial class Migracao0
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -79,7 +82,7 @@ namespace StayFit.Migrations
                     b.Property<float?>("Distance")
                         .HasColumnType("real");
 
-                    b.Property<int?>("ExercicioId")
+                    b.Property<int>("ExercicioId")
                         .HasColumnType("int");
 
                     b.Property<int>("RepetitionNumber")
@@ -105,7 +108,9 @@ namespace StayFit.Migrations
                 {
                     b.HasOne("StayFit.Models.Exercicio", "Exercicio")
                         .WithMany()
-                        .HasForeignKey("ExercicioId");
+                        .HasForeignKey("ExercicioId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Exercicio");
                 });

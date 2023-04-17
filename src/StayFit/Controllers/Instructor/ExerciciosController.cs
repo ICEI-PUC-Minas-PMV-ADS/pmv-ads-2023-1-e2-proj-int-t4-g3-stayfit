@@ -15,7 +15,8 @@ namespace StayFit.Controllers.Instructor
         }
         public IActionResult Index()
         {
-            return View();
+            IEnumerable<Exercicio> exercicios = _exercicioRepository.Exercicios;
+            return View(exercicios);
         }
 
 
