@@ -1,10 +1,37 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Views\Login - Cópia\**" />
+    <Compile Remove="Views\NovaPasta\**" />
+    <Compile Remove="wwwroot\css\NovaPasta\**" />
+    <Content Remove="Views\Login - Cópia\**" />
+    <Content Remove="Views\NovaPasta\**" />
+    <Content Remove="wwwroot\css\NovaPasta\**" />
+    <EmbeddedResource Remove="Views\Login - Cópia\**" />
+    <EmbeddedResource Remove="Views\NovaPasta\**" />
+    <EmbeddedResource Remove="wwwroot\css\NovaPasta\**" />
+    <None Remove="Views\Login - Cópia\**" />
+    <None Remove="Views\NovaPasta\**" />
+    <None Remove="wwwroot\css\NovaPasta\**" />
+  </ItemGroup>
+
+	  <ItemGroup>
+    <Compile Remove="Controllers\Class.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="Views\Exercicios\Login.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Views\Cadastro\TextFile.txtsdfgdfs" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.5" />
@@ -23,6 +50,24 @@
   <ItemGroup>
     <Folder Include="Controllers\Client\" />
     <Folder Include="wwwroot\site-imagens\instrutor\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Views\Exercicios\Login.cshtml" />
+    <None Include="wwwroot\js\animsition.js" />
+    <None Include="wwwroot\js\animsition.min.js" />
+    <None Include="wwwroot\js\bootstrap.js" />
+    <None Include="wwwroot\js\bootstrap.min.js" />
+    <None Include="wwwroot\js\popper.js" />
+    <None Include="wwwroot\js\popper.min.js" />
+    <None Include="wwwroot\js\countdowntime.js" />
+    <None Include="wwwroot\css\daterangepicker.css" />
+    <None Include="wwwroot\js\daterangepicker.js" />
+    <None Include="wwwroot\js\moment.js" />
+    <None Include="wwwroot\js\moment.min.js" />
+    <None Include="wwwroot\js\jquery-3.2.1.min.js" />
+    <None Include="wwwroot\js\select2.js" />
+    <None Include="wwwroot\js\select2.min.js" />
   </ItemGroup>
 
 </Project>
