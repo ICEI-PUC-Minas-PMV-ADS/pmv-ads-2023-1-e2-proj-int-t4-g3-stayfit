@@ -15,13 +15,14 @@ namespace StayFit.Controllers.Instructor
         }
         public IActionResult Index()
         {
-            return View();
+            IEnumerable<Exercicio> exercicios = _exercicioRepository.Exercicios;
+            return View("~/Views/Admin/Instrutor/Exercicios/Index.cshtml", exercicios);
         }
 
 
         public IActionResult Create()
         {
-            return View();
+            return View("~/Views/Admin/Instrutor/Exercicios/Create.cshtml");
         }
 
         [HttpPost]
