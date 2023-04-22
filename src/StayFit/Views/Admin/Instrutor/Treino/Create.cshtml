@@ -1,12 +1,18 @@
 ﻿@model StayFit.Models.Treino
 
 
-<input type="checkbox" id="menu-toggle">
+
+<!-- Sidebar  -->
 <partial name="_SideMenu" />
 
-<div class="main-content">
+
+
+<!-- Page Content  -->
+<div id="content">
+
     <partial name="_Header" />
 
+    <div class="main-content">
     <h1>Adicionar Treino</h1>
 
 
@@ -56,7 +62,7 @@
             </form>
         </div>
     </div>
-
+    </div>
     
     @section Scripts {
         @{
