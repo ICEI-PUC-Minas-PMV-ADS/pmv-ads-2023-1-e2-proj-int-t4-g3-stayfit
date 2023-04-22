@@ -1,0 +1,35 @@
+﻿@model IEnumerable<StayFit.Models.Cliente>
+
+<input type="checkbox" id="menu-toggle">
+<partial name="_SideMenu" />
+
+<div class="main-content">
+    <partial name="_Header" />
+@foreach (var Cliente in Model)
+{
+
+    <div class="cards-cli">
+        <div class="card-cli">
+            <div class="card-info" >
+                <div class="img-area">
+                    <img src="@Cliente.Foto" alt="@Cliente.Nome" /> 
+                </div>
+                <div class="card-body">
+                      <div class="card-title-info" >@Cliente.Nome</div>
+                      <div class="card-body-info">
+                           <div class="info"><span>Matricula:</span> @Cliente.Matricula</div>
+                        <div class="info"><span>CPF:</span> @Cliente.CPF</div>
+                      </div>
+                </div>
+            </div>
+
+                <div class="card-actions">
+                    <input class="btn btn-success" type="submit" value="Editar" />
+                    <input class="btn btn-success" type="submit" value="Ficha" />
+                </div>            
+        </div>
+    </div>
+        
+}
+
+

@@ -16,13 +16,13 @@ namespace StayFit.Controllers.Instructor
         }
         public IActionResult Index()
         {
-            return View();
+            return View("~/Views/Admin/Instrutor/Treino/Index.cshtml");
         }
 
         public IActionResult Create()
         {
             ViewBag.Exercicios = _exercicioRepository.Exercicios.Select(e => new SelectListItem() { Text = e.Name, Value = e.ExercicioId.ToString() });
-                return View("Instrutor/Treino/Create");
+                return View("~/Views/Admin/Instrutor/Treino/Create.cshtml");
         }
 
         [HttpPost]

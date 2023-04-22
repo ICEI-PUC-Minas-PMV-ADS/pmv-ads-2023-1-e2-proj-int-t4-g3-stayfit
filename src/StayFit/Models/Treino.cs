@@ -23,16 +23,7 @@ namespace StayFit.Models
         [Display(Name = "Tempo de Descanço")]
         [DefaultValue((int)1)]
         public int RestTime { get; set; }
-
-        [Display(Name = "Dia da Semana")]
-        public DiaSemana? DiaSemana { get; set; }
-
-        [Display(Name = "Data de Inicio")]
-        public DateTime? DataInicio { get; set; }
-
-        [Display(Name = "Data do Fim")]
-        public DateTime? DataFim { get; set; }
-
+        
         [Display(Name = "Distancia Percorida")]
         [DefaultValue((int)0)]
         public float? Distance { get; set; }

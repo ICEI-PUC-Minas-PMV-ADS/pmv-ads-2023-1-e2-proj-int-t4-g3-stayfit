@@ -46,7 +46,7 @@
                 <select asp-for="TypeExercice" class="form-control" asp-items="Html.GetEnumSelectList<TypeExercice>()"> </select>
                 <span asp-validation-for="TypeExercice" class="text-danger"></span>
             </div>
-      
+            <br />
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
@@ -54,9 +54,6 @@
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
 
 @section Scripts {
     @{

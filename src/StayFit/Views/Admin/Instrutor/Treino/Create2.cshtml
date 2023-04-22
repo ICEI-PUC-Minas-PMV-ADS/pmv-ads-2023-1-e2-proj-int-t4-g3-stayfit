@@ -27,21 +27,7 @@
                 <input asp-for="RestTime" class="form-control" />
                 <span asp-validation-for="RestTime" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="DiaSemana" class="control-label"></label>
-                <select asp-for="DiaSemana" class="form-control" asp-items="Html.GetEnumSelectList<DiaSemana>()"></select>
-                <span asp-validation-for="DiaSemana" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="DataInicio" class="control-label"></label>
-                <input asp-for="DataInicio" class="form-control" />
-                <span asp-validation-for="DataInicio" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="DataFim" class="control-label"></label>
-                <input asp-for="DataFim" class="form-control" />
-                <span asp-validation-for="DataFim" class="text-danger"></span>
-            </div>
+          
             <div class="form-group">
                 <label asp-for="Distance" class="control-label"></label>
                 <input asp-for="Distance" class="form-control" />

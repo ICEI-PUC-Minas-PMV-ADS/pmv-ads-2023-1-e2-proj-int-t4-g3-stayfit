@@ -21,6 +21,7 @@ namespace StayFit
             services.AddDbContext<AppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddTransient<IExercicioRepository, ExercicioRepository>();
             services.AddTransient<ITreinoRepository, TreinoRepository>();
+            services.AddTransient<IClienteRepository, ClienteRepository>();
             services.AddControllersWithViews();
         }
 
@@ -46,6 +47,18 @@ namespace StayFit
 
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapControllerRoute(
+                name: "admin",
+                pattern: "Admin/Cliente/{action}/{categoria?}",
+                defaults: new { Controller = "AdminCliente", Action = "ListClient" }
+                );
+
+                endpoints.MapControllerRoute(
+                   name: "admin",
+                   pattern: "Admin/Cliente/{action}/{categoria?}",
+                   defaults: new { Controller = "AdminCliente", Action = "CreateClient" }
+                   );
+
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
