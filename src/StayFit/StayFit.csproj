@@ -49,7 +49,6 @@
 
   <ItemGroup>
     <Folder Include="Controllers\Client\" />
-    <Folder Include="Views\Treinos\Instrutor\" />
     <Folder Include="wwwroot\site-imagens\instrutor\" />
   </ItemGroup>
 
