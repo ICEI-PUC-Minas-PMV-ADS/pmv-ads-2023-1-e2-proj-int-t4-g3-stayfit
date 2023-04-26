@@ -5,11 +5,11 @@ using StayFit.Repositories.Interfaces;
 
 namespace StayFit.Controllers.Instructor
 {
-    public class ExerciciosController : Controller
+    public class ExercicioController : Controller
     {
         private readonly IExercicioRepository _exercicioRepository;
 
-        public ExerciciosController(IExercicioRepository exercicioRepository)
+        public ExercicioController(IExercicioRepository exercicioRepository)
         {
             _exercicioRepository = exercicioRepository;
         }

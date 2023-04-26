@@ -10,7 +10,25 @@ namespace StayFit.Context
         public DbSet<Cliente> Clientes { get; set; }
         public DbSet<Exercicio> Exercicios { get; set; }
         public DbSet<Treino> Treinos { get; set; }
-        public DbSet<StayFit.Models.Cliente>? Cliente { get; set; }
-      //  public DbSet<Ficha> Fichas { get; set; }
+        public DbSet<Cliente> Cliente { get; set; }
+        public DbSet<Ficha> Ficha { get; set; }
+        public DbSet<Instrutor> Instrutores { get; set; }
+
+         
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<Instrutor>().HasData(
+                new Instrutor
+                {
+                    InstrutorId = 1,
+                    Nome = "Paulo",
+                    Telefone = "93333-5555",
+                    Email = "Paulo@eu.com",                   
+                    
+                }
+              );
+        }
     }
 }

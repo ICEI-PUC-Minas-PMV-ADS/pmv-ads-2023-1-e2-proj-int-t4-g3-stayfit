@@ -33,12 +33,14 @@ namespace StayFit.Controllers.Adm
         {
             if(ModelState.IsValid)
             {
-                _context.Add(cliente);
+                IEnumerable<Cliente> clientes = _clienteRepository.Clientes;
+                _context.Clientes.Add(cliente);
                 await _context.SaveChangesAsync();
-                return View("~/Views/Admin/Admin/AdminCliente/ListClient.cshtml");
+                return View("~/Views/Admin/Admin/AdminCliente/ListClient.cshtml", clientes);
             }
             return View("~/Views/Admin/Admin/AdminCliente/CreateClient.cshtml");
 
         }
+
     }
 }

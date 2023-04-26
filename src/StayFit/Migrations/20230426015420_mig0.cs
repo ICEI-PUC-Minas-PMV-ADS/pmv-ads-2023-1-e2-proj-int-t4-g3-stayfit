@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace StayFit.Migrations
 {
     /// <inheritdoc />
-    public partial class MigracaoInicial : Migration
+    public partial class mig0 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -30,17 +30,18 @@ namespace StayFit.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Fichas",
+                name: "Instrutores",
                 columns: table => new
                 {
-                    FichaId = table.Column<int>(type: "int", nullable: false)
+                    InstrutorId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    DataInicio = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    DataFim = table.Column<DateTime>(type: "datetime2", nullable: false)
+                    Nome = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Telefone = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Email = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Fichas", x => x.FichaId);
+                    table.PrimaryKey("PK_Instrutores", x => x.InstrutorId);
                 });
 
             migrationBuilder.CreateTable(
@@ -57,16 +58,38 @@ namespace StayFit.Migrations
                     Foto = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: true),
                     Telefone = table.Column<string>(type: "nvarchar(15)", maxLength: 15, nullable: false),
                     Pontuacao = table.Column<int>(type: "int", nullable: true),
-                    FichaId = table.Column<int>(type: "int", nullable: true)
+                    InstrutorId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Clientes", x => x.ClienteId);
                     table.ForeignKey(
-                        name: "FK_Clientes_Fichas_FichaId",
-                        column: x => x.FichaId,
-                        principalTable: "Fichas",
-                        principalColumn: "FichaId");
+                        name: "FK_Clientes_Instrutores_InstrutorId",
+                        column: x => x.InstrutorId,
+                        principalTable: "Instrutores",
+                        principalColumn: "InstrutorId");
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Fichas",
+                columns: table => new
+                {
+                    FichaId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    NomeAtividade = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    DiaSemana = table.Column<int>(type: "int", nullable: true),
+                    DataInicio = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    DataFim = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    ClienteId = table.Column<int>(type: "int", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Fichas", x => x.FichaId);
+                    table.ForeignKey(
+                        name: "FK_Fichas_Clientes_ClienteId",
+                        column: x => x.ClienteId,
+                        principalTable: "Clientes",
+                        principalColumn: "ClienteId");
                 });
 
             migrationBuilder.CreateTable(
@@ -77,7 +100,8 @@ namespace StayFit.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     RepetitionNumber = table.Column<int>(type: "int", nullable: false),
                     Series = table.Column<int>(type: "int", nullable: false),
-                    RestTime = table.Column<int>(type: "int", nullable: false),
+                    RestTime = table.Column<int>(type: "int", nullable: true),
+                    RestBetween = table.Column<int>(type: "int", nullable: true),
                     Distance = table.Column<float>(type: "real", nullable: true),
                     Weight = table.Column<float>(type: "real", nullable: true),
                     ExercicioId = table.Column<int>(type: "int", nullable: false),
@@ -99,10 +123,20 @@ namespace StayFit.Migrations
                         principalColumn: "FichaId");
                 });
 
+            migrationBuilder.InsertData(
+                table: "Instrutores",
+                columns: new[] { "InstrutorId", "Email", "Nome", "Telefone" },
+                values: new object[] { 1, "Paulo@eu.com", "Paulo", "93333-5555" });
+
             migrationBuilder.CreateIndex(
-                name: "IX_Clientes_FichaId",
+                name: "IX_Clientes_InstrutorId",
                 table: "Clientes",
-                column: "FichaId");
+                column: "InstrutorId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Fichas_ClienteId",
+                table: "Fichas",
+                column: "ClienteId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Treinos_ExercicioId",
@@ -119,9 +153,6 @@ namespace StayFit.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Clientes");
-
-            migrationBuilder.DropTable(
                 name: "Treinos");
 
             migrationBuilder.DropTable(
@@ -129,6 +160,12 @@ namespace StayFit.Migrations
 
             migrationBuilder.DropTable(
                 name: "Fichas");
+
+            migrationBuilder.DropTable(
+                name: "Clientes");
+
+            migrationBuilder.DropTable(
+                name: "Instrutores");
         }
     }
 }

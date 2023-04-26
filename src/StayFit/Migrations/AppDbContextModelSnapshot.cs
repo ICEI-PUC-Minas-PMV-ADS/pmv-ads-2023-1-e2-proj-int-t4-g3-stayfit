@@ -40,12 +40,12 @@ namespace StayFit.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.Property<int?>("FichaId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Foto")
                         .HasMaxLength(200)
                         .HasColumnType("nvarchar(200)");
+
+                    b.Property<int?>("InstrutorId")
+                        .HasColumnType("int");
 
                     b.Property<int?>("Matricula")
                         .HasColumnType("int");
@@ -68,7 +68,7 @@ namespace StayFit.Migrations
 
                     b.HasKey("ClienteId");
 
-                    b.HasIndex("FichaId");
+                    b.HasIndex("InstrutorId");
 
                     b.ToTable("Clientes");
                 });
@@ -118,15 +118,61 @@ namespace StayFit.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("FichaId"));
 
-                    b.Property<DateTime>("DataFim")
+                    b.Property<int?>("ClienteId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("DataFim")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("DataInicio")
+                    b.Property<DateTime?>("DataInicio")
                         .HasColumnType("datetime2");
+
+                    b.Property<int?>("DiaSemana")
+                        .HasColumnType("int");
+
+                    b.Property<string>("NomeAtividade")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.HasKey("FichaId");
 
+                    b.HasIndex("ClienteId");
+
                     b.ToTable("Fichas");
+                });
+
+            modelBuilder.Entity("StayFit.Models.Instrutor", b =>
+                {
+                    b.Property<int>("InstrutorId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("InstrutorId"));
+
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Nome")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Telefone")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("InstrutorId");
+
+                    b.ToTable("Instrutores");
+
+                    b.HasData(
+                        new
+                        {
+                            InstrutorId = 1,
+                            Email = "Paulo@eu.com",
+                            Nome = "Paulo",
+                            Telefone = "93333-5555"
+                        });
                 });
 
             modelBuilder.Entity("StayFit.Models.Treino", b =>
@@ -149,7 +195,10 @@ namespace StayFit.Migrations
                     b.Property<int>("RepetitionNumber")
                         .HasColumnType("int");
 
-                    b.Property<int>("RestTime")
+                    b.Property<int?>("RestBetween")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("RestTime")
                         .HasColumnType("int");
 
                     b.Property<int>("Series")
@@ -169,11 +218,16 @@ namespace StayFit.Migrations
 
             modelBuilder.Entity("StayFit.Models.Cliente", b =>
                 {
-                    b.HasOne("StayFit.Models.Ficha", "Ficha")
-                        .WithMany()
-                        .HasForeignKey("FichaId");
+                    b.HasOne("StayFit.Models.Instrutor", null)
+                        .WithMany("Clientes")
+                        .HasForeignKey("InstrutorId");
+                });
 
-                    b.Navigation("Ficha");
+            modelBuilder.Entity("StayFit.Models.Ficha", b =>
+                {
+                    b.HasOne("StayFit.Models.Cliente", null)
+                        .WithMany("Fichas")
+                        .HasForeignKey("ClienteId");
                 });
 
             modelBuilder.Entity("StayFit.Models.Treino", b =>
@@ -191,9 +245,19 @@ namespace StayFit.Migrations
                     b.Navigation("Exercicio");
                 });
 
+            modelBuilder.Entity("StayFit.Models.Cliente", b =>
+                {
+                    b.Navigation("Fichas");
+                });
+
             modelBuilder.Entity("StayFit.Models.Ficha", b =>
                 {
                     b.Navigation("Treinos");
+                });
+
+            modelBuilder.Entity("StayFit.Models.Instrutor", b =>
+                {
+                    b.Navigation("Clientes");
                 });
 #pragma warning restore 612, 618
         }
