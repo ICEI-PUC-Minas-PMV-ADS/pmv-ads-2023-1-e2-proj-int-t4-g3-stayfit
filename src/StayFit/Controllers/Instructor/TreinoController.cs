@@ -45,23 +45,31 @@ namespace StayFit.Controllers.Instructor
                 return View("Passou");
         }
 
-
+       
         [HttpPost]
         public JsonResult teste([FromBody] List<Treino> treinos)
         {
+             int fichaid = treinos[0].FichaId;
+              System.Diagnostics.Debug.WriteLine("============= Teste " + fichaid);
 
-            Ficha ficha = _fichaRepository.UpdateTreinosFicha(treinos, 2);
-
-          /*  if (_treinoRepository.Create(treino))
+            if (fichaid != 0 || fichaid != null)
             {
-                return Json(treino.RepetitionNumber);
+                Ficha ficha = _fichaRepository.UpdateTreinosFicha(treinos,fichaid);
             }
             else
             {
-                return Json(treino.RestTime);
-            }*/
+                return Json(1111);
+            }
+            /*  if (_treinoRepository.Create(treino))
+              {
+                  return Json(treino.RepetitionNumber);
+              }
+              else
+              {
+                  return Json(treino.RestTime);
+              }*/
 
-            return Json(ficha.DiaSemana);
+            return Json(treinos[0].FichaId);
         }
 
 

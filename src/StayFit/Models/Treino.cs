@@ -40,8 +40,8 @@ namespace StayFit.Models
         [Required]
         public int ExercicioId { get; set; }
 
-        public int? FichaId { get; set; }
-        public Exercicio? Exercicio { get; set; }
+        public int FichaId { get; set; }
+       // public Exercicio? Exercicio { get; set; }
 
         //public Ficha? Ficha { get; set; }
     }

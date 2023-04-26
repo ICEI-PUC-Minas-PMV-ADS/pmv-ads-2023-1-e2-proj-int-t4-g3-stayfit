@@ -12,7 +12,7 @@ using StayFit.Context;
 namespace StayFit.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20230426015420_mig0")]
+    [Migration("20230426191646_mig0")]
     partial class mig0
     {
         /// <inheritdoc />
@@ -192,7 +192,7 @@ namespace StayFit.Migrations
                     b.Property<int>("ExercicioId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("FichaId")
+                    b.Property<int>("FichaId")
                         .HasColumnType("int");
 
                     b.Property<int>("RepetitionNumber")
@@ -211,8 +211,6 @@ namespace StayFit.Migrations
                         .HasColumnType("real");
 
                     b.HasKey("TreinoId");
-
-                    b.HasIndex("ExercicioId");
 
                     b.HasIndex("FichaId");
 
@@ -235,17 +233,11 @@ namespace StayFit.Migrations
 
             modelBuilder.Entity("StayFit.Models.Treino", b =>
                 {
-                    b.HasOne("StayFit.Models.Exercicio", "Exercicio")
-                        .WithMany()
-                        .HasForeignKey("ExercicioId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("StayFit.Models.Ficha", null)
                         .WithMany("Treinos")
-                        .HasForeignKey("FichaId");
-
-                    b.Navigation("Exercicio");
+                        .HasForeignKey("FichaId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("StayFit.Models.Cliente", b =>

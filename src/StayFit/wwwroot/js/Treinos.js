@@ -14,8 +14,8 @@ function adicionarLista() {
     let ExercicioId = document.getElementById("ExercicioId").value;
     let FichaId = document.getElementById("FichaId").value;
 
-    if (localStorage.getItem("TreinosLocal") == null) {
-        let treino = [{
+    let treino = {
+            
             "repetitionNumber": nrepeticoes,
             "series": series,
             "restTime": restTime,
@@ -24,17 +24,26 @@ function adicionarLista() {
             "weight": weight,
             "exercicioId": ExercicioId,
             "exercicio": null,
-            "fichaId": FichaId
-        }]; 
+            "FichaId":FichaId,
+        }; 
 
-        localStorage.setItem("TreinosLocal", JSON.stringify(treino))
+    let dataLocal = localStorage.getItem("TreinosLocal");
+    if (dataLocal == null || dataLocal == undefined) {
+        localStorage.setItem("TreinosLocal", JSON.stringify([treino]))
+    } else {
+        data = JSON.parse(dataLocal)
+        data.push(treino);
+        localStorage.setItem("TreinosLocal", JSON.stringify(data))
     }
 }
 
 
 function enviar() {
-    var treino = [{       
-        "repetitionNumber": 100,
+    let treinos = JSON.parse(localStorage.getItem("TreinosLocal"));
+
+    /*
+    let treinos = [{       
+        "repetitionNumber": 3,
         "series": 3,
         "restTime": 1,
         "restBetween": 2,
@@ -42,10 +51,10 @@ function enviar() {
         "weight": null,
         "exercicioId": 2,
         "exercicio": null,
-        "ficha": null
+        "FichaId": 1
     },
         {
-            "repetitionNumber": 255,
+            "repetitionNumber": 335,
             "series": 3,
             "restTime": 1,
             "restBetween": 2,
@@ -53,14 +62,15 @@ function enviar() {
             "weight": null,
             "exercicioId": 2,
             "exercicio": null,
-            "ficha": null
+            "FichaId": 1
         }];
+        */
     fetch('/Treino/teste', {
         method: 'POST',
         headers: {
             'Content-type': 'application/json',
         },
-        body: JSON.stringify(treino)
+        body: JSON.stringify(treinos)
     }).then(function (response) {
         if (response.ok) {
             alert("teste"+ response);

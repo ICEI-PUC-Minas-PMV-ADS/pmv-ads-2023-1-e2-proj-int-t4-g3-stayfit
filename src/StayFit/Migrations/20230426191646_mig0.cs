@@ -105,22 +105,17 @@ namespace StayFit.Migrations
                     Distance = table.Column<float>(type: "real", nullable: true),
                     Weight = table.Column<float>(type: "real", nullable: true),
                     ExercicioId = table.Column<int>(type: "int", nullable: false),
-                    FichaId = table.Column<int>(type: "int", nullable: true)
+                    FichaId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Treinos", x => x.TreinoId);
                     table.ForeignKey(
-                        name: "FK_Treinos_Exercicios_ExercicioId",
-                        column: x => x.ExercicioId,
-                        principalTable: "Exercicios",
-                        principalColumn: "ExercicioId",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
                         name: "FK_Treinos_Fichas_FichaId",
                         column: x => x.FichaId,
                         principalTable: "Fichas",
-                        principalColumn: "FichaId");
+                        principalColumn: "FichaId",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.InsertData(
@@ -139,11 +134,6 @@ namespace StayFit.Migrations
                 column: "ClienteId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Treinos_ExercicioId",
-                table: "Treinos",
-                column: "ExercicioId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_Treinos_FichaId",
                 table: "Treinos",
                 column: "FichaId");
@@ -153,10 +143,10 @@ namespace StayFit.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Treinos");
+                name: "Exercicios");
 
             migrationBuilder.DropTable(
-                name: "Exercicios");
+                name: "Treinos");
 
             migrationBuilder.DropTable(
                 name: "Fichas");
