@@ -206,16 +206,20 @@ a:focus {
 
 
 #sidebar ul.components {
+    
     padding: 20px 0;
+
 }
 
 #sidebar ul li a {
+  
     padding: 10px;
+    
     line-height: 30px;
     border-radius: 5px;
     font-size: 15px;
     position: relative;
-    ' font-weight: 400;
+    font-weight: 400;
     display: block;
 }
 

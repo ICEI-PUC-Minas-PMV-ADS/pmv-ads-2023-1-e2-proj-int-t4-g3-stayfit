@@ -21,9 +21,13 @@ namespace StayFit.Models
         public int Series { get; set; }
 
         [Display(Name = "Tempo de Descanço")]
-        [DefaultValue((int)1)]
-        public int RestTime { get; set; }
-        
+        [DefaultValue((int)0)]
+        public int? RestTime { get; set; }
+
+        [Display(Name = "Descanço entre Exercícios")]
+        [DefaultValue((int)0)]
+        public int? RestBetween { get; set; }
+
         [Display(Name = "Distancia Percorida")]
         [DefaultValue((int)0)]
         public float? Distance { get; set; }
@@ -35,8 +39,11 @@ namespace StayFit.Models
         [Display(Name ="Exercício")]
         [Required]
         public int ExercicioId { get; set; }
-        public Exercicio? Exercicio { get; set; }
 
+        public int FichaId { get; set; }
+       // public Exercicio? Exercicio { get; set; }
+
+        //public Ficha? Ficha { get; set; }
     }
 }
 

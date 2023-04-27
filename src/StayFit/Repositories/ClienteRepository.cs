@@ -8,6 +8,10 @@ namespace StayFit.Repositories
     {
         private readonly AppDbContext _context;
 
+        public Cliente GetCliente(int ClienteId)
+        {
+            return _context.Cliente.FirstOrDefault(cliente => cliente.ClienteId == ClienteId);
+        }
         public ClienteRepository(AppDbContext context)
         {
            _context = context;  

@@ -4,7 +4,9 @@
 <partial name="_SideMenu" />
 
 <div id="content">
- 
+
+    <div class="main-content">
+
     <partial name="_Header" />
 @foreach (var Cliente in Model)
 {
@@ -25,12 +27,12 @@
             </div>
 
                 <div class="card-actions">
-                    <input class="btn btn-success" type="submit" value="Editar" />
-                    <input class="btn btn-success" type="submit" value="Ficha" />
+                    <a class="btn btn-success"  role="button">Editar Usuário</a>
+                    <a class="btn btn-success" asp-controller="Ficha" asp-action="Create" asp-route-cliente="@Cliente.ClienteId" role="button">Editar Ficha</a>
                 </div>            
         </div>
     </div>
-        
+    
 }
 
 

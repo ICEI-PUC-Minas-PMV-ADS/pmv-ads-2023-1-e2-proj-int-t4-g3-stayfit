@@ -21,7 +21,7 @@ namespace StayFit.Repositories
         {
             try
             {
-                _context.Add(exercicio);
+                _context.Exercicios.Add(exercicio);
                 Save();
                 return true;
             }catch (Exception)

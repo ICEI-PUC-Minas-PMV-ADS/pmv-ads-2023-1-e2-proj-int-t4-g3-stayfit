@@ -7,6 +7,10 @@ namespace StayFit.Models
     [Table("Clientes")]
     public class Cliente
     {
+        public Cliente()
+        {
+            Fichas = new List<Ficha>();           
+        }
         [Key]
         public int ClienteId { get; set; }
         public int? Matricula { get; set; }
@@ -40,8 +44,7 @@ namespace StayFit.Models
         [DefaultValue((int)0)]
         public int? Pontuacao { get; set; }
 
-               
-        public Ficha? Ficha { get; set; }
+        public IEnumerable<Ficha>? Fichas { get; set; }       
 
 
         

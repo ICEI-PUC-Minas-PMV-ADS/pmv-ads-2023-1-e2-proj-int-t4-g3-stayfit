@@ -18,7 +18,7 @@ namespace StayFit.Repositories
         {
             try
             {
-                _context.Add(treino);
+                _context.Treinos.Add(treino);
                 Save();
                 return true;
             }
@@ -26,6 +26,11 @@ namespace StayFit.Repositories
             {
                 return false;
             }
+        }
+
+        public IEnumerable<Treino> GetTreinosFicha(int fichaId)
+        {
+            return _context.Treinos.Where(treino => treino.FichaId == fichaId);
         }
 
         private void Save()
