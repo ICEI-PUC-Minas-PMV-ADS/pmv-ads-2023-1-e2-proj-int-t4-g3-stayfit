@@ -2,9 +2,11 @@
 document.getElementById("enviarTeste").addEventListener("click", enviar);
 document.getElementById("addTreino").addEventListener("click", adicionarLista);
 
-   
+var e = document.getElementById("ExercicioId");
+var value = e.value;
+document.querySelector(".teste").innerHTML = e.options[e.selectedIndex].text;
 function adicionarLista() {
-    alert("Click");
+    
     let nrepeticoes = document.getElementById("nrepeticoes").value;
     let series = document.getElementById("series").value;
     let restTime = document.getElementById("restTime").value;
@@ -35,6 +37,8 @@ function adicionarLista() {
         data.push(treino);
         localStorage.setItem("TreinosLocal", JSON.stringify(data))
     }
+
+    ListarTreino();
 }
 
 
@@ -81,7 +85,24 @@ function enviar() {
         let dados = JSON.parse(data);
         console.log('Success:', dados);
     }).catch(function (error) {
-        console.warn('BLAH BLAH BLAH', error);
+        console.warn(error);
     });
 
+}
+
+function ListarTreino() {
+    let place_treinos = '';
+    let data = JSON.parse(localStorage.getItem("TreinosLocal"));
+    if (data !== null) {
+        data.forEach(treino =>  {
+            place_treinos += ` 
+            <div>
+                <h4><span>${treino.exercicioId} </span></h4>
+                <h5><span>Repeticoes: ${treino.repetitionNumber} </span><span>Series: ${treino.series}</span> </h5>
+            </div>`
+        });
+    }
+
+    document.querySelector('.treinos-card').innerHTML = place_treinos;
+    place_treinos = ''
 }

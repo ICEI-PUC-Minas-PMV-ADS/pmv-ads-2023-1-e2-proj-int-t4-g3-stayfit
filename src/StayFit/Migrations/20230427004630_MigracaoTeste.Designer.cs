@@ -12,8 +12,8 @@ using StayFit.Context;
 namespace StayFit.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20230426191646_mig0")]
-    partial class mig0
+    [Migration("20230427004630_MigracaoTeste")]
+    partial class MigracaoTeste
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace StayFit.Migrations
 {
     /// <inheritdoc />
-    public partial class mig0 : Migration
+    public partial class MigracaoTeste : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
