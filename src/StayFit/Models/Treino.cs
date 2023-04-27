@@ -47,5 +47,5 @@ namespace StayFit.Models
     }
 }
 
-//   "DefaultConnection": "Server=localhost,1433; Initial Catalog=LanchesDatabase; User ID=sa ; Password=pauloosilas@1; TrustServerCertificate=True"
+//   "DefaultConnection": "Server=localhost,1433; Initial Catalog=StayFit; User ID=sa ; Password=pauloosilas@1; TrustServerCertificate=True"
 //    "DefaultConnection": "Server=tcp:stayfit.database.windows.net,1433;Initial Catalog=stayfit;Persist Security Info=False;User ID=stayfit;Password=Stay@Fit;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;",

@@ -47,7 +47,7 @@ namespace StayFit.Controllers.Instructor
 
        
         [HttpPost]
-        public JsonResult teste([FromBody] List<Treino> treinos)
+        public JsonResult UpdateTreinos([FromBody] List<Treino> treinos)
         {
              int fichaid = treinos[0].FichaId;
               System.Diagnostics.Debug.WriteLine("============= Teste " + fichaid);
@@ -72,8 +72,7 @@ namespace StayFit.Controllers.Instructor
             return Json(treinos[0].FichaId);
         }
 
-
-
+     
     }
 
       

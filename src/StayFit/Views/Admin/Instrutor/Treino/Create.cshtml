@@ -9,10 +9,7 @@
     <partial name="_Header" />
 
     <div class="main-content">
-    <h1>Adicionar Treino</h1>
-
-   <div class="teste"></div>
-    <h4>Treino</h4>
+    <h1>Adicionar Treino</h1>   
     <hr />
     <div class="row">
             <div class="col-lg-5 col-md-12">
@@ -67,8 +64,10 @@
                         <span asp-validation-for="Weight" class="text-danger"></span>
                     </div>
                       <input type="hidden" value="@ViewBag.FichaId" id="FichaId" class="btn btn-primary" />
+                     
                     <div class="form-group">
-                        <input type="submit" value="Create" class="btn btn-primary" />
+                        <a role="button" id="addTreino" class="btn btn-primary">Adicionar</a>
+                       
                     </div>
                 </form>
                 </div>
@@ -80,38 +79,16 @@
                         <h4 class="card-title">Atividades</h4>
                     </div>
                     <div class="card-content">
-                        <div class="cards-cli">
+                       
                                 <div class="treinos-card">
                                   
                                 </div>
-                            </div>
+
+                               <a class="btn btn-success " id="enviarTreino" role="button">Finalizar</a>
+                           
                         </div>
 
-
-                        <div class="cards-cli">
-                            <div class="card-cli">
-                                <div class="card-info">
-                                    <div class="img-area">
-                                        <img src="" alt="" />
-                                    </div>
-                                    <div class="card-body">
-                                        <div class="card-title-info">Nome</div>
-                                        <div class="card-body-info">
-                                            <div class="info"><span>Matricula:</span> Matricula</div>
-                                            <div class="info"><span>CPF:</span> CPF</div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="card-actions">
-                                    <a class="btn btn-success " id="addTreino" role="button">Add</a>
-                                    <a class="btn btn-success " id="enviarTeste" role="button">Enviar Gravar </a>
-                                    <a class="btn btn-success" asp-controller="Ficha" asp-action="Create" asp-route-cliente="" role="button">Editar Ficha</a>
-                                </div>
-                            </div>
-                        </div>
                     </div>
-
                 </div>
             </div>
         </div>
