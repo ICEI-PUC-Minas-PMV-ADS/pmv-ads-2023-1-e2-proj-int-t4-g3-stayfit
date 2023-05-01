@@ -1,0 +1,36 @@
+﻿@model ClienteFichaViewModel
+
+<!-- Sidebar  -->
+<partial name="_SideMenu" />
+
+
+
+<!-- Page Content  -->
+<div id="content">
+
+    <partial name="_Header" />
+
+    <div class="main-content">
+        <h1>Ficha -- @Model.cliente.Nome</h1>
+
+        <br />
+        
+        
+
+        @foreach(Ficha ficha in @Model.fichas)
+        {
+            <h1>Treino para: @ficha.NomeAtividade </h1>
+            <h2>@ficha.DiaSemana</h2>
+
+            foreach(Treino treino in ficha.Treinos)
+            {
+               @treino.Exercicio.Name
+                <h1>@treino.Series</h1>
+            }
+
+        }
+
+
+
+    </div>
+</div>

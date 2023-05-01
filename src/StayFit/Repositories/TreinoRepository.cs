@@ -33,6 +33,7 @@ namespace StayFit.Repositories
             return _context.Treinos.Where(treino => treino.FichaId == fichaId);
         }
 
+
         private void Save()
         {
             _context.SaveChanges();
