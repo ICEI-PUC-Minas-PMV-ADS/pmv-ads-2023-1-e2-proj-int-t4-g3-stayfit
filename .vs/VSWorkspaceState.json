@@ -2,10 +2,8 @@
   "ExpandedNodes": [
     "",
     "\\src",
-    "\\src\\StayFit",
-    "\\src\\StayFit\\Views",
-    "\\src\\StayFit\\Views\\Home"
+    "\\src\\StayFit"
   ],
-  "SelectedNode": "\\src\\StayFit\\Views\\Home\\Index.cshtml",
+  "SelectedNode": "\\src\\StayFit\\StayFit.csproj",
   "PreviewInSolutionExplorer": false
 }

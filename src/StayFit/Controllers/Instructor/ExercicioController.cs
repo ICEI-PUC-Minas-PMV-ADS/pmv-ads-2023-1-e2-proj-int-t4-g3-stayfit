@@ -28,19 +28,30 @@ namespace StayFit.Controllers.Instructor
         [HttpPost]
         public IActionResult Create(Exercicio exercicio)
         {
-            if(ModelState.IsValid)
+            try
             {
-                if(_exercicioRepository.Create(exercicio))
+                if (ModelState.IsValid)
                 {
+                    _exercicioRepository.Create(exercicio);
+                    TempData["MsgSuccess"] = "Exercício cadastrado com sucesso!";
                     return RedirectToAction(nameof(Index));
+
                 }
-                else
-                {
-                    return RedirectToAction("Teste");
-                }
+
+            }
+            catch(System.Exception ex)
+            {
+                TempData["MsgSuccess"] = $"Não foi possivel cadastrar o exercício! {ex.Message}";
+                return RedirectToAction(nameof(Index));
             }
 
-            return View();
+            return View("~/Views/Admin/Instrutor/Exercicios/Create.cshtml", exercicio);
+          }
+
+        public ViewResult Detail(int ExercicioId)
+        {
+            Exercicio exercicio = _exercicioRepository.GetExercicio(ExercicioId);
+            return View("~/Views/Admin/Instrutor/Exercicios/Detail.cshtml", exercicio);
         }
     }
 }

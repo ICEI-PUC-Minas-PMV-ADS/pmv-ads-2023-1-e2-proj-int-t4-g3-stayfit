@@ -8,26 +8,26 @@ namespace StayFit.Repositories
     public class ExercicioRepository : IExercicioRepository
     {
         private readonly AppDbContext _context;
-
         public ExercicioRepository(AppDbContext context)
         {
             _context = context; 
         }
 
+        public Exercicio GetExercicio(int exercicioId)
+        {
+            return _context.Exercicios.FirstOrDefault(exercicio => exercicio.ExercicioId == exercicioId);
+        }
+
         public IEnumerable<Exercicio> Exercicios => _context.Exercicios;
 
 
-        public bool Create(Exercicio exercicio)
+        public Exercicio Create(Exercicio exercicio)
         {
-            try
-            {
+            
                 _context.Exercicios.Add(exercicio);
                 Save();
-                return true;
-            }catch (Exception)
-            {
-                return false;
-            }
+                return exercicio;
+          
         }
 
         private void Save()

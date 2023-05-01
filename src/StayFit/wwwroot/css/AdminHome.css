@@ -1,0 +1,38 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.square {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 200px;
+    border: 1px solid black;
+    margin: 10px;
+    cursor: pointer;
+}
+
+    .square:hover {
+        background-color: lightgray;
+    }
+
+    .square.clicked {
+        background-color: darkgray;
+    }
+
+.icon {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+.text {
+    font-size: 18px;
+    text-align: center;
+}
