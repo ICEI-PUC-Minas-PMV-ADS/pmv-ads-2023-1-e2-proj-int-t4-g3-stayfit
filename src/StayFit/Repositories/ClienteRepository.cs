@@ -17,6 +17,14 @@ namespace StayFit.Repositories
            _context = context;  
         }
 
+        public Cliente CreateClient(Cliente cliente)
+        {
+            _context.Clientes.Add(cliente);
+            _context.SaveChanges();
+
+            return cliente;
+        }
+
         public IEnumerable<Cliente> Clientes => _context.Clientes;
 
     }

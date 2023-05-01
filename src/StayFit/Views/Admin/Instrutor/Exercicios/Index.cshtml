@@ -10,16 +10,39 @@
 
     <partial name="_Header" />
     <div class="main-content">
+    
+        <div class="text-center">
 
-    @foreach(var exercicio in Model)
-    {
-        <div class="col-sm-4 col-md-4 col-lg-4">
-            <h3>Exercicio: @exercicio.Name</h3>
-            <h4>Grupo Muscular: @exercicio.GroupMuscle</h4>
-            <h4>Tipo: @exercicio.TypeExercice</h4>
+        @if(TempData["msgSuccess"] != null)
+        {
+            <div class="alert alert-success" role="alert">
+              <button type="button" class="btn btn-success btn-sm close-alert" arial-label="Close">X</button>
+              @TempData["msgSucess"]
+             </div>
+            
+        }
+        @if(TempData["msgSuccess"] != null)
+        {
+        <div class="alert alert-danger" role="alert">
+            <button type="button" class="btn btn-danger btn-sm close-alert" arial-label="Close">X</button>
+            @TempData["msgSucess"]
         </div>
-        <br />
-    }
-
+        }
+        
     </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card card-stats">
+                    @foreach(var exercicio in Model)
+                    {
+                        <div class="col-sm-4 col-md-6 col-lg-4">
+                            <a asp-action="Detail" asp-controller="Exercicio" asp-route-ExercicioId="@exercicio.ExercicioId"> <h3>Exercicio: @exercicio.Name</h3></a>
+                            <h4>Grupo Muscular: @exercicio.GroupMuscle</h4>
+                            <h4>Tipo: @exercicio.TypeExercice</h4>
+                        </div>
+                        <br />
+                    }
+                </div>
+          </div>
+      </div>
 </div>

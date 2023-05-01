@@ -29,13 +29,13 @@ namespace StayFit.Controllers.Adm
         }
 
         [HttpPost]  
-        public async Task<ViewResult> CreateClient(Cliente cliente)
+        public ViewResult CreateClient(Cliente cliente)
         {
             if(ModelState.IsValid)
             {
+                _clienteRepository.CreateClient(cliente);
                 IEnumerable<Cliente> clientes = _clienteRepository.Clientes;
-                _context.Clientes.Add(cliente);
-                await _context.SaveChangesAsync();
+               
                 return View("~/Views/Admin/Admin/AdminCliente/ListClient.cshtml", clientes);
             }
             return View("~/Views/Admin/Admin/AdminCliente/CreateClient.cshtml");

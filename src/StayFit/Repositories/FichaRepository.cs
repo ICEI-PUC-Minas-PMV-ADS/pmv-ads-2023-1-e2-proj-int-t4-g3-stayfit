@@ -1,4 +1,5 @@
-﻿using StayFit.Context;
+﻿using Microsoft.EntityFrameworkCore;
+using StayFit.Context;
 using StayFit.Models;
 using StayFit.Repositories.Interfaces;
 
@@ -12,6 +13,7 @@ namespace StayFit.Repositories
         {
             _context = context;
         } 
+
 
        public Ficha Create(Ficha ficha)
         {
@@ -35,5 +37,10 @@ namespace StayFit.Repositories
             return ficha;
         }
 
+        public IEnumerable<Ficha> GetFichasClient(int clientId) {
+            return _context.Ficha.Where(ficha => ficha.ClienteId == clientId).Include(treino => treino.Treinos);
+           
+           
+        }
     }
 }

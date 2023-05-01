@@ -5,7 +5,8 @@ namespace StayFit.Repositories.Interfaces
 {
     public interface IExercicioRepository
     {
+        public Exercicio GetExercicio(int exercicioId);
         public IEnumerable<Exercicio> Exercicios { get; }
-        public bool Create(Exercicio exercicio);
+        public Exercicio Create(Exercicio exercicio);
     }
 }
