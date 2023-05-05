@@ -1,0 +1,54 @@
+﻿@{
+    ViewData["Title"] = "AdminHome";
+}
+
+
+	<div class="body-overlay"></div>
+
+
+	<!-- Sidebar  -->
+	<partial name="_SideMenu" />
+
+
+
+	<!-- Page Content  -->
+	<div id="content">
+
+	   <partial name="_Header" />
+
+			<head>
+				<link rel="stylesheet" type="text/css" href="~/css/AdminHome.css">
+				
+			</head>
+			<body>
+				<div class="square" onclick="window.location.href='cadastrar-ficha.html'">
+				<img src="~/site-imagens/IcoPrancheta.png" width="100px"><br>
+					<div class="text"><strong>Cadastrar Ficha</strong></div>
+				</div>
+				<div class="square" onclick="window.location.href='alunos.html'">
+				<img src="~/site-imagens/IcoUser.png" width="100px"><br>
+					<div class="text"><strong>Alunos</strong></div>
+				</div>
+				<div class="square" onclick="window.location.href='exames.html'">
+				<img src="~/site-imagens/IcoExame.png" width="100px"><br>
+					<div class="text"><strong>Exames</strong></div>
+				</div>
+
+				<script>
+					let squares = document.querySelectorAll(".square");
+
+					squares.forEach(square => {
+						square.addEventListener("click", function () {
+							this.classList.toggle("clicked");
+						});
+					});
+				</script>
+			</body>
+
+	</div>
+
+
+
+
+	
+

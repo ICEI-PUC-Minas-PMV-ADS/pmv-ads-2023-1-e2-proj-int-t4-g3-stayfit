@@ -8,16 +8,12 @@
 
   <ItemGroup>
     <Compile Remove="Views\Login - Cópia\**" />
-    <Compile Remove="Views\NovaPasta\**" />
     <Compile Remove="wwwroot\css\NovaPasta\**" />
     <Content Remove="Views\Login - Cópia\**" />
-    <Content Remove="Views\NovaPasta\**" />
     <Content Remove="wwwroot\css\NovaPasta\**" />
     <EmbeddedResource Remove="Views\Login - Cópia\**" />
-    <EmbeddedResource Remove="Views\NovaPasta\**" />
     <EmbeddedResource Remove="wwwroot\css\NovaPasta\**" />
     <None Remove="Views\Login - Cópia\**" />
-    <None Remove="Views\NovaPasta\**" />
     <None Remove="wwwroot\css\NovaPasta\**" />
   </ItemGroup>
 
