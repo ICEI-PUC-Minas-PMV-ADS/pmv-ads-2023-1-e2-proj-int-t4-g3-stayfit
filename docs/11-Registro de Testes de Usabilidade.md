@@ -29,7 +29,7 @@ Coletar feedback dos usuários após os testes por meio de entrevistas ou questi
 | Heurísticas |	Notas dos avaliadores |	Média	| Consenso |	Considerações |	Melhorias |
 |---------------|------------------------------------|------------------------------------|------------------------------------|------------------------------------|------------------------------------|
 | Visibilidade do status do sistema | Avaliador1: 1 Avaliador2: 1 Avaliador3: 1 | 1 | 1 | O sistema contem feedbacks em em ações de escrita no banco de dados. | Nenhuma
-| Correspondência entre sistema e mundo real | Avaliador1: 3 Avaliador2: 3 Avaliador3: 1 | 1 | 1 | Nenhuma | Nenhuma
+| Correspondência entre sistema e mundo real | Avaliador1: 1 Avaliador2: 1 Avaliador3: 1 | 1 | 1 | Nenhuma | Nenhuma
 | Controle de usuário e liberdade | Avaliador1: 2 Avaliador2: 2 Avaliador3: 2 | 2 | 2 | Nenhuma | Nenhuma 
 | Consistência e padrões | Avaliador1: 2 Avaliador2: 2 Avaliador3: 2 | 2 | 2 | Nenhuma | Nenhuma 
 | Prevenção de erros | Avaliador1: 1 Avaliador2: 1 Avaliador3: 1 | 1 | 1 | O sistema não propõe prevenções de possíveis erros  | Nenhuma
@@ -54,14 +54,12 @@ Coletar feedback dos usuários após os testes por meio de entrevistas ou questi
 | Ajuda e documentação | Adicionar mensagens com instruções. Adicionar página com instruções.
 
 
-
-
 **Avaliação Funcional**
 
 | Atividade a ser realizada | Feedback do usuário | Considerações (quais os problemas, deficiências, limitações, etc) | Sugestão de melhorias |
 |--------------------|------------------------------------|------------------------------------|------------------------------------|
 | Cadastro de Clientes - Campos obrigatórios: Nome, CPF, Telefone, Endereço | Foi fácil cadastrar um cliente | O sistema permite o cadastro de CPF invalido. | Nenhuma | 
-| Cadastro de Exercícios - Campos obrigatórios:Nome do Exercício, Descrição |  | Nenhum | Campos para upload de arquivos | 
+| Cadastro de Exercícios - Campos obrigatórios:Nome do Exercício, Descrição | Incluir campos para upload | Nenhum | Campos para upload de arquivos | 
 | Criar Categoria para Ficha - Campos obrigatórios: Nome da Atividade | Consegui cadastrar as categorias desejadas | Nenhuma | Nenhuma | 
 | Adicionar Treino(Conjunto de exercícios) à ficha  | Consegui realizar o lançamento | Validação de campos, o sistema permite o envio de campos requeridos | Validar campos. Ocultar campos que não serão preenchidos. | 
 
