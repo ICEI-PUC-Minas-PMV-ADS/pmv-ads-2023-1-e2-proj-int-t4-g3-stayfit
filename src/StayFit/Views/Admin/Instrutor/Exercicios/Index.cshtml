@@ -13,19 +13,19 @@
     
         <div class="text-center">
 
-        @if(TempData["msgSuccess"] != null)
+        @if(@TempData["msgSuccess"] != null)
         {
             <div class="alert alert-success" role="alert">
               <button type="button" class="btn btn-success btn-sm close-alert" arial-label="Close">X</button>
-              @TempData["msgSucess"]
+                @TempData["msgSuccess"]
              </div>
             
         }
-        @if(TempData["msgSuccess"] != null)
+            @if (@TempData["msgError"] != null)
         {
         <div class="alert alert-danger" role="alert">
             <button type="button" class="btn btn-danger btn-sm close-alert" arial-label="Close">X</button>
-            @TempData["msgSucess"]
+                    @TempData["msgError"]
         </div>
         }
         

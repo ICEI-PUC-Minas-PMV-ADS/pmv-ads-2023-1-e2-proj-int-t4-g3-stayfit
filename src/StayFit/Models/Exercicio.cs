@@ -12,6 +12,7 @@ namespace StayFit.Models
         [Required(ErrorMessage = "O nome do exercício deve ser informado!")]
         [Display(Name = "Nome do Exercício")]
         [StringLength(100, MinimumLength = 10, ErrorMessage = "O Nome deve ter no minimo 10 e no maximo 100 caracteres")]
+
         public string Name { get; set; }
 
         [Required(ErrorMessage = "A descrição deve ser informada!")]

@@ -9,14 +9,17 @@ namespace StayFit.Models
     {
         public Cliente()
         {
+            Pontuacao = 0;
             Fichas = new List<Ficha>();           
         }
-        [Key]
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ClienteId { get; set; }
+               
         public int? Matricula { get; set; }
 
         [Required(ErrorMessage = "Informe o Nome do Cliente")]
-        [StringLength(50)]
+        [StringLength(70)]
+        [RegularExpression(@"^[a-zA-Z]+$", ErrorMessage = "Somente letras, por favor")]
         public string Nome { get; set; }
 
         [Required(ErrorMessage = "Informe o email.")]
@@ -41,7 +44,6 @@ namespace StayFit.Models
         public string Telefone { get; set; }
 
         [Display(Name = "Pontuação")]
-        [DefaultValue((int)0)]
         public int? Pontuacao { get; set; }
 
         public IEnumerable<Ficha>? Fichas { get; set; }       

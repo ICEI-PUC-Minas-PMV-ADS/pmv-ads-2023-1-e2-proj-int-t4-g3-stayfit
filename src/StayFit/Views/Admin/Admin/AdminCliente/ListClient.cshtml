@@ -13,6 +13,26 @@
 
     <div class="main-content">
 
+        <div class="text-center">
+
+            @if (@TempData["msgSuccess"] != null)
+            {
+                <div class="alert alert-success" role="alert">
+                    <button type="button" class="btn btn-success btn-sm close-alert" arial-label="Close">X</button>
+                    @TempData["msgSuccess"]
+                </div>
+
+            }
+            @if (@TempData["msgError"] != null)
+            {
+                <div class="alert alert-danger" role="alert">
+                    <button type="button" class="btn btn-danger btn-sm close-alert" arial-label="Close">X</button>
+                    @TempData["msgError"]
+                </div>
+            }
+
+        </div>
+
 @foreach (var Cliente in Model)
 {
 
@@ -33,7 +53,7 @@
 
                 <div class="card-actions">
                     <a class="btn btn-success"  role="button">Editar Usuário</a>
-                    <a class="btn btn-success" asp-controller="Ficha" asp-action="Create" asp-route-cliente="@Cliente.ClienteId" role="button">Editar Ficha</a>
+                    <a class="btn btn-success" asp-controller="Ficha" asp-action="Create" asp-route-cliente="@Cliente.ClienteId" role="button">Ficha</a>
                 </div>            
         </div>
     </div>

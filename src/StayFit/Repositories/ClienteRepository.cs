@@ -22,6 +22,7 @@ namespace StayFit.Repositories
             _context.Clientes.Add(cliente);
             _context.SaveChanges();
 
+
             return cliente;
         }
 

@@ -1,4 +1,4 @@
-﻿@model StayFit.Models.Ficha
+﻿@model FichaViewModel
 
 <!-- Sidebar  -->
 <partial name="_SideMenu" />
@@ -20,35 +20,43 @@
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="NomeAtividade" class="control-label"></label>
-                <input asp-for="NomeAtividade" class="form-control" />
-                <span asp-validation-for="NomeAtividade" class="text-danger"></span>
+                <label asp-for="@Model.Ficha.NomeAtividade" class="control-label"></label>
+                        <input asp-for="@Model.Ficha.NomeAtividade" class="form-control" />
+                        <span asp-validation-for="@Model.Ficha.NomeAtividade" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="DiaSemana" class="control-label"></label>
-                <select asp-for="DiaSemana" class="form-control" asp-items="Html.GetEnumSelectList<DiaSemana>()"></select>
-                <span asp-validation-for="DiaSemana" class="text-danger"></span>
+                        <label asp-for="@Model.Ficha.DiaSemana" class="control-label"></label>
+                        <select asp-for="@Model.Ficha.DiaSemana" class="form-control" asp-items="Html.GetEnumSelectList<DiaSemana>()"></select>
+                        <span asp-validation-for="@Model.Ficha.DiaSemana" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="DataInicio" class="control-label"></label>
-                <input asp-for="DataInicio" class="form-control" />
-                <span asp-validation-for="DataInicio" class="text-danger"></span>
+                        <label asp-for="@Model.Ficha.DataInicio" class="control-label"></label>
+                        <input asp-for="@Model.Ficha.DataInicio" class="form-control" />
+                        <span asp-validation-for="@Model.Ficha.DataInicio" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="DataFim" class="control-label"></label>
-                <input asp-for="DataFim" class="form-control" />
-                <span asp-validation-for="DataFim" class="text-danger"></span>
+                        <label asp-for="@Model.Ficha.DataFim" class="control-label"></label>
+                        <input asp-for="@Model.Ficha.DataFim" class="form-control" />
+                        <span asp-validation-for="@Model.Ficha.DataFim" class="text-danger"></span>
             </div>
               <div class="form-group">
-                 <input type="hidden" asp-for="ClienteId" value="@ViewBag.ClienteId" />
+                        <input type="hidden" asp-for="@Model.Ficha.ClienteId" value="@ViewBag.ClienteId" />
              </div>
             <div class="form-group">
              <input type="submit" value="Create" class="btn btn-primary" />
             </div>
         </form>
     </div>
+            
+        <div class="col-md-4">
+               
+                    @foreach(Ficha ficha in @Model.FichaList)
+                    {
+                    <a asp-controller="Treino" asp-action="Create" asp-route-fichaId="@ficha.FichaId"> <h3>@ficha.NomeAtividade</h3></a>
+                    }
+              
+            </div>
 </div>
-
 </div>
 
  

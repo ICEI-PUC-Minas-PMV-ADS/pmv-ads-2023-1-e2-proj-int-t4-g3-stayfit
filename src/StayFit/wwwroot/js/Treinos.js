@@ -91,6 +91,11 @@ function enviar() {
     }).then(data => {
         let dados = JSON.parse(data);
         console.log('Success:', dados);
+        if (data) {
+            localStorage.removeItem("TreinosLocal")
+            localStorage.removeItem("TreinosLocal")
+            window.location.replace('http://localhost:5247/Admin/Cliente');
+        }
     }).catch(function (error) {
         console.warn(error);
     });

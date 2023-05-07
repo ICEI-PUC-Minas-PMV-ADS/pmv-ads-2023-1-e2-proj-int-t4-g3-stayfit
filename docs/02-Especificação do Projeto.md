@@ -90,6 +90,7 @@ A tabela a seguir apresenta os requisitos do projeto, identificando a prioridade
 |RF-15| O site irá exibir para cada exercício informações de tempo, carga sugerida e dicas de execução | ALTA |
 |RF-16| O sistema exibirá no perfil do usuário o histórico de exercícios e informações cadastrais | BAIXA |
 |RF-17| O sistema deve exibir informações de contato da academia | BAIXA |
+|RF-18| O sistema deve permitir ao instrutor cadastrar exercícios físicos na base de dados do sistema | ALTA |
 
 ### Requisitos não Funcionais
 

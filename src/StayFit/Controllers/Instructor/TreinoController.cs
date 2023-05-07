@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc.Rendering;
 using StayFit.Models;
 using StayFit.Repositories.Interfaces;
+using StayFit.ViewModels;
 using System.Text.Json.Nodes;
 
 namespace StayFit.Controllers.Instructor
@@ -11,6 +12,7 @@ namespace StayFit.Controllers.Instructor
         private readonly IExercicioRepository _exercicioRepository;
         private readonly ITreinoRepository _treinoRepository;
         private readonly IFichaRepository _fichaRepository;
+
         public TreinoController(IExercicioRepository exercicioRepository, ITreinoRepository treinoRepository, IFichaRepository fichaRepository) { 
             _exercicioRepository = exercicioRepository;
             _treinoRepository = treinoRepository;
@@ -25,7 +27,14 @@ namespace StayFit.Controllers.Instructor
         {
             ViewBag.FichaId = FichaId;
             ViewBag.Exercicios = _exercicioRepository.Exercicios.Select(e => new SelectListItem() { Text = e.Name, Value = e.ExercicioId.ToString() });
-                return View("~/Views/Admin/Instrutor/Treino/Create.cshtml");
+            IEnumerable<Treino> treinos = _treinoRepository.GetTreinosFicha(FichaId);
+            
+            TreinoViewModel treinoViewModel = new TreinoViewModel
+            {
+                TreinoList = treinos,
+            };
+
+            return View("~/Views/Admin/Instrutor/Treino/Create.cshtml", treinoViewModel);
         }
 
         [HttpPost]
@@ -52,13 +61,20 @@ namespace StayFit.Controllers.Instructor
              int fichaid = treinos[0].FichaId;
               System.Diagnostics.Debug.WriteLine("============= Teste " + fichaid);
 
+            foreach(Treino treino in treinos)
+            {
+                treino.Exercicio = _exercicioRepository.GetExercicio(treino.ExercicioId);
+            }
+
             if (fichaid != 0 || fichaid != null)
             {
                 Ficha ficha = _fichaRepository.UpdateTreinosFicha(treinos,fichaid);
+                TempData["msgSuccess"] = "Exercício cadastrado com sucesso!";
+                return Json(1);
             }
             else
             {
-                return Json(1111);
+                return Json(0);
             }
             /*  if (_treinoRepository.Create(treino))
               {

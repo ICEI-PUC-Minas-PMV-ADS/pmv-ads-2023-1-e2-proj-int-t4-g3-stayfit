@@ -1,4 +1,5 @@
-﻿using StayFit.Context;
+﻿using Microsoft.EntityFrameworkCore;
+using StayFit.Context;
 using StayFit.Models;
 using StayFit.Repositories.Interfaces;
 
@@ -30,7 +31,9 @@ namespace StayFit.Repositories
 
         public IEnumerable<Treino> GetTreinosFicha(int fichaId)
         {
-            return _context.Treinos.Where(treino => treino.FichaId == fichaId);
+            return _context.Treinos
+                .Where(treino => treino.FichaId == fichaId)
+                .Include(e => e.Exercicio);
         }
 
 
