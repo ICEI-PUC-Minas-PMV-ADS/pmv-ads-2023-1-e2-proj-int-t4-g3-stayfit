@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace StayFit.Migrations
 {
     /// <inheritdoc />
-    public partial class mig0 : Migration
+    public partial class m0 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -50,7 +50,7 @@ namespace StayFit.Migrations
                 {
                     ClienteId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Matricula = table.Column<int>(type: "int", nullable: true),
+                    Matricula = table.Column<int>(type: "int", nullable: true).Annotation("SqlServer:Computed", "1200, 1"),
                     Nome = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     Email = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     CPF = table.Column<string>(type: "nvarchar(11)", maxLength: 11, nullable: false),
@@ -111,6 +111,12 @@ namespace StayFit.Migrations
                 {
                     table.PrimaryKey("PK_Treinos", x => x.TreinoId);
                     table.ForeignKey(
+                        name: "FK_Treinos_Exercicios_ExercicioId",
+                        column: x => x.ExercicioId,
+                        principalTable: "Exercicios",
+                        principalColumn: "ExercicioId",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
                         name: "FK_Treinos_Fichas_FichaId",
                         column: x => x.FichaId,
                         principalTable: "Fichas",
@@ -134,6 +140,11 @@ namespace StayFit.Migrations
                 column: "ClienteId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Treinos_ExercicioId",
+                table: "Treinos",
+                column: "ExercicioId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Treinos_FichaId",
                 table: "Treinos",
                 column: "FichaId");
@@ -143,10 +154,10 @@ namespace StayFit.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Exercicios");
+                name: "Treinos");
 
             migrationBuilder.DropTable(
-                name: "Treinos");
+                name: "Exercicios");
 
             migrationBuilder.DropTable(
                 name: "Fichas");

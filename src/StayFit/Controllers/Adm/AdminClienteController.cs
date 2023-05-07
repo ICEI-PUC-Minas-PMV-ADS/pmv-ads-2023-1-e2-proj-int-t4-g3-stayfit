@@ -33,6 +33,7 @@ namespace StayFit.Controllers.Adm
         {
             if(ModelState.IsValid)
             {
+               
                 _clienteRepository.CreateClient(cliente);
                 IEnumerable<Cliente> clientes = _clienteRepository.Clientes;
                

@@ -15,7 +15,6 @@ namespace StayFit.Context
         public DbSet<Instrutor> Instrutores { get; set; }
 
          
-
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
@@ -27,8 +26,13 @@ namespace StayFit.Context
                     Telefone = "93333-5555",
                     Email = "Paulo@eu.com",                   
                     
-                }
+                }               
               );
+
+           modelBuilder.Entity<Cliente>()
+          .Property(c => c.Matricula)
+          .HasComputedColumnSql("CAST(ClienteId + 120 * 1000 AS INT)");
+
         }
     }
 }

@@ -12,8 +12,8 @@ using StayFit.Context;
 namespace StayFit.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20230427150019_mig0")]
-    partial class mig0
+    [Migration("20230502180537_m0")]
+    partial class m0
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -51,6 +51,7 @@ namespace StayFit.Migrations
                         .HasColumnType("int");
 
                     b.Property<int?>("Matricula")
+                        .ValueGeneratedOnAddOrUpdate()
                         .HasColumnType("int");
 
                     b.Property<string>("Nome")
@@ -212,6 +213,8 @@ namespace StayFit.Migrations
 
                     b.HasKey("TreinoId");
 
+                    b.HasIndex("ExercicioId");
+
                     b.HasIndex("FichaId");
 
                     b.ToTable("Treinos");
@@ -233,11 +236,19 @@ namespace StayFit.Migrations
 
             modelBuilder.Entity("StayFit.Models.Treino", b =>
                 {
+                    b.HasOne("StayFit.Models.Exercicio", "Exercicio")
+                        .WithMany()
+                        .HasForeignKey("ExercicioId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("StayFit.Models.Ficha", null)
                         .WithMany("Treinos")
                         .HasForeignKey("FichaId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Exercicio");
                 });
 
             modelBuilder.Entity("StayFit.Models.Cliente", b =>

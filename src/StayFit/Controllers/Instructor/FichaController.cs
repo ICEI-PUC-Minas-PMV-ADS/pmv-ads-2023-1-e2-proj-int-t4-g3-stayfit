@@ -19,7 +19,12 @@ namespace StayFit.Controllers.Instructor
         public IActionResult Create(int cliente)
         {
             ViewBag.ClienteId = cliente;
-            return View("~/Views/Admin/Instrutor/Fichas/Create.cshtml");
+            IEnumerable<Ficha> fichas = _fichaRepository.GetFichasClient(cliente);
+            FichaViewModel fichaViewModel = new FichaViewModel
+            {
+                FichaList = fichas,
+            };
+            return View("~/Views/Admin/Instrutor/Fichas/Create.cshtml", fichaViewModel);
         }
 
         [HttpPost]
