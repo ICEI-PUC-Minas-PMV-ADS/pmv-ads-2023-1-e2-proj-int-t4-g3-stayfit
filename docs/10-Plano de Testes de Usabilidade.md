@@ -1,20 +1,40 @@
 # Plano de Testes de Usabilidade
 
-**Avaliação Estática (inspeção feita pela equipe de desenvolvimento ou alguém interno)**
+**Objetivos dos testes:**
+
+Verificar a facilidade de uso do software StayFit <br />
+Identificar problemas de usabilidade e propor soluções <br />
+Verificar se o software atende às necessidades dos usuários <br />
+Melhorar a experiência do usuário com o software
+
+**Estratégia de teste:**
+
+Teste de usabilidade com usuários: realizar testes com usuários reais para avaliar a usabilidade do software StayFit <br />
+Observação direta: observar o comportamento do usuário durante os testes para identificar problemas de usabilidade <br />
+Entrevistas com usuários: realizar entrevistas após os testes para coletar feedback adicional sobre a usabilidade do software
+
+**Plano de teste:**
+
+Selecionar um grupo de usuários representativos do público-alvo do software StayFit <br />
+Preparar uma lista de tarefas específicas que os usuários devem realizar no software <br />
+Pedir aos usuários que realizem as tarefas enquanto são observados <br />
+Coletar feedback dos usuários após os testes por meio de entrevistas ou questionários
+
+**Avaliação Estática**
 | Heurísticas |	Notas dos avaliadores |	Média	| Consenso |	Considerações |	Melhorias |
 |---------------|------------------------------------|------------------------------------|------------------------------------|------------------------------------|------------------------------------|
-| Visibilidade do status do sistema | Avaliador1: 1 Avaliador2: 1 Avaliador3: 1 | 1 | 1 | A aplicação não exibe status do sistema | Nenhuma
+| Visibilidade do status do sistema | Avaliador1: 1 Avaliador2: 1 Avaliador3: 1 | 1 | 1 | O sistema contem feedback de erros em formulários e em ações de escrita no banco de dados. | Nenhuma
 | Correspondência entre sistema e mundo real | Avaliador1: 3 Avaliador2: 3 Avaliador3: 3 | 3 | 3 | Nenhuma | Nenhuma
 | Controle de usuário e liberdade | Avaliador1: 2 Avaliador2: 2 Avaliador3: 2 | 2 | 2 | Nenhuma | Nenhuma 
 | Consistência e padrões | Avaliador1: 2 Avaliador2: 2 Avaliador3: 2 | 2 | 2 | Nenhuma | Nenhuma 
 | Prevenção de erros | Avaliador1: 1 Avaliador2: 1 Avaliador3: 1 | 1 | 1 | O sistema não propõe prevenções de possíveis erros  | Nenhuma
-| Reconhecimento ao invés de recordação | Avaliador1: 2 Avaliador2: 1 Avaliador3: 1 | 1,33 | 2 | Nenhuma | Nenhuma
-| Flexibilidade e eficiência de uso | Avaliador1: 1 Avaliador2: 1 Avaliador3: 2 | 1,33 | 1 | Nenhuma | Nenhuma
+| Reconhecimento ao invés de recordação | Avaliador1: 2 Avaliador2: 1 Avaliador3: 1 | 1 | 2 | Nenhuma | Nenhuma
+| Flexibilidade e eficiência de uso | Avaliador1: 1 Avaliador2: 1 Avaliador3: 2 | 1 | 1 | Nenhuma | Nenhuma
 | Estética e design minimalista | Avaliador1: 3 Avaliador2: 3 Avaliador3: 3 | 3 | 3 | Nenhuma | Nenhuma
 | Ajudar os usuários e reconhecer, diagnosticar se recuperar de erros | Avaliador1: 1 Avaliador2: 1 Avaliador3: 1 | 1 | 1 | O sistema não exibe como tratar um possível erro | Nenhuma
 | Ajuda e documentação | Avaliador1: 1 Avaliador2: 1 Avaliador3: 1 | 1 | 1 | Nenhuma | Nenhuma
 
-**O que fazer para melhorar**
+**O que melhorar**
 | Heurísticas |	Melhoria |
 |---------------|------------------------------------|
 | Visibilidade do status do sistema | Nenhuma
@@ -31,18 +51,15 @@
 
 
 
-**Avaliação Funcional (feita pelo usuário que faz transações – casos de uso)**
+**Avaliação Funcional**
 
 | Atividade a ser realizada | Feedback do usuário | Considerações (quais os problemas, deficiências, limitações, etc) | Sugestão de melhorias |
 |--------------------|------------------------------------|------------------------------------|------------------------------------|
-| Cadastro de usuário - Campos obrigatórios: Nome, Sobrenome, E-mail, Data de nascimento, Telefone, Senha, Confirmação da senha | Consegui cadastrar o usuário sem problemas | O campo de telefone está permitindo infinitos caractéres, assim como "ano" na data de nascimento | Limitar os campos de caracteres citados| 
-| Realizar login na aplicação - Campos obrigatórios: Usuário, E-mail ou telefone e senha | Consegui realizar o login na aplicação | Nenhum | Nenhuma | 
-| Cadastrar categorias | Consegui cadastrar as categorias desejadas | Nenhuma | Nenhuma | 
-| Realizar um lançamento - Campos obrigatórios: Data, Valor, Categoria, Descrição | Consegui realizar o lançamento | Não consegui identificar se o lançamento era receita ou despesa | Identificar se os lançamentos são despesas ou receitas | 
-| Excluir um lançamento | Consegui excluir o lançamento desejado | Não foi solicitado confirmação de exclusão | A aplicação poderia solicitar confirmação de exclusão de lançamento | 
-| Editar um lançamento | Funcionou corretamente a alteração de dados de um lançamento | Nenhuma | Nenhuma | 
-| Visualizar lançamento por período (Filtro por semana, mês ou ano) | Foi possível filtrar os lançamentos por mês e também visualizar do ano | Nenhuma | Nenhuma | 
-| Definir metas | Consegui definir uma meta e visualizar o status do alcance da meta | Não foi possível visualizar uma porcetagem para o atingimento da meta | Incluir uma forma de exibir o percentual alcançado da meta definida |
+| Cadastro de Clientes - Campos obrigatórios: Nome, CPF, Telefone, Endereço | Foi fácil cadastrar um cliente | O sistema permite o cadastro de CPF invalido. | Nenhuma | 
+| Cadastro de Exercícios - Campos obrigatórios:Nome do Exercício, Descrição |  | Nenhum | Campos para upload de arquivos | 
+| Criar Categoria para Ficha - Campos obrigatórios: Nome da Atividade | Consegui cadastrar as categorias desejadas | Nenhuma | Nenhuma | 
+| Adicionar Treino(Conjunto de exercícios) à ficha  | Consegui realizar o lançamento | Validação de campos, o sistema permite o envio de campos requeridos | Validar campos. Ocultar campos que não serão preenchidos. | 
+
 
 **Detalhamento Análise Heurística**
 | ID | Característica | Sim - Não - N/A | Comentários |
@@ -102,28 +119,6 @@
 | 10.2 | Existe ajuda online sensível ao contexto? | [ ] [ ] [x] |  |
 | 10.3 | É simples o acesso a ajuda do sistema e retorno ao sistema? | [ ] [ ] [x] |  |
 
-
-
-
-**Objetivos dos testes:**
-
-Verificar a facilidade de uso do software StayFit <br />
-Identificar problemas de usabilidade e propor soluções <br />
-Verificar se o software atende às necessidades dos usuários <br />
-Melhorar a experiência do usuário com o software
-
-**Estratégia de teste:**
-
-Teste de usabilidade com usuários: realizar testes com usuários reais para avaliar a usabilidade do software StayFit <br />
-Observação direta: observar o comportamento do usuário durante os testes para identificar problemas de usabilidade <br />
-Entrevistas com usuários: realizar entrevistas após os testes para coletar feedback adicional sobre a usabilidade do software
-
-**Plano de teste:**
-
-Selecionar um grupo de usuários representativos do público-alvo do software StayFit <br />
-Preparar uma lista de tarefas específicas que os usuários devem realizar no software <br />
-Pedir aos usuários que realizem as tarefas enquanto são observados <br />
-Coletar feedback dos usuários após os testes por meio de entrevistas ou questionários
 
 **Ferramentas de teste:**
 
