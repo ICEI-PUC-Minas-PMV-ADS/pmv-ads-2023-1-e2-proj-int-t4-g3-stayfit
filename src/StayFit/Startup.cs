@@ -1,5 +1,6 @@
 
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Hosting.Internal;
 using StayFit.Context;
 using StayFit.Repositories;
 using StayFit.Repositories.Interfaces;
@@ -23,6 +24,8 @@ namespace StayFit
             services.AddTransient<ITreinoRepository, TreinoRepository>();
             services.AddTransient<IClienteRepository, ClienteRepository>();
             services.AddTransient<IFichaRepository,FichaRepository>();
+
+            services.AddSingleton<IHostEnvironment, HostingEnvironment>();
             services.AddControllersWithViews();
         }
 
