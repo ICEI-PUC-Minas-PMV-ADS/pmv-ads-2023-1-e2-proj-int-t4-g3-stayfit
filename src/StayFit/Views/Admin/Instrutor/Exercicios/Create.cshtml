@@ -18,12 +18,12 @@
          <hr />
 
         <div class="row">
-            <div class="col-lg-8 col-md-12">
+            <div class="col-lg-6 col-md-12">
                 <div class="card" style="min-height: 485px">
         
         
                     <div class="card-header card-header-text">
-                <form asp-action="Create">
+                        <form asp-action="Create" enctype="multipart/form-data">
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                     <div class="form-group">
                         <label asp-for="Name" class="control-label"></label>
@@ -37,12 +37,12 @@
                     </div>
                     <div class="form-group">
                         <label asp-for="Photo" class="control-label"></label>
-                        <input asp-for="Photo" class="form-control" />
+                        <input asp-for="Photo" class="form-control" type="file"/>
                         <span asp-validation-for="Photo" class="text-danger"></span>
                     </div>
                     <div class="form-group">
                         <label asp-for="Video" class="control-label"></label>
-                        <input asp-for="Video" class="form-control" />
+                        <input asp-for="Video" class="form-control" type="file"/>
                         <span asp-validation-for="Video" class="text-danger"></span>
                     </div>
            
