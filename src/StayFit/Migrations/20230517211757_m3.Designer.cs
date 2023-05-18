@@ -12,8 +12,8 @@ using StayFit.Context;
 namespace StayFit.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20230502180537_m0")]
-    partial class m0
+    [Migration("20230517211757_m3")]
+    partial class m3
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -52,12 +52,13 @@ namespace StayFit.Migrations
 
                     b.Property<int?>("Matricula")
                         .ValueGeneratedOnAddOrUpdate()
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .HasComputedColumnSql("CAST(ClienteId + 120 * 1000 AS INT)");
 
                     b.Property<string>("Nome")
                         .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                        .HasMaxLength(70)
+                        .HasColumnType("nvarchar(70)");
 
                     b.Property<int?>("Pontuacao")
                         .HasColumnType("int");
@@ -218,6 +219,41 @@ namespace StayFit.Migrations
                     b.HasIndex("FichaId");
 
                     b.ToTable("Treinos");
+                });
+
+            modelBuilder.Entity("StayFit.Models.Usuario", b =>
+                {
+                    b.Property<int>("LoginId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("LoginId"));
+
+                    b.Property<string>("CPF")
+                        .IsRequired()
+                        .HasMaxLength(11)
+                        .HasColumnType("nvarchar(11)");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<int?>("Matricula")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Nome")
+                        .IsRequired()
+                        .HasMaxLength(70)
+                        .HasColumnType("nvarchar(70)");
+
+                    b.Property<string>("Senha")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("LoginId");
+
+                    b.ToTable("Usuarios");
                 });
 
             modelBuilder.Entity("StayFit.Models.Cliente", b =>

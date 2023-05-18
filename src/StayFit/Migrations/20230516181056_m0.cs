@@ -45,13 +45,30 @@ namespace StayFit.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Logins",
+                columns: table => new
+                {
+                    LoginId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Nome = table.Column<string>(type: "nvarchar(70)", maxLength: 70, nullable: false),
+                    Senha = table.Column<string>(type: "nvarchar(12)", maxLength: 12, nullable: false),
+                    Matricula = table.Column<int>(type: "int", nullable: true),
+                    Email = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    CPF = table.Column<string>(type: "nvarchar(11)", maxLength: 11, nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Logins", x => x.LoginId);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Clientes",
                 columns: table => new
                 {
                     ClienteId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Matricula = table.Column<int>(type: "int", nullable: true).Annotation("SqlServer:Computed", "1200, 1"),
-                    Nome = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    Matricula = table.Column<int>(type: "int", nullable: true, computedColumnSql: "CAST(ClienteId + 120 * 1000 AS INT)"),
+                    Nome = table.Column<string>(type: "nvarchar(70)", maxLength: 70, nullable: false),
                     Email = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     CPF = table.Column<string>(type: "nvarchar(11)", maxLength: 11, nullable: false),
                     Sexo = table.Column<int>(type: "int", nullable: false),
@@ -153,6 +170,9 @@ namespace StayFit.Migrations
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+                name: "Logins");
+
             migrationBuilder.DropTable(
                 name: "Treinos");
 

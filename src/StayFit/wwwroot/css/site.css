@@ -14,14 +14,6 @@ html {
   }
 }
 
-html {
-  position: relative;
-  min-height: 100%;
-}
-
-body {
-  margin-bottom: 60px;
-}
 
 .cards-cli {
     width: 100%;
@@ -70,3 +62,14 @@ body {
         gap: 5px;
     }
 
+.items-center {
+    display: flex;
+    flex-direction: row;
+    align-items: center !important;
+ 
+    justify-content: center !important;
+    
+    width: 100%;
+    background: #ff0000;
+    z-index: 1;
+}

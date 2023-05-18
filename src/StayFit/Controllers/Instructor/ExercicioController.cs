@@ -32,7 +32,8 @@ namespace StayFit.Controllers.Instructor
         {
             if (Photo != null && Photo.Length > 0)
             {
-                var fileName = exercicio.Name.ToLower() + Path.GetFileName(Photo.FileName).ToLower()  ;
+               // var fileName = exercicio.Name.ToLower() + Path.GetFileName(Photo.FileName).ToLower()  ;
+                var fileName = Path.GetFileName(Photo.FileName).ToLower()  ;
                 var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/imagens/exercicios/", fileName);
 
                 using (var fileStream = new FileStream(filePath, FileMode.Create))
@@ -45,7 +46,8 @@ namespace StayFit.Controllers.Instructor
 
             if (Video != null && Video.Length > 0)
             {
-              var fileName = exercicio.Name.ToLower()+Path.GetFileName(Video.FileName).ToLower();
+              //var fileName = exercicio.Name.ToLower()+Path.GetFileName(Video.FileName).ToLower();
+              var fileName = Path.GetFileName(Video.FileName).ToLower();
               var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/videos/exercicios/", fileName);
 
                 using (var fileStream = new FileStream(filePath, FileMode.Create))

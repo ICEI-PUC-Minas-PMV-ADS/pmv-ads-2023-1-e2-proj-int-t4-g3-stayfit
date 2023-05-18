@@ -17,6 +17,11 @@ namespace StayFit.Repositories
            _context = context;  
         }
 
+        public Cliente GetClienteByMatricula(int matricula)
+        {
+            return _context.Clientes.FirstOrDefault(cli => cli.Matricula == matricula);
+        }
+
         public Cliente CreateClient(Cliente cliente)
         {
             _context.Clientes.Add(cliente);

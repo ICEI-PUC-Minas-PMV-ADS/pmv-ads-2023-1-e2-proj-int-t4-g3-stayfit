@@ -36,6 +36,12 @@ namespace StayFit.Repositories
                 .Include(e => e.Exercicio);
         }
 
+        public Treino GetTreino(int treinoId)
+        {
+            return _context.Treinos.Include(e => e.Exercicio)
+                .FirstOrDefault(treino => treino.TreinoId == treinoId);
+                        
+        }
 
         private void Save()
         {

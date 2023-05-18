@@ -12,8 +12,8 @@ using StayFit.Context;
 namespace StayFit.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20230502201651_m4")]
-    partial class m4
+    [Migration("20230518165355_m5")]
+    partial class m5
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -53,12 +53,12 @@ namespace StayFit.Migrations
                     b.Property<int?>("Matricula")
                         .ValueGeneratedOnAddOrUpdate()
                         .HasColumnType("int")
-                        .HasComputedColumnSql("CONCAT(120000, ClienteId AS INT)");
+                        .HasComputedColumnSql("CAST(ClienteId + 120 * 1000 AS INT)");
 
                     b.Property<string>("Nome")
                         .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                        .HasMaxLength(70)
+                        .HasColumnType("nvarchar(70)");
 
                     b.Property<int?>("Pontuacao")
                         .HasColumnType("int");
@@ -221,6 +221,49 @@ namespace StayFit.Migrations
                     b.ToTable("Treinos");
                 });
 
+            modelBuilder.Entity("StayFit.Models.Usuario", b =>
+                {
+                    b.Property<int>("UsuarioId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("UsuarioId"));
+
+                    b.Property<string>("CPF")
+                        .IsRequired()
+                        .HasMaxLength(11)
+                        .HasColumnType("nvarchar(11)");
+
+                    b.Property<int?>("ClienteId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<int?>("Matricula")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Nome")
+                        .IsRequired()
+                        .HasMaxLength(70)
+                        .HasColumnType("nvarchar(70)");
+
+                    b.Property<string>("Senha")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("TipoUsuario")
+                        .HasColumnType("int");
+
+                    b.HasKey("UsuarioId");
+
+                    b.HasIndex("ClienteId");
+
+                    b.ToTable("Usuarios");
+                });
+
             modelBuilder.Entity("StayFit.Models.Cliente", b =>
                 {
                     b.HasOne("StayFit.Models.Instrutor", null)
@@ -250,6 +293,15 @@ namespace StayFit.Migrations
                         .IsRequired();
 
                     b.Navigation("Exercicio");
+                });
+
+            modelBuilder.Entity("StayFit.Models.Usuario", b =>
+                {
+                    b.HasOne("StayFit.Models.Cliente", "Cliente")
+                        .WithMany()
+                        .HasForeignKey("ClienteId");
+
+                    b.Navigation("Cliente");
                 });
 
             modelBuilder.Entity("StayFit.Models.Cliente", b =>

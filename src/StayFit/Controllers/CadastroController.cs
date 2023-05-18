@@ -1,20 +1,36 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
+using StayFit.Models;
+using StayFit.Repositories.Interfaces;
 
 namespace StayFit.Controllers
 {
 	public class CadastroController : Controller
 	{
+		private readonly ILoginRepository _loginRepository;
+		 
+		public CadastroController(ILoginRepository loginRepository)
+		{
+			_loginRepository = loginRepository;
+		} 
+
 		public IActionResult Index()
 		{
 			return View();
 		}
 
 		[HttpPost]
-		public IActionResult Cadastrar(string name, string email, int cpf, int Matricula, DateOnly date)
+		public IActionResult Create(Usuario login)
 		{
-
-			return Json(new { });
+				login.Senha = BCrypt.Net.BCrypt.HashPassword(login.Senha);
+				_loginRepository.Create(login);
+                return View("~/Views/Cliente/FichaCliente/Index.cshtml");
+          
+            
+			
+				
+			
+			
 		}
 	}
 }

@@ -17,9 +17,10 @@ namespace StayFit.Models
                
         public int? Matricula { get; set; }
 
+
         [Required(ErrorMessage = "Informe o Nome do Cliente")]
         [StringLength(70)]
-        [RegularExpression(@"^[a-zA-Z]+$", ErrorMessage = "Somente letras, por favor")]
+        [RegularExpression(@"^[a-zA-Z]+[ a-zA-Z-_]*$", ErrorMessage = "Somente letras, por favor")]
         public string Nome { get; set; }
 
         [Required(ErrorMessage = "Informe o email.")]
