@@ -24,7 +24,6 @@ namespace StayFit.Controllers.Client
 		public IActionResult addMatricula(Usuario usuario)
 		{
 		
-
             Cliente cliente = _clienteRepository.GetClienteByMatricula((int)usuario.Matricula);
             Usuario user = usuario;
 
@@ -33,8 +32,8 @@ namespace StayFit.Controllers.Client
                 usuario.Cliente = cliente;
                 user = _usuarioRepository.UpdateUsuarioCliente(usuario);
 
-				System.Diagnostics.Debug.WriteLine("================ " + user.Matricula);
-				System.Diagnostics.Debug.WriteLine("================ " + user.UsuarioId);
+				System.Diagnostics.Debug.WriteLine("================ " + usuario.Matricula);
+				System.Diagnostics.Debug.WriteLine("================ " + usuario.UsuarioId);
 			}
             else
             {

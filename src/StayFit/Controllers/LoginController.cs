@@ -23,8 +23,9 @@ namespace StayFit.Controllers
         public IActionResult Login([Bind("Matricula,Senha")] Usuario usuario)
         {
             var user = _context.Usuarios.FirstOrDefault(u => u.Matricula == usuario.Matricula);
-				
-			if (user == null)
+            ViewBag.msg = "";
+
+            if (user == null)
             {   
                 ViewBag.msg = "Matricula e/ou senha invalida(s)";
                 return View("Teste1");
