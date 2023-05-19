@@ -44,8 +44,9 @@ namespace StayFit.Controllers.Client
 
 		public ViewResult Edit(int id)
         {
+            Usuario usuario = _usuarioRepository.GetUsuario(id);
             System.Diagnostics.Debug.WriteLine("================ " + id);
-            return View("~/Views/Cliente/EditCliente.cshtml");
+            return View("~/Views/Cliente/EditCliente.cshtml", usuario);
         }
 
 

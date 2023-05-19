@@ -1,4 +1,5 @@
-﻿using StayFit.Context;
+﻿using Microsoft.EntityFrameworkCore;
+using StayFit.Context;
 using StayFit.Models;
 using StayFit.Repositories.Interfaces;
 
@@ -14,7 +15,9 @@ namespace StayFit.Repositories
 		}
 		public Usuario GetUsuario(int usuarioId)
 		{
-			return _context.Usuarios.FirstOrDefault(user => user.UsuarioId == usuarioId);
+			return _context.Usuarios
+				.Include(c => c.Cliente)
+				.FirstOrDefault(user => user.UsuarioId == usuarioId);
 		}
 
 		public Usuario UpdateUsuarioCliente(Usuario usuario)
