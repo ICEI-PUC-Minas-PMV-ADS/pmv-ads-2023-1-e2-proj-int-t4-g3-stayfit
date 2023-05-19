@@ -1,5 +1,4 @@
-﻿@model IEnumerable<StayFit.Models.Cliente>
-
+﻿
 
 <!-- Sidebar  -->
 <partial name="_SideMenu" />
@@ -33,31 +32,31 @@
 
         </div>
 
-@foreach (var Cliente in Model)
-{
+        @foreach (var Cliente in Model)
+        {
 
-    <div class="cards-cli">
-        <div class="card-cli">
-            <div class="card-info" >
-                <div class="img-area">
-                    <img src="@Cliente.Foto" alt="@Cliente.Nome" /> 
-                </div>
-                <div class="card-body">
-                      <div class="card-title-info" >@Cliente.Nome</div>
-                      <div class="card-body-info">
-                           <div class="info"><span>Matricula:</span> @Cliente.Matricula</div>
-                        <div class="info"><span>CPF:</span> @Cliente.CPF</div>
-                      </div>
+            <div class="cards-cli">
+                <div class="card-cli">
+                    <div class="card-info">
+                        <div class="img-area">
+                            <img src="@Cliente.Foto" alt="@Cliente.Nome" />
+                        </div>
+                        <div class="card-body">
+                            <div class="card-title-info">@Cliente.Nome</div>
+                            <div class="card-body-info">
+                                <div class="info"><span>Matricula:</span> @Cliente.Matricula</div>
+                                <div class="info"><span>CPF:</span> @Cliente.CPF</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-actions">
+                        <a class="btn btn-success" role="button">Editar Usuário</a>
+                        <a class="btn btn-success" asp-controller="Ficha" asp-action="Create" asp-route-cliente="@Cliente.ClienteId" role="button">Ficha</a>
+                    </div>
                 </div>
             </div>
 
-                <div class="card-actions">
-                    <a class="btn btn-success"  role="button">Editar Usuário</a>
-                    <a class="btn btn-success" asp-controller="Ficha" asp-action="Create" asp-route-cliente="@Cliente.ClienteId" role="button">Ficha</a>
-                </div>            
-        </div>
-    </div>
-    
-}
+        }
 
 

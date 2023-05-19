@@ -10,10 +10,10 @@ namespace StayFit.Context
         public DbSet<Cliente> Clientes { get; set; }
         public DbSet<Exercicio> Exercicios { get; set; }
         public DbSet<Treino> Treinos { get; set; }
-        public DbSet<Cliente> Cliente { get; set; }
+       
         public DbSet<Ficha> Ficha { get; set; }
         public DbSet<Instrutor> Instrutores { get; set; }
-
+        public DbSet<Usuario> Usuarios { get; set; }
          
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

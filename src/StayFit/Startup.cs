@@ -24,8 +24,10 @@ namespace StayFit
             services.AddTransient<ITreinoRepository, TreinoRepository>();
             services.AddTransient<IClienteRepository, ClienteRepository>();
             services.AddTransient<IFichaRepository,FichaRepository>();
+            services.AddTransient<ILoginRepository, LoginRepository>();
+            services.AddTransient<IUsuarioRepository, UsuarioRepository>();
 
-            services.AddSingleton<IHostEnvironment, HostingEnvironment>();
+			services.AddSingleton<IHostEnvironment, HostingEnvironment>();
             services.AddControllersWithViews();
         }
 

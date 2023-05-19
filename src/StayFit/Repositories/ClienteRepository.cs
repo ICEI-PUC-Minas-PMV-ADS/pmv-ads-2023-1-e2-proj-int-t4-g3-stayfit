@@ -10,11 +10,16 @@ namespace StayFit.Repositories
 
         public Cliente GetCliente(int ClienteId)
         {
-            return _context.Cliente.FirstOrDefault(cliente => cliente.ClienteId == ClienteId);
+            return _context.Clientes.FirstOrDefault(cliente => cliente.ClienteId == ClienteId);
         }
         public ClienteRepository(AppDbContext context)
         {
            _context = context;  
+        }
+
+        public Cliente GetClienteByMatricula(int matricula)
+        {
+            return _context.Clientes.FirstOrDefault(cli => cli.Matricula == matricula);
         }
 
         public Cliente CreateClient(Cliente cliente)

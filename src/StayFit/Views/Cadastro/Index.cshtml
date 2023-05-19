@@ -1,70 +1,53 @@
-﻿@{
-    ViewData["Title"] = "Cadastro";
-}
+﻿@model StayFit.Models.Usuario
 
-<form asp-controller="Cadastro" asp-action="Cadastrar" method="post">
-
-	<!DOCTYPE html>
-	<html lang="en">
-	<head>
-		<title>Cadastro</title>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" type="text/css" href="~/css/Cadastro.css">
-	</head>
-	<body>
 
 		<div class="limiter">
 			<div class="container-login100">
 				<div class="wrap-login100">
-					<form class="login100-form validate-form">
-						<span class="login100-form-title p-b-48">
-							<i class="zmdi zmdi-font"></i>
-						</span>
+			<span class="login100-form-title p-b-26">
+				<img src="~/site-imagens/logo.png" width="95">
+			</span><br><br>
+			<form asp-action="Create">
+				<div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
-						<div class="wrap-input100 validate-input">
-							<input class="input100" type="text" name="name">
-							<span class="focus-input100" data-placeholder="Nome Completo" pattern="([aA-zZ]+)"></span>
-						</div>
-
-						<div class="wrap-input100 validate-input" data-validate="Valid email is: a@b.c">
-							<input class="input100" type="text" name="email">
-							<span class="focus-input100" data-placeholder="Email"></span>
-						</div>
-
-						<div class="wrap-input100 validate-input" data-validate="Valid email is: 000.000.000-00">
-							<input class="input100" type="number" name="cpf">
-							<span class="focus-input100" data-placeholder="CPF"></span>
-						</div>
-
-						<div class="wrap-input100 validate-input">
-							<input class="input100" type="number" name="matricula">
-							<span class="focus-input100" data-placeholder="Matricula"></span>
-						</div>
-
-						<div class="wrap-input100 validate-input" data-validate="Enter password">
-							<span class="btn-show-pass">
-								<i class="zmdi zmdi-eye"></i>
-							</span>
-							<input class="input100" type="date" name="Data">
-							<span class="focus-input100"></span>
-						</div>
-
-
-
-						<div class="container-login100-form-btn">
+				<div class="form-group ">
+					<label asp-for="Nome" class="control-label "></label>
+					<input asp-for="Nome" class="form-control " />
+					<span asp-validation-for="Nome" class="text-danger"></span>
+				</div>
+				<div class="form-group ">
+					<label asp-for="Senha" class="control-label"></label>
+					<input asp-for="Senha" class="form-control" />
+					<span asp-validation-for="Senha" class="text-danger"></span>
+				</div>
+				<!-- 
+					<div class="form-group">
+					<label asp-for="Matricula" class="control-label"></label>
+					<input asp-for="Matricula" class="form-control" />
+					<span asp-validation-for="Matricula" class="text-danger"></span>
+					</div>
+					-->
+				<div class="form-group ">
+					<label asp-for="Email" class="control-label"></label>
+					<input asp-for="Email" class="form-control" />
+					<span asp-validation-for="Email" class="text-danger"></span>
+				</div>
+				<div class="form-group ">
+					<label asp-for="CPF" class="control-label"></label>
+					<input asp-for="CPF" class="form-control" />
+					<span asp-validation-for="CPF" class="text-danger"></span>
+				</div>
+				
+				<div class="container-login100-form-btn">
 							<div class="wrap-login100-form-btn">
 								<div class="login100-form-bgbtn"></div>
-								<button class="login100-form-btn">
+								<button type="submit" class="login100-form-btn">
 									Cadastrar
 								</button>
 							</div>
 						</div><br>
-						<span class="login100-form-title p-b-26">
-							<img src="~/site-imagens/instrutor/logo.png" width="120">
-						</span><br><br>
-
-					</form>
+			</form>
 				</div>
 			</div>
 		</div>
@@ -82,9 +65,9 @@
 		<script src="~/js/Cadastro.js"></script>
 
 
+@section Scripts {
+	@{
+		await Html.RenderPartialAsync("_ValidationScriptsPartial");
+	}
+}
 
-	</body>
-</html>
-
-	
-</form>

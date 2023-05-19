@@ -7,6 +7,7 @@ namespace StayFit.Repositories.Interfaces
         public IEnumerable<Treino> Treinos { get; }
         public bool Create(Treino treino);
 
+        public Treino GetTreino(int treinoId);
         public IEnumerable<Treino> GetTreinosFicha(int fichaId);
     }
 }
