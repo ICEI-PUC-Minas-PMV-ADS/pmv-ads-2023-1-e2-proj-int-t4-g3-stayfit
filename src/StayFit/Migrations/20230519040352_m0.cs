@@ -45,23 +45,6 @@ namespace StayFit.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Logins",
-                columns: table => new
-                {
-                    LoginId = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Nome = table.Column<string>(type: "nvarchar(70)", maxLength: 70, nullable: false),
-                    Senha = table.Column<string>(type: "nvarchar(12)", maxLength: 12, nullable: false),
-                    Matricula = table.Column<int>(type: "int", nullable: true),
-                    Email = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    CPF = table.Column<string>(type: "nvarchar(11)", maxLength: 11, nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Logins", x => x.LoginId);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Clientes",
                 columns: table => new
                 {
@@ -104,6 +87,30 @@ namespace StayFit.Migrations
                     table.PrimaryKey("PK_Fichas", x => x.FichaId);
                     table.ForeignKey(
                         name: "FK_Fichas_Clientes_ClienteId",
+                        column: x => x.ClienteId,
+                        principalTable: "Clientes",
+                        principalColumn: "ClienteId");
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Usuarios",
+                columns: table => new
+                {
+                    UsuarioId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Nome = table.Column<string>(type: "nvarchar(70)", maxLength: 70, nullable: false),
+                    Senha = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Matricula = table.Column<int>(type: "int", nullable: true),
+                    Email = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    CPF = table.Column<string>(type: "nvarchar(11)", maxLength: 11, nullable: false),
+                    TipoUsuario = table.Column<int>(type: "int", nullable: false),
+                    ClienteId = table.Column<int>(type: "int", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Usuarios", x => x.UsuarioId);
+                    table.ForeignKey(
+                        name: "FK_Usuarios_Clientes_ClienteId",
                         column: x => x.ClienteId,
                         principalTable: "Clientes",
                         principalColumn: "ClienteId");
@@ -165,16 +172,21 @@ namespace StayFit.Migrations
                 name: "IX_Treinos_FichaId",
                 table: "Treinos",
                 column: "FichaId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Usuarios_ClienteId",
+                table: "Usuarios",
+                column: "ClienteId");
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Logins");
+                name: "Treinos");
 
             migrationBuilder.DropTable(
-                name: "Treinos");
+                name: "Usuarios");
 
             migrationBuilder.DropTable(
                 name: "Exercicios");

@@ -12,8 +12,8 @@ using StayFit.Context;
 namespace StayFit.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20230517211757_m3")]
-    partial class m3
+    [Migration("20230519040352_m0")]
+    partial class m0
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -223,16 +223,19 @@ namespace StayFit.Migrations
 
             modelBuilder.Entity("StayFit.Models.Usuario", b =>
                 {
-                    b.Property<int>("LoginId")
+                    b.Property<int>("UsuarioId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("LoginId"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("UsuarioId"));
 
                     b.Property<string>("CPF")
                         .IsRequired()
                         .HasMaxLength(11)
                         .HasColumnType("nvarchar(11)");
+
+                    b.Property<int?>("ClienteId")
+                        .HasColumnType("int");
 
                     b.Property<string>("Email")
                         .IsRequired()
@@ -251,7 +254,12 @@ namespace StayFit.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("LoginId");
+                    b.Property<int>("TipoUsuario")
+                        .HasColumnType("int");
+
+                    b.HasKey("UsuarioId");
+
+                    b.HasIndex("ClienteId");
 
                     b.ToTable("Usuarios");
                 });
@@ -285,6 +293,15 @@ namespace StayFit.Migrations
                         .IsRequired();
 
                     b.Navigation("Exercicio");
+                });
+
+            modelBuilder.Entity("StayFit.Models.Usuario", b =>
+                {
+                    b.HasOne("StayFit.Models.Cliente", "Cliente")
+                        .WithMany()
+                        .HasForeignKey("ClienteId");
+
+                    b.Navigation("Cliente");
                 });
 
             modelBuilder.Entity("StayFit.Models.Cliente", b =>
