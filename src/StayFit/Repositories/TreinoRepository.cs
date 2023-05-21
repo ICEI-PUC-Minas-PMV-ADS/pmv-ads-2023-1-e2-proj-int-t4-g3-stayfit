@@ -8,17 +8,18 @@ namespace StayFit.Repositories
     public class TreinoRepository : ITreinoRepository
     {
         private readonly AppDbContext _context;
-
-        public TreinoRepository(AppDbContext context)
+        private readonly IExercicioRepository _exercicioRepository;
+        public TreinoRepository(AppDbContext context, IExercicioRepository exercicioRepository)
         {
             _context = context;
+            _exercicioRepository = exercicioRepository;
         }
         public IEnumerable<Treino> Treinos => _context.Treinos;
 
         public bool Create(Treino treino)
         {
             try
-            {
+            {               
                 _context.Treinos.Add(treino);
                 Save();
                 return true;

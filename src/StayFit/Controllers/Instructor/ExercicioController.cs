@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using StayFit.helpers;
 using StayFit.Models;
 using StayFit.Repositories;
 using StayFit.Repositories.Interfaces;
@@ -30,32 +31,29 @@ namespace StayFit.Controllers.Instructor
         [HttpPost]
         public async Task<IActionResult> Create(Exercicio exercicio, IFormFile Photo, IFormFile Video)
         {
+            string path = "/imagens/exercicios/";
+
             if (Photo != null && Photo.Length > 0)
             {
                // var fileName = exercicio.Name.ToLower() + Path.GetFileName(Photo.FileName).ToLower()  ;
                 var fileName = Path.GetFileName(Photo.FileName).ToLower()  ;
-                var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/imagens/exercicios/", fileName);
-
-                using (var fileStream = new FileStream(filePath, FileMode.Create))
+                if (await FileUpload.imageUpload(Photo, path))
                 {
-                    await Photo.CopyToAsync(fileStream);
+                     exercicio.Photo = $"{path}{fileName}";
                 }
 
-                exercicio.Photo = $"/imagens/exercicios/{fileName}";
             }
 
             if (Video != null && Video.Length > 0)
             {
               //var fileName = exercicio.Name.ToLower()+Path.GetFileName(Video.FileName).ToLower();
               var fileName = Path.GetFileName(Video.FileName).ToLower();
-              var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/videos/exercicios/", fileName);
-
-                using (var fileStream = new FileStream(filePath, FileMode.Create))
+            
+              if(await FileUpload.videoUpload(Video, path))
                 {
-                    await Video.CopyToAsync(fileStream);
-        }
+                  exercicio.Video = $"{path}{fileName}";
+                }
 
-            exercicio.Video = $"/videos/exercicios/{fileName}";
     }
 
 

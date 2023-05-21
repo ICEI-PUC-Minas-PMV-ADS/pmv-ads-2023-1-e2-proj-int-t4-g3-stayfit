@@ -20,17 +20,12 @@ namespace StayFit.Controllers
 		}
 
 		[HttpPost]
-		public IActionResult Create(Usuario login)
+		public IActionResult Create(Usuario user)
 		{
-				login.Senha = BCrypt.Net.BCrypt.HashPassword(login.Senha);
-				_loginRepository.Create(login);
-                return View("~/Views/Cliente/FichaCliente/Index.cshtml");
-          
-            
-			
-				
-			
-			
+				user.Senha = BCrypt.Net.BCrypt.HashPassword(user.Senha);
+				_loginRepository.Create(user);
+                return View("~/Views/Home/Index.cshtml", user);
+                      			
 		}
 	}
 }
