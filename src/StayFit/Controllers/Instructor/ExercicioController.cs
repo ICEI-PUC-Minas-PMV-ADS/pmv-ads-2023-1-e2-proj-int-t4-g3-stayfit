@@ -46,8 +46,10 @@ namespace StayFit.Controllers.Instructor
 
             if (Video != null && Video.Length > 0)
             {
-              //var fileName = exercicio.Name.ToLower()+Path.GetFileName(Video.FileName).ToLower();
-              var fileName = Path.GetFileName(Video.FileName).ToLower();
+                path = "wwwroot/videos/exercicios/";
+                url = "/videos/exercicios/";
+                //var fileName = exercicio.Name.ToLower()+Path.GetFileName(Video.FileName).ToLower();
+                var fileName = Path.GetFileName(Video.FileName).ToLower();
             
               if(await FileUpload.videoUpload(Video, path))
                 {
