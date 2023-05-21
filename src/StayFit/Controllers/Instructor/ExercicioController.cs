@@ -31,15 +31,15 @@ namespace StayFit.Controllers.Instructor
         [HttpPost]
         public async Task<IActionResult> Create(Exercicio exercicio, IFormFile Photo, IFormFile Video)
         {
-            string path = "/imagens/exercicios/";
-
+            string path = "wwwroot/imagens/exercicios/";
+            string url = "/imagens/exercicios/";
             if (Photo != null && Photo.Length > 0)
             {
                // var fileName = exercicio.Name.ToLower() + Path.GetFileName(Photo.FileName).ToLower()  ;
                 var fileName = Path.GetFileName(Photo.FileName).ToLower()  ;
                 if (await FileUpload.imageUpload(Photo, path))
                 {
-                     exercicio.Photo = $"{path}{fileName}";
+                     exercicio.Photo = $"{url}{fileName}";
                 }
 
             }
@@ -51,7 +51,7 @@ namespace StayFit.Controllers.Instructor
             
               if(await FileUpload.videoUpload(Video, path))
                 {
-                  exercicio.Video = $"{path}{fileName}";
+                  exercicio.Video = $"{url}{fileName}";
                 }
 
     }

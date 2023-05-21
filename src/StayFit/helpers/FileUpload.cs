@@ -10,7 +10,7 @@ namespace StayFit.helpers
             {
                     // var fileName = exercicio.Name.ToLower() + Path.GetFileName(Photo.FileName).ToLower()  ;
                     var fileName = Path.GetFileName(Photo.FileName).ToLower();
-                    var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/"+ path, fileName);
+                    var filePath = Path.Combine(Directory.GetCurrentDirectory(), path, fileName);
 
                     using (var fileStream = new FileStream(filePath, FileMode.Create))
                     {
@@ -28,7 +28,7 @@ namespace StayFit.helpers
             {
                 //var fileName = exercicio.Name.ToLower()+Path.GetFileName(Video.FileName).ToLower();
                 var fileName = Path.GetFileName(Video.FileName).ToLower();
-                var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/"+path, fileName);
+                var filePath = Path.Combine(Directory.GetCurrentDirectory(), path, fileName);
 
                 using (var fileStream = new FileStream(filePath, FileMode.Create))
                 {

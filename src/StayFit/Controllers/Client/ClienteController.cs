@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using StayFit.helpers;
 using StayFit.Models;
 using StayFit.Repositories.Interfaces;
 using StayFit.ViewModels;
@@ -73,6 +74,28 @@ namespace StayFit.Controllers.Client
             };
 
             return View("~/Views/Cliente/FichaCliente/Index.cshtml", clienteFichaViewModel);
+        }
+
+        [HttpPost]
+        public async Task<ViewResult> EditUsuario(Usuario usuario, IFormFile Photo)
+        {
+            string path = "wwwroot/imagens/exercicios/";
+            string url = "/imagens/exercicios/";
+
+            if (Photo != null && Photo.Length > 0)
+            {
+                // var fileName = exercicio.Name.ToLower() + Path.GetFileName(Photo.FileName).ToLower()  ;
+                var fileName = Path.GetFileName(Photo.FileName).ToLower();
+                if (await FileUpload.imageUpload(Photo, path))
+                {
+                    usuario.Foto = $"{url}{fileName}";
+                    System.Diagnostics.Debug.WriteLine("=========== " + usuario.Foto);
+                }
+
+            }
+            usuario = _usuarioRepository.EditUsuario(usuario);
+
+            return View("~/Views/Home/Index.cshtml", usuario);
         }
     }
 }
