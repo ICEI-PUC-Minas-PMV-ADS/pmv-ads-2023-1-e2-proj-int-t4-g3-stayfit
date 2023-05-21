@@ -2,6 +2,7 @@
 using Microsoft.Data.SqlClient;
 using StayFit.Context;
 using StayFit.Models;
+using System.Security.Claims;
 
 namespace StayFit.Controllers
 {
@@ -20,28 +21,28 @@ namespace StayFit.Controllers
         }
 
         [HttpPost]
-        public IActionResult Login([Bind("Matricula,Senha")] Usuario usuario)
+        public IActionResult Login([Bind("Email,Senha")] Usuario usuario)
         {
-            var user = _context.Usuarios.FirstOrDefault(u => u.Matricula == usuario.Matricula);
+            var user = _context.Usuarios.FirstOrDefault(u => u.Email == usuario.Email);
             ViewBag.msg = "";
 
             if (user == null)
             {   
-                ViewBag.msg = "Matricula e/ou senha invalida(s)";
-                return View("Teste1");
+                ViewBag.msg = "Email e/ou senha invalida(s)";
+                return View("Index");
             }
 
 			//System.Diagnostics.Debug.WriteLine("=====================");
 			
 			bool isPassValid = BCrypt.Net.BCrypt.Verify(usuario.Senha, user.Senha);
 
-           
 
             if(!isPassValid)
             {
-				ViewBag.msg = "Matricula e/ou senha invalida(s)";
-				return View("Teste2");
+				ViewBag.msg = "Email e/ou senha invalida(s)";
+				return View("Index");
 			}
+
 
             return View("~/Views/Home/Index.cshtml", user);
         }

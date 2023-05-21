@@ -47,5 +47,28 @@ namespace StayFit.Repositories
 			}
 			return user;
 		}
+
+
+		public Usuario EditUsuario(Usuario usuario)
+		{
+			Usuario user = GetUsuario(usuario.UsuarioId);
+			if (user != null)
+			{
+				user.Email = usuario.Email;
+				user.Nome = usuario.Nome;
+				user.CPF = usuario.CPF;
+				user.Foto = usuario.Foto;
+
+				if (user.Matricula != null)
+				{
+
+				}
+				_context.Usuarios.Update(user);
+				_context.SaveChanges();
+			
+				return user;
+			}
+			return usuario;
+		}
 	}
 }
