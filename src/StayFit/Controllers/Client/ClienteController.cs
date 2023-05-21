@@ -77,10 +77,10 @@ namespace StayFit.Controllers.Client
         }
 
         [HttpPost]
-        public async Task<ViewResult> EditUsuario(Usuario usuario, IFormFile Photo)
+        public async Task<ViewResult> EditUsuario(Usuario usuario, [FromForm(Name = "Foto")] IFormFile Photo)
         {
-            string path = "wwwroot/imagens/exercicios/";
-            string url = "/imagens/exercicios/";
+            string path = "wwwroot/PrivateFiles/users/imagens/";
+            string url = "/PrivateFiles/users/imagens/";
 
             if (Photo != null && Photo.Length > 0)
             {
@@ -89,7 +89,7 @@ namespace StayFit.Controllers.Client
                 if (await FileUpload.imageUpload(Photo, path))
                 {
                     usuario.Foto = $"{url}{fileName}";
-                    System.Diagnostics.Debug.WriteLine("=========== " + usuario.Foto);
+                    System.Diagnostics.Debug.WriteLine("=========== " + usuario.Foto + " =============");
                 }
 
             }
