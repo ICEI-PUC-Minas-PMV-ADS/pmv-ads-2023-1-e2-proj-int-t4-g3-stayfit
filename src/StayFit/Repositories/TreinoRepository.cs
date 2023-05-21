@@ -19,7 +19,9 @@ namespace StayFit.Repositories
         public bool Create(Treino treino)
         {
             try
-            {               
+            {
+                Exercicio exercicio = _exercicioRepository.GetExercicio(treino.ExercicioId);
+                treino.Exercicio = exercicio;
                 _context.Treinos.Add(treino);
                 Save();
                 return true;

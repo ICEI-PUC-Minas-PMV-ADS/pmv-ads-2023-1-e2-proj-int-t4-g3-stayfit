@@ -8,6 +8,7 @@ namespace StayFit.Models
         public Usuario()
         {
             TipoUsuario = TypeUser.Cliente;
+            Foto = "/site-imagens/user.png";
         }
         [Key]
         public int UsuarioId { get; set; }
@@ -19,9 +20,7 @@ namespace StayFit.Models
 
         [Required(ErrorMessage = "Adicione uma senha")]
         [DataType(DataType.Password)]
-        [StringLength(12)]
-        [MinLength(6, ErrorMessage = "A senha deve ter no mínimo 6 caracteres...")]
-        [MaxLength(12, ErrorMessage = "A senha deve ter no máximo 12 caracteres...")]
+        [MinLength(6, ErrorMessage = "A senha deve ter no mínimo 6 caracteres...")]      
 		public string Senha { get; set; }
 
         public int? Matricula { get; set; }

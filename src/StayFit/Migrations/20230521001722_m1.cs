@@ -13,8 +13,8 @@ namespace StayFit.Migrations
             migrationBuilder.AlterColumn<string>(
                 name: "Senha",
                 table: "Usuarios",
-                type: "nvarchar(12)",
-                maxLength: 12,
+                type: "nvarchar(257)",
+                maxLength: 257,
                 nullable: false,
                 oldClrType: typeof(string),
                 oldType: "nvarchar(max)");
