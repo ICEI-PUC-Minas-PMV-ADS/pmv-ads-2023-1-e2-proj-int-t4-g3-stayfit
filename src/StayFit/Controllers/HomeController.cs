@@ -13,13 +13,15 @@ namespace StayFit.Controllers
             _logger = logger;
         }
 
-        public IActionResult Teste(){
-            return View("Teste");
-        }
-
+      
         public IActionResult Index()
         {
-            return View();
+            if (User.Identity.IsAuthenticated)            
+                return View();           
+            else            
+              return RedirectToAction("Index", "Login");
+            
+
         }
 
         public IActionResult Privacy()

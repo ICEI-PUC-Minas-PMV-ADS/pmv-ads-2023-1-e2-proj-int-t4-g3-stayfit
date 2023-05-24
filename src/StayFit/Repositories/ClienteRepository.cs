@@ -22,6 +22,11 @@ namespace StayFit.Repositories
             return _context.Clientes.FirstOrDefault(cli => cli.Matricula == matricula);
         }
 
+        public Cliente GetClienteByCPF(string cpf)
+        {
+            return _context.Clientes.FirstOrDefault(c => c.CPF == cpf);
+        }
+
         public Cliente CreateClient(Cliente cliente)
         {
             _context.Clientes.Add(cliente);

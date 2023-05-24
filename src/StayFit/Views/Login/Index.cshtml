@@ -10,7 +10,7 @@
 
 					 
 					<form asp-action="Login">
-					 
+					<div asp-validation-summary="ModelOnly" class="text-danger"></div>
 						<span class="login100-form-title p-b-26">
 							<strong>StayFit</strong>
 						</span><br>
@@ -60,7 +60,7 @@
 								Não tem uma conta?
 							</span>
 
-							<a class="txt2" href="#">
+							<a class="txt2" href="/Cadastro">
 								Cadastre-se
 							</a>
 						</div>

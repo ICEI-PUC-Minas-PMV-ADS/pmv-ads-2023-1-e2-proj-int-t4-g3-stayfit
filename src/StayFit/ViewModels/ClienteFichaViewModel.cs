@@ -5,7 +5,7 @@ namespace StayFit.ViewModels
     public class ClienteFichaViewModel
     {
         public Cliente cliente;
-        public IEnumerable<Ficha> fichas;
+        public List<Ficha> fichas;
 
     }
 }

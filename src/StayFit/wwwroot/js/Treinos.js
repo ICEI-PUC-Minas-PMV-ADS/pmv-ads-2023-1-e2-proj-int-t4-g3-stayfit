@@ -1,9 +1,9 @@
-﻿
+﻿alert("       ");
 document.getElementById("enviarTreino").addEventListener("click", enviar);
 document.getElementById("addTreino").addEventListener("click", adicionarLista);
 
 ListarTreino();
-
+ 
 function adicionarLista() {
     
     let nrepeticoes = document.getElementById("nrepeticoes").value;
@@ -36,10 +36,12 @@ function adicionarLista() {
     if (dataLocal == null || dataLocal == undefined) {
         localStorage.setItem("TreinosLocal", JSON.stringify([treino]))
         localStorage.setItem("NomeExercicios", JSON.stringify([nomeTreino]))
+           
     } else {
         data = JSON.parse(dataLocal)
         dataEx = JSON.parse(dataEx)
         data.push(treino);
+       
         dataEx.push(nomeTreino);
         localStorage.setItem("TreinosLocal", JSON.stringify(data))
         localStorage.setItem("NomeExercicios", JSON.stringify(dataEx))
@@ -50,8 +52,9 @@ function adicionarLista() {
 
 
 function enviar() {
+   
     let treinos = JSON.parse(localStorage.getItem("TreinosLocal"));
-
+   
     /*
     let treinos = [{       
         "repetitionNumber": 3,
