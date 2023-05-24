@@ -7,6 +7,7 @@ namespace StayFit.Models
     [Table("Treinos")]
     public class Treino
     {
+      
         [Key]
         public int TreinoId { get; set; }      
         

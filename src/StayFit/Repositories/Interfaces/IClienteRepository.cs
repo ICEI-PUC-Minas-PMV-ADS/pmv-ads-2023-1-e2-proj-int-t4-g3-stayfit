@@ -9,7 +9,8 @@ namespace StayFit.Repositories.Interfaces
         public Cliente GetClienteByMatricula(int matricula);
         public Cliente GetCliente(int ClienteId);
         public IEnumerable<Cliente> Clientes { get; }
+        public Cliente GetClienteByCPF(string cpf);
 
-       
-    }
+
+	}
 }

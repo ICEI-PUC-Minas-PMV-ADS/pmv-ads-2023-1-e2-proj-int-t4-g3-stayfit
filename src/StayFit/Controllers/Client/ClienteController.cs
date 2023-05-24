@@ -57,7 +57,7 @@ namespace StayFit.Controllers.Client
           //LEMBRAR DE MUDAR ID DO CLIENTE------------------------------
             int clientID = 1;
             Cliente cliente = _clienteRepository.GetCliente(clientID);
-            IEnumerable< Ficha > fichas = _fichaRepository.GetFichasClient(clientID);
+            List< Ficha > fichas = _fichaRepository.GetFichasClient(clientID).ToList();
             
             foreach(Ficha ficha in fichas)
             {
