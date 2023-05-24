@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 using StayFit.Context;
 using StayFit.Models;
 using StayFit.Repositories.Interfaces;
@@ -7,12 +8,15 @@ namespace StayFit.Controllers.Adm
 {
     public class AdminClienteController : Controller
     {
-        public AppDbContext _context;
+		private readonly UserManager<ApplicationUser> _userManager;
+		private readonly SignInManager<ApplicationUser> _signInManager;
         public IClienteRepository _clienteRepository;
-        public AdminClienteController(AppDbContext context, IClienteRepository clienteRepository)
-        {
-            _context = context;
+		public AppDbContext _context;
+        public AdminClienteController(AppDbContext context, UserManager<ApplicationUser> userManager , IClienteRepository clienteRepository)
+        {            
             _clienteRepository = clienteRepository;
+            _userManager = userManager;
+            _context = context;
         }
 
         public ViewResult ListClient()
@@ -29,12 +33,17 @@ namespace StayFit.Controllers.Adm
         }
 
         [HttpPost]  
-        public ViewResult CreateClient(Cliente cliente)
+        public async Task<ViewResult> CreateClient(Cliente cliente)
         {
             if(ModelState.IsValid)
             {
-               
-                _clienteRepository.CreateClient(cliente);
+                var user = _userManager.Users.FirstOrDefault(u => u.CPF == cliente.CPF);
+                if (user != null)
+                {
+                    user.Cliente = cliente;
+                    await _userManager.UpdateAsync(user);
+                }
+                //_clienteRepository.CreateClient(cliente);
                 IEnumerable<Cliente> clientes = _clienteRepository.Clientes;
                
                 return View("~/Views/Admin/Admin/AdminCliente/ListClient.cshtml", clientes);
