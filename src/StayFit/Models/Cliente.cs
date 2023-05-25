@@ -10,7 +10,8 @@ namespace StayFit.Models
         public Cliente()
         {
             Pontuacao = 0;
-            Fichas = new List<Ficha>();           
+            Fichas = new List<Ficha>(); 
+            Foto= "/site-imagens/user.png";
         }
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ClienteId { get; set; }

@@ -48,8 +48,8 @@ namespace StayFit.Controllers
 					usuario.Cliente = cliente;
 				}
 
-				var user = new ApplicationUser { UserName = usuario.Email,
-					CPF = usuario.CPF, Email = usuario.Email, Cliente = usuario.Cliente  };
+				var user = new ApplicationUser { UserName = usuario.Email, Nome = usuario.Nome,
+					CPF = usuario.CPF, Email = usuario.Email, Foto = usuario.Foto, Cliente = usuario.Cliente  };
 				
 				var result = await _userManager.CreateAsync(user, usuario.Senha);
 

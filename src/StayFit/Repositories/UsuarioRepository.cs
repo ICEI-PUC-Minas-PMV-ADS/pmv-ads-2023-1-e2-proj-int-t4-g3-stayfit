@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using StayFit.Context;
 using StayFit.Models;
 using StayFit.Repositories.Interfaces;
@@ -48,10 +49,28 @@ namespace StayFit.Repositories
 			return user;
 		}
 
-
-		public Usuario EditUsuario(Usuario usuario)
+        public Usuario GetUserByEmail(string email)
 		{
-			Usuario user = GetUsuario(usuario.UsuarioId);
+			Usuario usuario = new Usuario();
+			var user = _context.Users.FirstOrDefault(u => u.Email == email);
+			if(user != null)
+			{ 
+				usuario.Nome = user.Nome;
+				usuario.Email = email;
+				usuario.Foto = user.Foto;
+				usuario.CPF = user.CPF;
+				usuario.TipoUsuario = user.TipoUsuario;
+				usuario.Matricula = user.Matricula;
+				usuario.Cliente = _context.Clientes.FirstOrDefault(c => c.CPF == user.CPF);
+			}
+
+			return usuario;
+		}
+
+		
+		public Usuario EditUsuario(Usuario usuario, string userInditityEmail)
+		{
+			var user = _context.Users.FirstOrDefault(user => user.Email == userInditityEmail);
 			if (user != null)
 			{
 				user.Email = usuario.Email;
@@ -63,10 +82,10 @@ namespace StayFit.Repositories
 				{
 
 				}
-				_context.Usuarios.Update(user);
+				_context.Users.Update(user);
 				_context.SaveChanges();
 			
-				return user;
+				return usuario;
 			}
 			return usuario;
 		}

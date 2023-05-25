@@ -6,6 +6,7 @@ namespace StayFit.Repositories.Interfaces
 	{
 		public Usuario GetUsuario(int usuarioId);
 		public Usuario UpdateUsuarioCliente(Usuario usuario);
-		public Usuario EditUsuario(Usuario usuario);
+		public Usuario EditUsuario(Usuario usuario, string userInditityEmail);
+		public Usuario GetUserByEmail(string email);
 	}
 }

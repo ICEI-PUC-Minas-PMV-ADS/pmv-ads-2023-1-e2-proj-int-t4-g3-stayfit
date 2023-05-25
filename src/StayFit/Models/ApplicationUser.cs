@@ -5,7 +5,12 @@ namespace StayFit.Models
 {
 	public class ApplicationUser:IdentityUser
 	{
-		public int? Matricula { get; set; }
+        [Required(ErrorMessage = "Informe o Nome completo")]
+        [StringLength(70)]
+        [RegularExpression(@"^[a-zA-Z]+[ a-zA-Z-_]*$", ErrorMessage = "Somente letras, por favor")]
+        public string Nome { get; set; }
+
+        public int? Matricula { get; set; }
 
 		[Display(Name = "Foto")]
 		[StringLength(200)]
