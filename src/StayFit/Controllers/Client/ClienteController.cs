@@ -18,7 +18,7 @@ namespace StayFit.Controllers.Client
             _exercicioRepository = exercicioRepository;
             _clienteRepository = clienteRepository;
             _fichaRepository = fichaRepository;
-           _usuarioRepository = usuarioRepository;
+            _usuarioRepository = usuarioRepository;
         }
 
         [HttpPost]
@@ -43,37 +43,42 @@ namespace StayFit.Controllers.Client
 			return View("~/Views/Home/Index.cshtml", user);
 		}
 
-		public ViewResult Edit(int id)
+		public ViewResult Edit()
         {
-            Usuario usuario = _usuarioRepository.GetUsuario(id);
-            System.Diagnostics.Debug.WriteLine("================ " + id);
+            Usuario usuario = _usuarioRepository.GetUserByEmail(User.Identity.Name);
+            System.Diagnostics.Debug.WriteLine("================ " + usuario.Nome);
             return View("~/Views/Cliente/EditCliente.cshtml", usuario);
         }
 
 
-        public IActionResult Index()
+        public IActionResult Ficha()
         {
-
-          //LEMBRAR DE MUDAR ID DO CLIENTE------------------------------
-            int clientID = 1;
-            Cliente cliente = _clienteRepository.GetCliente(clientID);
-            List< Ficha > fichas = _fichaRepository.GetFichasClient(clientID).ToList();
-            
-            foreach(Ficha ficha in fichas)
-            {
-                foreach(Treino t in ficha.Treinos)
+            Usuario usuario = _usuarioRepository.GetUserByEmail(User.Identity.Name);
+                      
+                if(usuario.Cliente != null)
                 {
-                    t.Exercicio = _exercicioRepository.GetExercicio(t.ExercicioId);
-                }
-            }
-          
-            ClienteFichaViewModel clienteFichaViewModel = new ClienteFichaViewModel
-            {
-                cliente = cliente,
-                fichas = fichas,
-            };
+                    Cliente cliente = _clienteRepository.GetCliente(usuario.Cliente.ClienteId);
+                    List<Ficha> fichas = _fichaRepository.GetFichasClient(usuario.Cliente.ClienteId).ToList();
 
-            return View("~/Views/Cliente/FichaCliente/Index.cshtml", clienteFichaViewModel);
+                    foreach (Ficha ficha in fichas)
+                    {
+                        foreach (Treino t in ficha.Treinos)
+                        {
+                            t.Exercicio = _exercicioRepository.GetExercicio(t.ExercicioId);
+                        }
+                    }
+
+                    ClienteFichaViewModel clienteFichaViewModel = new ClienteFichaViewModel
+                    {
+                        cliente = cliente,
+                        fichas = fichas,
+                    };
+
+                    return View("~/Views/Cliente/FichaCliente/Index.cshtml", clienteFichaViewModel);
+                
+            }
+            return RedirectToAction("Index", "Login");          
+           
         }
 
         [HttpPost]
@@ -93,7 +98,7 @@ namespace StayFit.Controllers.Client
                 }
 
             }
-            usuario = _usuarioRepository.EditUsuario(usuario);
+            usuario = _usuarioRepository.EditUsuario(usuario, User.Identity.Name);
 
             return View("~/Views/Home/Index.cshtml", usuario);
         }

@@ -6,7 +6,7 @@ namespace StayFit.Controllers.Adm
     {
         public IActionResult Index()
         {
-            return View();
-        }
+			return View();
+		}
     }
 }

@@ -99,20 +99,22 @@ namespace StayFit.Controllers
 				//return View("Index", usuario);
     //        }
 
-            var user = await _userManager.FindByNameAsync(usuario.Email.ToUpper());
+            var user = await _userManager.FindByNameAsync(usuario.Email);
 
             System.Diagnostics.Debug.WriteLine("======" + usuario.Email);
             if (user != null)
-            {
-				System.Diagnostics.Debug.WriteLine("======" + user.NormalizedEmail);
+            {               
 				var result = await _signInManager.PasswordSignInAsync(user, usuario.Senha, false, false);
                 if (result.Succeeded)
                 {
-                 /*   if (string.IsNullOrEmpty(loginVM.ReturnUrl))
-                    {
-                        return RedirectToAction("Index", "Home");
-                    }
-                 */
+                    usuario.Nome = user.UserName;
+                    usuario.Foto = user.Foto;
+
+                    /*   if (string.IsNullOrEmpty(loginVM.ReturnUrl))
+                       {
+                           return RedirectToAction("Index", "Home");
+                       }
+                    */
                     return RedirectToAction("Index", "Home");
                 }
                 else

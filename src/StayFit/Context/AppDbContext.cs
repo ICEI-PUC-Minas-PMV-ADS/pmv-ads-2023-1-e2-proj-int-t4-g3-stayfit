@@ -20,16 +20,16 @@ namespace StayFit.Context
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-            modelBuilder.Entity<Instrutor>().HasData(
-                new Instrutor
-                {
-                    InstrutorId = 1,
-                    Nome = "Paulo",
-                    Telefone = "93333-5555",
-                    Email = "Paulo@eu.com",                   
+            //modelBuilder.Entity<Instrutor>().HasData(
+            //    new Instrutor
+            //    {
+            //        InstrutorId = 1,
+            //        Nome = "Paulo",
+            //        Telefone = "93333-5555",
+            //        Email = "Paulo@eu.com",                   
                     
-                }               
-              );
+            //    }               
+              //);
 
            modelBuilder.Entity<Cliente>()
           .Property(c => c.Matricula)

@@ -26,7 +26,16 @@ p {
     line-height: 24px;
 }
 
+.userPhoto{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+   
+}
 
+    .userPhoto img {
+        
+    }
 
 a {
     color: #333;

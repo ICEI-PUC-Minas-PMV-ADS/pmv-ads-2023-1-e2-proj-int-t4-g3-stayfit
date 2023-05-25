@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using StayFit.Models;
+using StayFit.Repositories.Interfaces;
 using System.Diagnostics;
 
 namespace StayFit.Controllers
@@ -7,19 +8,25 @@ namespace StayFit.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
+        private readonly IUsuarioRepository _usuarioRepository;
+        public HomeController(ILogger<HomeController> logger, IUsuarioRepository usuarioRepository)
         {
             _logger = logger;
+            _usuarioRepository = usuarioRepository;
         }
 
       
         public IActionResult Index()
         {
-            if (User.Identity.IsAuthenticated)            
-                return View();           
-            else            
+            if (User.Identity.IsAuthenticated == false)            
               return RedirectToAction("Index", "Login");
+
+            Usuario usuario = _usuarioRepository.GetUserByEmail(User.Identity.Name);
+            if(usuario!=null)
+             return View(usuario);
+
+            usuario.Nome = "Error";
+            return View(usuario);
             
 
         }

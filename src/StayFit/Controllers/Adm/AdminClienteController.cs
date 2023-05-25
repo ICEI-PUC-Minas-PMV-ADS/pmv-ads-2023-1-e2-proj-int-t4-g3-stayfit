@@ -40,6 +40,7 @@ namespace StayFit.Controllers.Adm
                 var user = _userManager.Users.FirstOrDefault(u => u.CPF == cliente.CPF);
                 if (user != null)
                 {
+                    user.Matricula = cliente.Matricula;
                     user.Cliente = cliente;
                     await _userManager.UpdateAsync(user);
                 }

@@ -1,0 +1,39 @@
+﻿@model StayFit.Models.Usuario
+
+<nav id="sidebar">
+    <div class="sidebar-header">
+        <h1><span>StayFit</span></h1>
+        <div class="userPhoto">
+            <img src="@Model.Foto" style="width:120px; height:120px; border-radius:50%; z-index:0;" class="img-fluid" />
+        </div>
+        <span>@Model.Nome</span>
+    </div>
+    <ul class="list-unstyled components">
+        <li class="active">
+            <a href="/Home" class="dashboard"><i class="material-icons">home</i><span>Página Inicial</span></a>
+        </li>
+
+        <li class="">
+            <a href="/Admin/Cliente" class="dashboard"><i class="material-icons">view_list</i><span>Minha ficha</span></a>
+        </li>
+
+        <li class="">
+            <a href="/Exercicio/Create" class="dashboard"><i class="material-icons">post_add</i><span>Exercicios</span></a>
+        </li>
+
+        <li class="">
+            <a href="Admin/Cliente/CreateClient" class="dashboard"><i class="material-icons">help_outline</i><span>Ajuda</span></a>
+        </li>
+        <li class="">
+            <a href="/Cliente/Edit"><i class="material-icons">info_outline</i><span>Editar Perfil</span></a>
+        </li>
+        <li class="">
+            
+                 <a asp-controller="Login" asp-action="Logout" class="dashboard"><i class="material-icons">logout</i><span>Sair</span></a>
+
+             
+        </li>
+
+    </ul>
+
+</nav>

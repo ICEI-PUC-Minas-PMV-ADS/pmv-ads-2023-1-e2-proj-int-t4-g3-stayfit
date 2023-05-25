@@ -196,6 +196,11 @@ namespace StayFit.Migrations
                     b.Property<int?>("Matricula")
                         .HasColumnType("int");
 
+                    b.Property<string>("Nome")
+                        .IsRequired()
+                        .HasMaxLength(70)
+                        .HasColumnType("nvarchar(70)");
+
                     b.Property<string>("NormalizedEmail")
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)");
@@ -371,29 +376,35 @@ namespace StayFit.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("InstrutorId"));
 
+                    b.Property<string>("CPF")
+                        .IsRequired()
+                        .HasMaxLength(11)
+                        .HasColumnType("nvarchar(11)");
+
                     b.Property<string>("Email")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("Nome")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(70)
+                        .HasColumnType("nvarchar(70)");
+
+                    b.Property<int>("Sexo")
+                        .HasColumnType("int");
 
                     b.Property<string>("Telefone")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(15)
+                        .HasColumnType("nvarchar(15)");
+
+                    b.Property<int?>("Turno")
+                        .HasColumnType("int");
 
                     b.HasKey("InstrutorId");
 
                     b.ToTable("Instrutores");
-
-                    b.HasData(
-                        new
-                        {
-                            InstrutorId = 1,
-                            Email = "Paulo@eu.com",
-                            Nome = "Paulo",
-                            Telefone = "93333-5555"
-                        });
                 });
 
             modelBuilder.Entity("StayFit.Models.Treino", b =>
