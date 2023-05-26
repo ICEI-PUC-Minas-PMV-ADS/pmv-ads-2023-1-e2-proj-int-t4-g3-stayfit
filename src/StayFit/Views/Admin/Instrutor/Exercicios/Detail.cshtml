@@ -29,20 +29,21 @@
 
                     <div class="card" style="min-height: 485px">
                         <div class="card-header card-header-text">
-                            <h3 class="card-title">@Model.Name</h3>
+                            <h2 class="card-title">@Model.Name</h2>
                             <p class="category">
-                                <hr />
+                                <hr />  
+                                <h3> @Model.Description</h3>
                             </p>
                         </div>
                         <div class="card-content table-responsive">
-                          
-            <video style="width:70%" controls="controls">
-                <source src="@Model.Video" type="video/mp4" />
-            </video>
+
+                            <div class="embed-responsive embed-responsive-16by9">
+                                <iframe class="embed-responsive-item" src="@Model.Video" allowfullscreen></iframe>
+                            </div>
 
             <img src="@Model.Photo" alt="@Model.Name" />
            </div>
-                      
-      </div>
+         
+                    </div>
     </div>
 

@@ -9,6 +9,8 @@
         Inferiores,
         Ombros,
         Abdômen,
-        Antebraço
+        Antebraço, 
+        Glúteo,
+        Costas
     }
 }

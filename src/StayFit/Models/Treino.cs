@@ -7,7 +7,6 @@ namespace StayFit.Models
     [Table("Treinos")]
     public class Treino
     {
-      
         [Key]
         public int TreinoId { get; set; }      
         
@@ -33,7 +32,7 @@ namespace StayFit.Models
         [DefaultValue((int)0)]
         public float? Distance { get; set; }
 
-        [Display(Name = "Carga Utilizada")]
+        [Display(Name = "Carga Utilizada (KG)")]
         [DefaultValue(0)]
         public float? Weight { get; set; }
 

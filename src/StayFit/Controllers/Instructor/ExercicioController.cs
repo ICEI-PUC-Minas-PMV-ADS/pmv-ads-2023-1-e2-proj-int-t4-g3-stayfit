@@ -29,7 +29,7 @@ namespace StayFit.Controllers.Instructor
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create(Exercicio exercicio, IFormFile Photo, IFormFile Video)
+        public async Task<IActionResult> Create(Exercicio exercicio, IFormFile? Photo, IFormFile? Video)
         {
             string path = "wwwroot/imagens/exercicios/";
             string url = "/imagens/exercicios/";

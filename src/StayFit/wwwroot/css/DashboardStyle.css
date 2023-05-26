@@ -1,11 +1,10 @@
 ﻿
-@import url('https://fonts.googleapis.com/css?family=Nova+Slim&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,300&display=swap');
 
 body, html {
     line-height: 1.8;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Poppins', sans-serif;
     color: #555e58;
-    
     text-rendering: optimizeLegibility !important;
     -webkit-font-smoothing: antialiased !important;
     font-weight: 400;
