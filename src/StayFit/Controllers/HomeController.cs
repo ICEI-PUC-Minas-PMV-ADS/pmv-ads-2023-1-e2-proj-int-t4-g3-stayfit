@@ -18,8 +18,8 @@ namespace StayFit.Controllers
       
         public IActionResult Index()
         {
-            if (User.Identity.IsAuthenticated == false)            
-              return RedirectToAction("Index", "Login");
+            //if (User.Identity.IsAuthenticated == false)            
+            //  return RedirectToAction("Index", "Login");
 
             Usuario usuario = _usuarioRepository.GetUserByEmail(User.Identity.Name);
             if(usuario!=null)
@@ -27,8 +27,7 @@ namespace StayFit.Controllers
 
             usuario.Nome = "Error";
             return View(usuario);
-            
-
+           
         }
 
         public IActionResult Privacy()
