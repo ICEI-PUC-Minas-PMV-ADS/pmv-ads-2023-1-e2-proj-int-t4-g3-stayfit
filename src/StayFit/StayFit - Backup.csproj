@@ -8,9 +8,13 @@
 
   <ItemGroup>
     <Compile Remove="Views\Login - Cópia\**" />
+    <Compile Remove="wwwroot\css\NovaPasta\**" />
     <Content Remove="Views\Login - Cópia\**" />
+    <Content Remove="wwwroot\css\NovaPasta\**" />
     <EmbeddedResource Remove="Views\Login - Cópia\**" />
+    <EmbeddedResource Remove="wwwroot\css\NovaPasta\**" />
     <None Remove="Views\Login - Cópia\**" />
+    <None Remove="wwwroot\css\NovaPasta\**" />
   </ItemGroup>
 
 	  <ItemGroup>
@@ -45,19 +49,12 @@
     <Folder Include="wwwroot\imagens\exercicios\" />
     <Folder Include="wwwroot\PrivateFiles\users\imagens\" />
     <Folder Include="wwwroot\site-imagens\instrutor\" />
+    <Folder Include="wwwroot\site-imagens\NewFolder\" />
     <Folder Include="wwwroot\videos\exercicios\" />
   </ItemGroup>
 
   <ItemGroup>
     <None Include="Views\Admin\Instrutor\Exercicios\Login.cshtml" />
-    <None Include="wwwroot\css\lib\easing\easing.js" />
-    <None Include="wwwroot\js\easing.min.js" />
-    <None Include="wwwroot\css\lib\flaticon\font\Flaticon.svg" />
-    <None Include="wwwroot\css\lib\flaticon\font\Flaticon.woff2" />
-    <None Include="wwwroot\css\lib\flaticon\font\_flaticon.scss" />
-    <None Include="wwwroot\css\lib\flaticon\license\license.pdf" />
-    <None Include="wwwroot\css\lib\waypoints\links.php" />
-    <None Include="wwwroot\js\waypoints.min.js" />
     <None Include="wwwroot\js\animsition.js" />
     <None Include="wwwroot\js\animsition.min.js" />
     <None Include="wwwroot\js\bootstrap.js" />
