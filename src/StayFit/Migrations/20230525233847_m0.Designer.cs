@@ -12,7 +12,7 @@ using StayFit.Context;
 namespace StayFit.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20230525181430_m0")]
+    [Migration("20230525233847_m0")]
     partial class m0
     {
         /// <inheritdoc />

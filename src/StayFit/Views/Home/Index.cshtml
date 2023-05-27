@@ -19,46 +19,16 @@
    <partial name="_Header" for="@Model"   />
 
     <div class="main-content">
-            
-           @* <hr />
-            <div class="row">
-                <div class="col-lg-12 col-md-6 col-sm-6">
-                    <div class="card card-stats">
-                        <div class="card-header">
-                            <div class="icon icon-warning">
-                                <span class="material-icons">info</span>
-                            </div>
-                        </div>
-                        <div class="card-content">
-                            <p class="category"><strong>Informe sua matrícula, e tenha acesso aos recursos</strong></p>
-                            <h3 class="card-title">
-                               
-                                <form asp-controller="Cliente" asp-action="addMatricula" method="post">
-                                    <input type="text" asp-for="Matricula"/>
-                                    <input type="hidden" asp-for="UsuarioId" />
-                                    <button type="submit" class="btn btn-outline-success"><span class="material-icons">add</span></button>
-                                </form>
-                           </h3>
-                        </div>
-                        <div class="card-footer">
-                            <div class="stats">
-                                <i class="material-icons text-info">help</i>
-                                <a href="#">Ajuda</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>*@
-        
+          
             <div class="row">
                     <div class="col-lg-4 col-md-6 col-sm-6">
                         <div class="card card-stats">
                      
                             <div class="card-content">
-                            <div class="square" onclick="window.location.href='cadastrar-ficha.html'">
+                            <a class="square" href="/cliente/ficha">
                                 <img src="~/site-imagens/IcoPrancheta.png" width="100px"><br>
                                 <div class="text"><strong>Ficha</strong></div>
-                            </div>
+                            </a>
                        </div>
                           
                         </div>
@@ -70,10 +40,10 @@
                     <div class="card card-stats">
 
                         <div class="card-content">
-                            <div class="square" onclick="window.location.href='alunos.html'">
+                            <a class="square" href="alunos.html">
                                 <img src="~/site-imagens/IcoUser.png" width="100px"><br>
                                 <div class="text"><strong>Evolução</strong></div>
-                            </div>
+                            </a>
                         </div>
 
                     </div>
@@ -86,10 +56,10 @@
 
                         <div class="card-content">
 
-                            <div class="square" onclick="window.location.href='exames.html'">
+                            <a class="square" href="exames.html">
                                 <img src="~/site-imagens/IcoExame.png" width="100px"><br>
                                 <div class="text"><strong>Exames</strong></div>
-                            </div>
+                            </a>
 
                         </div>
 

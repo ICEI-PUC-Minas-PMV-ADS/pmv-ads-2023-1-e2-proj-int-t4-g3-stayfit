@@ -1,11 +1,21 @@
 ﻿@model Treino
+<tr>
+        <a asp-action="Detail" asp-controller="Exercicio"
+           asp-route-ExercicioId="@Model.Exercicio.ExercicioId">
+   
+            <td>
+                <img src="@Model.Exercicio.Photo" style="width:55px" alt="@Model.Exercicio.Name" />
+            </td>
+            <td>
+                    @Model.Exercicio.Name
+            </td>
+            <td>
+                @Model.RepetitionNumber
+            <td>
+            <td>
+                            @Model.Series
+            <td>
+        </a>
+</tr>
 
-<a asp-action="Detail" asp-controller="Exercicio" asp-route-ExercicioId="@Model.Exercicio.ExercicioId">
-    <img src="@Model.Exercicio.Photo" style="width:55px" alt="@Model.Exercicio.Name" />        
-    @Model.Exercicio.Name
-               
-        @Model.RepetitionNumber 
-        @Model.Series            
-</a>
-<br />
   
