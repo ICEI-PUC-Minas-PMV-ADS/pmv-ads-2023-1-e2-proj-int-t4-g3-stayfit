@@ -41,5 +41,7 @@ namespace StayFit.Models
         public string CPF { get; set; }
         public TypeUser TipoUsuario { get; set; }
         public Cliente? Cliente { get; set; }
+
+        public Instrutor? Instrutor { get; set; }
     }
 }

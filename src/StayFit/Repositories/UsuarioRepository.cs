@@ -61,8 +61,13 @@ namespace StayFit.Repositories
 				usuario.CPF = user.CPF;
 				usuario.TipoUsuario = user.TipoUsuario;
 				usuario.Matricula = user.Matricula;
-				usuario.Cliente = _context.Clientes.FirstOrDefault(c => c.CPF == user.CPF);
-			}
+				if(user.TipoUsuario == TypeUser.Cliente)
+					usuario.Cliente = _context.Clientes.FirstOrDefault(c => c.CPF == user.CPF);
+
+                if (user.TipoUsuario == TypeUser.Instrutor)
+                    usuario.Instrutor = _context.Instrutores.FirstOrDefault(c => c.CPF == user.CPF);
+
+            }
 
 			return usuario;
 		}

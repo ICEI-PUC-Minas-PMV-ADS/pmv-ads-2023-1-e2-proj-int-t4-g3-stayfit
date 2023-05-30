@@ -3,14 +3,14 @@ using System.ComponentModel.DataAnnotations;
 
 namespace StayFit.Models
 {
-	public class ApplicationUser:IdentityUser
+	public class ApplicationUser : IdentityUser
 	{
-        [Required(ErrorMessage = "Informe o Nome completo")]
-        [StringLength(70)]
-        [RegularExpression(@"^[a-zA-Z]+[ a-zA-Z-_]*$", ErrorMessage = "Somente letras, por favor")]
-        public string Nome { get; set; }
+		[Required(ErrorMessage = "Informe o Nome completo")]
+		[StringLength(70)]
+		[RegularExpression(@"^[a-zA-Z]+[ a-zA-Z-_]*$", ErrorMessage = "Somente letras, por favor")]
+		public string Nome { get; set; }
 
-        public int? Matricula { get; set; }
+		public int? Matricula { get; set; }
 
 		[Display(Name = "Foto")]
 		[StringLength(200)]
@@ -28,5 +28,6 @@ namespace StayFit.Models
 		public string CPF { get; set; }
 		public TypeUser TipoUsuario { get; set; }
 		public Cliente? Cliente { get; set; }
+		public Instrutor? Instrutor{get;set;}
 		}
 }

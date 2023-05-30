@@ -18,6 +18,11 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4 {
     line-height: 1.5em;
 }
 
+.bg-teste {
+    background: #ff0000;
+    background-image: url("https://www.searchenginejournal.com/wp-content/uploads/2022/06/image-search-1600-x-840-px-62c6dc4ff1eee-sej.png");
+    background-size: cover;
+}
 
 p {
     font-size: 15px;
@@ -787,3 +792,36 @@ footer {
     height: 31px;
 }
 
+.box-start {
+    width: 100%;
+    margin: 0 auto;
+    width: 100%;
+    height: 120px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+    .box-start .box {
+        display: flex;
+        flex-direction: row;
+        border: 1px solid #cbcbcb;
+        width: 95%;
+        height: 120px;
+        justify-content: space-between;
+        align-items: center;
+        padding-left: 50px;
+        padding-right: 50px;
+        margin-bottom: 50px;
+        margin-top: 50px;
+    }
+.box-star .box-col{
+    width:100%;
+    height:100%;
+    padding:20px 50px 20px 50px;
+}
+
+ .watch{
+    width:65px;
+    height:65px;
+}
