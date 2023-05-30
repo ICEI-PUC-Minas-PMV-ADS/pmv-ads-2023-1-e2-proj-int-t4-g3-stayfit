@@ -1,0 +1,647 @@
+﻿@model StayFit.Models.Avaliacao
+
+@{
+    ViewData["Title"] = "Avaliacao";
+}
+
+
+<div class="wrapper">
+
+
+    <div class="body-overlay"></div>
+
+    <!-- Sidebar  -->
+    <partial name="_SideMenu" />
+
+
+
+    <!-- Page Content  -->
+    <div id="content">
+
+        <partial name="_Header" />
+
+        <div class="main-content">
+
+
+
+            <div class="row">
+                <div class="col-lg-12 col-md-12">
+                    <div class="card" style="min-height: 485px">
+                        <div class="card-header card-header-text">
+                            <h3 class="card-title">Avaliação Física do Cliente NOME DO CLIENTE</h3>
+                            <p class="category">
+                                <hr />
+                            </p>
+                        </div>
+                        <div class="card-content table-responsive">
+                       
+
+                            <nav>
+                                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                                    <a class="nav-item nav-link active" id="nav-dom-tab" data-toggle="tab" href="#nav-dom" role="tab" aria-controls="nav-dom" aria-selected="true">Anamnese</a>
+                                    <a class="nav-item nav-link" id="nav-seg-tab" data-toggle="tab" href="#nav-seg" role="tab" aria-controls="nav-seg" aria-selected="false">Medidas</a>
+                                    <a class="nav-item nav-link" id="nav-ter-tab" data-toggle="tab" href="#nav-ter" role="tab" aria-controls="nav-ter" aria-selected="false">Avaliação Física</a>
+                                   
+                                 
+                                </div>
+                            </nav>
+                            <div class="tab-content" id="nav-tabContent">
+                                <div class="tab-pane fade show active" id="nav-dom" role="tabpanel" aria-labelledby="nav-dom-tab">
+
+                                    <div class="row m-2 bg-teste">
+                                        <div class="col-md-6 pb-5">
+
+                                            <div class="row">
+                                                <div class="col-sm-2">
+                                                    <div class="form-group">
+                                                        <label asp-for="Peso"  class="control-label"></label>
+                                                        <input asp-for="Peso" id="Peso" class="form-control" />
+                                                        <span asp-validation-for="Peso" class="text-danger"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-2">
+                                                    <div class="form-group">
+                                                        <label asp-for="Altura" class="control-label"></label>
+                                                        <input asp-for="Altura" id="Altura" class="form-control" />
+                                                        <span asp-validation-for="Altura" class="text-danger"></span>
+                                                    </div>
+                                                </div>
+
+
+                                                <table class="table">
+                                                   
+                                                    <tbody>
+                                                        <tr>
+                                                            <th scope="row"> Pratica Alguma atividade física?</th>
+                                                          
+                                                            <td>
+                                                                <div class="form-group">                                                                    
+                                                                    <input type="checkbox" id="IsPraticante" class="form-control" />
+                                                                    <span asp-validation-for="IsPraticante" class="text-danger"></span>
+                                                                </div>
+                                                            </td>
+                                                            
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">Faz uso de medicamentos?</th>
+                                                            <td>
+                                                                <input type="checkbox" id="IsTomaMedicamentos" class="form-control" />
+                                                                <span asp-validation-for="IsTomaMedicamentos" class="text-danger"></span>
+                                                            </td>                                                           
+                                                        </tr>
+
+                                                        <tr>
+                                                            <th scope="row">Quais?</th>
+                                                            <td>
+                                                                <div class="form-group">                                                                   
+                                                                    @Html.TextAreaFor(m => m.Medicamentos, 3, 10, new { id="Medicamentos", @class = "form-control" })
+                                                                    <span asp-validation-for="Medicamentos" class="text-danger"></span>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+
+                                                        <tr>
+                                                            <th scope="row">É fumante?</th>
+                                                            <td>
+                                                                <div class="form-group">                                                                  
+                                                                    <input type="checkbox" id="IsFumante" class="form-control" />
+                                                                    <span asp-validation-for="IsFumante" class="text-danger"></span>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+
+
+                                                        <tr>
+                                                            <th scope="row">Tem algum problema de saúde?</th>
+                                                            <td>
+                                                                <div class="form-group">
+                                                                    <input type="checkbox" id="IsProblemaSaude" class="form-control" />
+                                                                    <span asp-validation-for="IsProblemaSaude" class="text-danger"></span>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+
+                                                         <tr>
+                                                            <th scope="row">Qual problema de saúde?</th>
+                                                            <td>
+                                                               <div class="form-group">                                                                
+                                                                   @Html.TextAreaFor(m => m.ProblemaSaude, 5, 10, new {id="ProblemaSaude", @class = "form-control" })
+                                                                    <span asp-validation-for="ProblemaSaude" class="text-danger"></span>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+
+                                                        
+
+                                                        <tr>
+                                                            <th scope="row">É deficiente?</th>
+                                                            <td>
+                                                                <div class="form-group">
+                                                                    <input type="checkbox" id="IsDeficiente" class="form-control" />
+                                                                    <span asp-validation-for="IsDeficiente" class="text-danger"></span>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        
+                                                    </tbody>
+                                                </table>
+
+
+                                              
+                                            </div>
+
+                                        </div>
+                                        <div class="col-md-6 pb-5">
+                                                                                            
+                                                <div class="form-group">
+                                                    <label asp-for="Objetivos" class="control-label"></label>
+                                                @Html.TextAreaFor(m => m.Objetivos, 5, 10, new {id="Objetivos", @class = "form-control" })
+                                                    <span asp-validation-for="Objetivos" class="text-danger"></span>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label asp-for="Observacoes" class="control-label"></label>
+                                                @Html.TextAreaFor(m => m.Observacoes, 5, 10, new {id="Observacoes", @class = "form-control" })
+                                                    <span asp-validation-for="Observacoes" class="text-danger"></span>
+                                                </div>
+
+                                            <div class="form-group">
+                                                <label asp-for="Deficiencia" class="control-label"></label>
+                                                @Html.TextAreaFor(m => m.Deficiencia, 5, 10, new {id="Deficiencia", @class = "form-control" })
+                                                <span asp-validation-for="Deficiencia" class="text-danger"></span>
+                                            </div>
+                                                    <div>
+                                                          <button class="btn btn-outline-primary" onclick="updateAnamnese()" id="updateAnamnese">Atualizar Avaliação</button>
+                                                    </div>
+                                               
+                                           
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                                <!--Fim Tab-->
+                                <div class="tab-pane fade" id="nav-seg" role="tabpanel" aria-labelledby="nav-seg-tab">
+                                    <span>Circunferência </span>
+                                    <div class="row m-2">
+                                        <div class="col-md-4 pb-5">
+
+                                            <div class="row">
+                                                <div class="col-sm-3">
+                                                    <div class="form-group">
+                                                        <label asp-for="CircunferenciaBracoDir" class="control-label">Braço Dir</label>
+                                                        <input asp-for="CircunferenciaBracoDir" class="form-control" />
+                                                        <span asp-validation-for="CircunferenciaBracoDir" class="text-danger"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    <div class="form-group">
+                                                        <label asp-for="CircunferenciaBracoEsq" class="control-label">Braço Esq</label>
+                                                        <input asp-for="CircunferenciaBracoEsq" class="form-control" />
+                                                        <span asp-validation-for="CircunferenciaBracoEsq" class="text-danger"></span>
+                                                    </div>
+                                                </div>
+
+
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col-sm-3">
+                                                    <div class="form-group">
+                                                        <label asp-for="CircunferenciaAnteBracoDir" class="control-label">Antebraço Dir</label>
+                                                        <input asp-for="CircunferenciaAnteBracoDir" class="form-control" />
+                                                        <span asp-validation-for="CircunferenciaAnteBracoDir" class="text-danger"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    <div class="form-group">
+                                                        <label asp-for="CircunferenciaAnteBracoEsq" class="control-label">Antebraço Esq</label>
+                                                        <input asp-for="CircunferenciaAnteBracoEsq" class="form-control" />
+                                                        <span asp-validation-for="CircunferenciaAnteBracoEsq" class="text-danger"></span>
+                                                    </div>
+                                                </div>
+
+                                        </div>
+
+
+                                            <div class="row">
+                                                <div class="col-sm-3">
+                                                    <div class="form-group">
+                                                        <label asp-for="CircunferenciaCintura" class="control-label">Cintura</label>
+                                                        <input asp-for="CircunferenciaCintura" class="form-control" />
+                                                        <span asp-validation-for="CircunferenciaCintura" class="text-danger"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    <div class="form-group">
+                                                        <label asp-for="CircunferenciaAbdomen" class="control-label"> Abdômen</label>
+                                                        <input asp-for="CircunferenciaAbdomen" class="form-control" />
+                                                        <span asp-validation-for="CircunferenciaAbdomen" class="text-danger"></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col-sm-3">
+                                                    <div class="form-group">
+                                                        <label asp-for="CircunferenciaQuadril" class="control-label">Quadril</label>
+                                                        <input asp-for="CircunferenciaQuadril" class="form-control" />
+                                                        <span asp-validation-for="CircunferenciaQuadril" class="text-danger"></span>
+                                                    </div>
+                                                </div>              
+                                            </div>
+
+
+                                            <div class="row">
+                                                <div class="col-sm-3">
+                                                    <div class="form-group">
+                                                        <label asp-for="CircunferenciaCoxaDir" class="control-label">Coxa Dir.</label>
+                                                        <input asp-for="CircunferenciaCoxaDir" class="form-control" />
+                                                        <span asp-validation-for="CircunferenciaCoxaDir" class="text-danger"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    <div class="form-group">
+                                                        <label asp-for="CircunferenciaCoxaEsq" class="control-label"> Coxa Esq.</label>
+                                                        <input asp-for="CircunferenciaCoxaEsq" class="form-control" />
+                                                        <span asp-validation-for="CircunferenciaCoxaEsq" class="text-danger"></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="row">
+                                                <div class="col-sm-3">
+                                                    <div class="form-group">
+                                                        <label asp-for="CircunferenciaPernaDir" class="control-label">Perna Dir.</label>
+                                                        <input asp-for="CircunferenciaPernaDir" class="form-control" />
+                                                        <span asp-validation-for="CircunferenciaPernaDir" class="text-danger"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    <div class="form-group">
+                                                        <label asp-for="CircunferenciaPernaEsq" class="control-label"> Perna Esq.</label>
+                                                        <input asp-for="CircunferenciaPernaEsq" class="form-control" />
+                                                        <span asp-validation-for="CircunferenciaPernaEsq" class="text-danger"></span>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+
+                                </div>
+
+                                        <div class="col-md-4 pb-5">
+
+                                            <div class="row">
+                                                <div class="col-sm-3">
+                                                    <div class="form-group">
+                                                        <label asp-for="PercentualGordura" class="control-label">Percentual de Gordura</label>
+                                                        <input asp-for="PercentualGordura" class="form-control" />
+                                                        <span asp-validation-for="PercentualGordura" class="text-danger"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    <div class="form-group">
+                                                        <label asp-for="MassaMagra" class="control-label"> Massa Magra</label>
+                                                        <input asp-for="MassaMagra" class="form-control" />
+                                                        <span asp-validation-for="MassaMagra" class="text-danger"></span>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                             <div class="row">
+                                                <div class="col-sm-3">
+                                                    <div class="form-group">
+                                                        <label asp-for="MassaGorda" class="control-label">Massa Gorda</label>
+                                                        <input asp-for="MassaGorda" class="form-control" />
+                                                        <span asp-validation-for="MassaGorda" class="text-danger"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    <div class="form-group">
+                                                        <label asp-for="MassaMuscular" class="control-label"> Massa Muscular</label>
+                                                        <input asp-for="MassaMuscular" class="form-control" />
+                                                        <span asp-validation-for="MassaMuscular" class="text-danger"></span>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                             <div class="row">
+                                                <div class="col-sm-3">
+                                                    <div class="form-group">
+                                                        <label asp-for="MassaOssea" class="control-label">Massa Ossea</label>
+                                                        <input asp-for="MassaOssea" class="form-control" />
+                                                        <span asp-validation-for="MassaOssea" class="text-danger"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    <div class="form-group">
+                                                        <label asp-for="MassaResidual" class="control-label"> Massa Residual</label>
+                                                        <input asp-for="MassaResidual" class="form-control" />
+                                                        <span asp-validation-for="MassaResidual" class="text-danger"></span>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+
+                                            <div>
+                                                <button class="btn btn-outline-primary" type="submit" id="sendMessageButton">Atualizar</button>
+                                            </div>
+
+                                        </div>
+                                        </div>
+
+
+                             </div>
+
+
+                                    <!--Fim Tab-->
+                                    <div class="tab-pane fade" id="nav-ter" role="tabpanel" aria-labelledby="nav-ter-tab">
+                                        <span>Circunferência </span>
+                                        <div class="row m-2">
+                                            <div class="col-md-7 pb-5">
+
+                                                <div class="row">
+                                                    <div class="col-sm-3">
+                                                        <div class="form-group">
+                                                        <label asp-for="FrecCardRepouso" class="control-label">Frequência Cardiaca em Repouso</label>
+                                                            <input asp-for="CircunferenciaBracoDir" class="form-control" />
+                                                            <span asp-validation-for="CircunferenciaBracoDir" class="text-danger"></span>
+                                                        </div>
+                                                    </div>
+                                                   
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="col-sm-3">
+                                                        <div class="form-group">
+                                                            <label asp-for="FrecCardM1" class="control-label">Frequência Cardiaca Primeiro Momento</label>
+                                                        <input asp-for="FrecCardM1" class="form-control" />
+                                                        <span asp-validation-for="FrecCardM1" class="text-danger"></span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-3">
+                                                        <div class="form-group">
+                                                        <label asp-for="FrecCardM2" class="control-label">Frequência Cardiaca Segundo Momento</label>
+                                                        <input asp-for="FrecCardM2" class="form-control" />
+                                                        <span asp-validation-for="FrecCardM2" class="text-danger"></span>
+                                                        </div>
+                                                    </div>
+
+                                                <div class="col-sm-3">
+                                                    <div class="form-group">
+                                                        <label asp-for="FrecCardM3" class="control-label">Frequência Cardiaca Terceiro Momento</label>
+                                                        <input asp-for="FrecCardM3" class="form-control" />
+                                                        <span asp-validation-for="FrecCardM3" class="text-danger"></span>
+                                                    </div>
+                                                </div>
+                                                </div>
+
+
+                                                <div class="row">
+                                                    <div class="col-sm-4">
+                                                        <div class="form-group">
+                                                        <label asp-for="FrecCardMaxima" class="control-label">Frequência Cardiaca Máxima</label>
+                                                        <input asp-for="FrecCardMaxima" class="form-control" />
+                                                        <span asp-validation-for="FrecCardMaxima" class="text-danger"></span>
+                                                        </div>
+                                                    </div>                                                   
+                                                </div>
+
+                                            <div class="row">
+                                                <div class="col-sm-3">
+                                                    <div class="form-group">
+                                                        <label asp-for="VoMax" class="control-label"> VoMax</label>
+                                                        <input asp-for="VoMax" class="form-control" />
+                                                        <span asp-validation-for="VoMax" class="text-danger"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <div class="form-group">
+                                                        <label asp-for="TempoEsteira" class="control-label">Tempo na Esteira</label>
+                                                        <input asp-for="TempoEsteira" class="form-control" />
+                                                        <span asp-validation-for="TempoEsteira" class="text-danger"></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                                </div>
+
+
+
+
+                                            </div>
+
+                                            <div class="col-md-4 pb-5">
+
+                                               @* <div class="row">
+                                                    <div class="col-sm-3">
+                                                        <div class="form-group">
+                                                            <label asp-for="PercentualGordura" class="control-label">Percentual de Gordura</label>
+                                                            <input asp-for="PercentualGordura" class="form-control" />
+                                                            <span asp-validation-for="PercentualGordura" class="text-danger"></span>
+                                                        </div>
+                                                    </div>
+                                                   *@
+
+                                                <div>
+                                                    <button class="btn btn-outline-primary" type="submit" id="sendMessageButton">Atualizar</button>
+                                                </div>
+
+
+                                            </div>
+
+
+                                        </div>
+
+
+                            </div>
+
+
+               @* <form asp-action="Avaliacao">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                   
+                    <div class="row">
+                           
+                           
+                           
+                            <div class="form-group">
+                                <label asp-for="IsProblemaSaude" class="control-label"></label>
+                                <input asp-for="IsProblemaSaude" class="form-control" />
+                                <span asp-validation-for="IsProblemaSaude" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="ProblemaSaude" class="control-label"></label>
+                                <input asp-for="ProblemaSaude" class="form-control" />
+                                <span asp-validation-for="ProblemaSaude" class="text-danger"></span>
+                            </div>
+                           
+                            <div class="form-group">
+                                <label asp-for="IsDeficiente" class="control-label"></label>
+                                <input asp-for="IsDeficiente" class="form-control" />
+                                <span asp-validation-for="IsDeficiente" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Deficiencia" class="control-label"></label>
+                                <input asp-for="Deficiencia" class="form-control" />
+                                <span asp-validation-for="Deficiencia" class="text-danger"></span>
+                            </div>
+                           
+                            </div>
+                              <div class="col-lg-6 col-md-5">
+
+                                            <div class="form-group">
+                                                <label asp-for="Objetivos" class="control-label"></label>
+                                                @Html.TextAreaFor(m => m.Objetivos, 5, 10, new { @class = "form-control" })
+                                                <span asp-validation-for="Objetivos" class="text-danger"></span>
+                                            </div>
+
+                                        <div class="form-group">
+                                            <label asp-for="Observacoes" class="control-label"></label>
+                                            @Html.TextAreaFor(m => m.Observacoes, 5, 10, new { @class = "form-control" })
+                                            <span asp-validation-for="Observacoes" class="text-danger"></span>
+                                        </div>
+                                        </div>
+
+                              </div>
+
+                    <div class="form-group">
+                        <label asp-for="CircunferenciaBracoDir" class="control-label"></label>
+                        <input asp-for="CircunferenciaBracoDir" class="form-control" />
+                        <span asp-validation-for="CircunferenciaBracoDir" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="CircunferenciaBracoEsq" class="control-label"></label>
+                        <input asp-for="CircunferenciaBracoEsq" class="form-control" />
+                        <span asp-validation-for="CircunferenciaBracoEsq" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="CircunferenciaAntiBracoDir" class="control-label"></label>
+                        <input asp-for="CircunferenciaAntiBracoDir" class="form-control" />
+                        <span asp-validation-for="CircunferenciaAntiBracoDir" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="CircunferenciaAntiBracoEsq" class="control-label"></label>
+                        <input asp-for="CircunferenciaAntiBracoEsq" class="form-control" />
+                        <span asp-validation-for="CircunferenciaAntiBracoEsq" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="CircunferenciaAbdomen" class="control-label"></label>
+                        <input asp-for="CircunferenciaAbdomen" class="form-control" />
+                        <span asp-validation-for="CircunferenciaAbdomen" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="CircunferenciaQuadril" class="control-label"></label>
+                        <input asp-for="CircunferenciaQuadril" class="form-control" />
+                        <span asp-validation-for="CircunferenciaQuadril" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="CircunferenciaCintura" class="control-label"></label>
+                        <input asp-for="CircunferenciaCintura" class="form-control" />
+                        <span asp-validation-for="CircunferenciaCintura" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="CircunferenciaCoxaEsq" class="control-label"></label>
+                        <input asp-for="CircunferenciaCoxaEsq" class="form-control" />
+                        <span asp-validation-for="CircunferenciaCoxaEsq" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="CircunferenciaCoxaDir" class="control-label"></label>
+                        <input asp-for="CircunferenciaCoxaDir" class="form-control" />
+                        <span asp-validation-for="CircunferenciaCoxaDir" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="CircunferenciaPernaEsq" class="control-label"></label>
+                        <input asp-for="CircunferenciaPernaEsq" class="form-control" />
+                        <span asp-validation-for="CircunferenciaPernaEsq" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="CircunferenciaPernaDir" class="control-label"></label>
+                        <input asp-for="CircunferenciaPernaDir" class="form-control" />
+                        <span asp-validation-for="CircunferenciaPernaDir" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="PercentualGordura" class="control-label"></label>
+                        <input asp-for="PercentualGordura" class="form-control" />
+                        <span asp-validation-for="PercentualGordura" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="MassMagra" class="control-label"></label>
+                        <input asp-for="MassMagra" class="form-control" />
+                        <span asp-validation-for="MassMagra" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="MassaGorda" class="control-label"></label>
+                        <input asp-for="MassaGorda" class="form-control" />
+                        <span asp-validation-for="MassaGorda" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="MassaMuscular" class="control-label"></label>
+                        <input asp-for="MassaMuscular" class="form-control" />
+                        <span asp-validation-for="MassaMuscular" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="MassaOssea" class="control-label"></label>
+                        <input asp-for="MassaOssea" class="form-control" />
+                        <span asp-validation-for="MassaOssea" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="MassaResidual" class="control-label"></label>
+                        <input asp-for="MassaResidual" class="form-control" />
+                        <span asp-validation-for="MassaResidual" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="FrecCardRepouso" class="control-label"></label>
+                        <input asp-for="FrecCardRepouso" class="form-control" />
+                        <span asp-validation-for="FrecCardRepouso" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="FrecCardM1" class="control-label"></label>
+                        <input asp-for="FrecCardM1" class="form-control" />
+                        <span asp-validation-for="FrecCardM1" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="FrecCardM2" class="control-label"></label>
+                        <input asp-for="FrecCardM2" class="form-control" />
+                        <span asp-validation-for="FrecCardM2" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="FrecCardM3" class="control-label"></label>
+                        <input asp-for="FrecCardM3" class="form-control" />
+                        <span asp-validation-for="FrecCardM3" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="FrecCardMaxima" class="control-label"></label>
+                        <input asp-for="FrecCardMaxima" class="form-control" />
+                        <span asp-validation-for="FrecCardMaxima" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="VoMax" class="control-label"></label>
+                        <input asp-for="VoMax" class="form-control" />
+                        <span asp-validation-for="VoMax" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="TempoEsteira" class="control-label"></label>
+                        <input asp-for="TempoEsteira" class="form-control" />
+                        <span asp-validation-for="TempoEsteira" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Create" class="btn btn-primary" />
+                    </div>
+                </form>*@
+
+
+            </div>
+                    </div>
+                </div>
+</div>
+
+
+@section Scripts {
+    <script src="@Url.Content("~/js/Avaliacao.js")"></script>
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

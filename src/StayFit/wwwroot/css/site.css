@@ -73,3 +73,7 @@ html {
     background: #ff0000;
     z-index: 1;
 }
+
+.bg-teste {
+    background-image: url(~/site-imagens/bg-teste.png);
+}

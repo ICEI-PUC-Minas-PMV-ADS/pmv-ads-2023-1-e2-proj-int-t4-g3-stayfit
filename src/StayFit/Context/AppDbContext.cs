@@ -16,7 +16,9 @@ namespace StayFit.Context
         public DbSet<Ficha> Ficha { get; set; }
         public DbSet<Instrutor> Instrutores { get; set; }
         public DbSet<Usuario> Usuarios { get; set; }
-         
+        public DbSet<Contato> Contatos { get; set; }
+        public DbSet<Avaliacao> Avaliacoes { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);

@@ -58,8 +58,9 @@ namespace StayFit
             services.AddTransient<IFichaRepository,FichaRepository>();
             services.AddTransient<ILoginRepository, LoginRepository>();
             services.AddTransient<IUsuarioRepository, UsuarioRepository>();
+            services.AddTransient<IAvalicaoFisicaRepository, AvalicaoFisicaRepository>();
             //services.AddScoped<StayFit.helpers.Interfaces.ISession, Session>();
-			services.AddSingleton<IHostEnvironment, HostingEnvironment>();
+            services.AddSingleton<IHostEnvironment, HostingEnvironment>();
             services.AddControllersWithViews();
 
             services.AddIdentity<ApplicationUser, IdentityRole>()

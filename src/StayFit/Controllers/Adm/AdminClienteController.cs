@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using StayFit.Context;
 using StayFit.Models;
 using StayFit.Repositories.Interfaces;
@@ -37,14 +38,17 @@ namespace StayFit.Controllers.Adm
         {
             if(ModelState.IsValid)
             {
-                var user = _userManager.Users.FirstOrDefault(u => u.CPF == cliente.CPF);
+                var user = await _userManager.Users.FirstOrDefaultAsync(u => u.CPF == cliente.CPF);
                 if (user != null)
                 {
                     user.Matricula = cliente.Matricula;
                     user.Cliente = cliente;
                     await _userManager.UpdateAsync(user);
                 }
-                //_clienteRepository.CreateClient(cliente);
+                else
+                {
+                    _clienteRepository.CreateClient(cliente);
+                }
                 IEnumerable<Cliente> clientes = _clienteRepository.Clientes;
                
                 return View("~/Views/Admin/Admin/AdminCliente/ListClient.cshtml", clientes);

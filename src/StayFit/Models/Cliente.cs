@@ -11,7 +11,7 @@ namespace StayFit.Models
         {
             Pontuacao = 0;
             Fichas = new List<Ficha>(); 
-            Foto= "/site-imagens/user.png";
+            NumeroDeTreinos = 0;
         }
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ClienteId { get; set; }
@@ -36,18 +36,32 @@ namespace StayFit.Models
         public string CPF { get; set; }
         public Sexo Sexo { get; set; }
 
-        [Display(Name = "Foto")]
-        [StringLength(200)]
-        public string? Foto { get; set; }
+        [DataType(DataType.Date)]
+        [Display(Name = "Data de Nascimento")]
+        public DateTime? DataNascimento { get; set; }
 
         [DataType(DataType.PhoneNumber)]
         [Display(Name ="Telefone")]
         [StringLength(15)]
         public string Telefone { get; set; }
 
-        [Display(Name = "Pontuação")]
+      
         public int? Pontuacao { get; set; }
+        public int NumeroDeTreinos { get; set; }
+       
+        [Required(ErrorMessage = "Informe o Nome o Endereço do Cliente")]
+        [StringLength(70)]
+        [Display(Name = "Endereço")]
+        public String Endereco { get; set; }
 
+        [Required(ErrorMessage = "Informe o Bairro do Cliente")]
+        [StringLength(30)]
+        [Display(Name = "Bairro")]
+        public string Bairro { get; set; }
+
+        [Required(ErrorMessage = "Informe o Nome o Número da residencia do Cliente")]
+        [Display(Name = "Número")]
+        public int Numero { get; set; }
         public IEnumerable<Ficha>? Fichas { get; set; }       
 
 

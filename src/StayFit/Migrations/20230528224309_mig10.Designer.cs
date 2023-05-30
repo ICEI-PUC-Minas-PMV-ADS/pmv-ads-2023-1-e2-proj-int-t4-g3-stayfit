@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using StayFit.Context;
 
@@ -11,9 +12,11 @@ using StayFit.Context;
 namespace StayFit.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230528224309_mig10")]
+    partial class mig10
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -257,61 +260,49 @@ namespace StayFit.Migrations
                     b.Property<float>("Altura")
                         .HasColumnType("real");
 
-                    b.Property<float?>("CircunferenciaAbdomen")
+                    b.Property<float>("CircunferenciaAbdomen")
                         .HasColumnType("real");
 
-                    b.Property<float?>("CircunferenciaAnteBracoDir")
+                    b.Property<float>("CircunferenciaAntiBracoDir")
                         .HasColumnType("real");
 
-                    b.Property<float?>("CircunferenciaAnteBracoEsq")
+                    b.Property<float>("CircunferenciaAntiBracoEsq")
                         .HasColumnType("real");
 
-                    b.Property<float?>("CircunferenciaBracoDir")
+                    b.Property<float>("CircunferenciaBracoDir")
                         .HasColumnType("real");
 
-                    b.Property<float?>("CircunferenciaBracoEsq")
+                    b.Property<float>("CircunferenciaBracoEsq")
                         .HasColumnType("real");
 
-                    b.Property<float?>("CircunferenciaCintura")
+                    b.Property<float>("CircunferenciaCintura")
                         .HasColumnType("real");
 
-                    b.Property<float?>("CircunferenciaCoxaDir")
+                    b.Property<float>("CircunferenciaCoxaDir")
                         .HasColumnType("real");
 
-                    b.Property<float?>("CircunferenciaCoxaEsq")
+                    b.Property<float>("CircunferenciaCoxaEsq")
                         .HasColumnType("real");
 
-                    b.Property<float?>("CircunferenciaPernaDir")
+                    b.Property<float>("CircunferenciaPernaDir")
                         .HasColumnType("real");
 
-                    b.Property<float?>("CircunferenciaPernaEsq")
+                    b.Property<float>("CircunferenciaPernaEsq")
                         .HasColumnType("real");
 
-                    b.Property<float?>("CircunferenciaQuadril")
+                    b.Property<float>("CircunferenciaQuadril")
                         .HasColumnType("real");
 
-                    b.Property<DateTime>("DataAvaliacao")
-                        .HasColumnType("datetime2");
+                    b.Property<string>("Cirurgia")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Deficiencia")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("FrecCardM1")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("FrecCardM2")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("FrecCardM3")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("FrecCardMaxima")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("FrecCardRepouso")
-                        .HasColumnType("int");
-
                     b.Property<bool?>("IsDeficiente")
+                        .HasColumnType("bit");
+
+                    b.Property<bool?>("IsFezCirurgia")
                         .HasColumnType("bit");
 
                     b.Property<bool?>("IsFumante")
@@ -326,32 +317,13 @@ namespace StayFit.Migrations
                     b.Property<bool?>("IsTomaMedicamentos")
                         .HasColumnType("bit");
 
-                    b.Property<float?>("MassaGorda")
-                        .HasColumnType("real");
-
-                    b.Property<float?>("MassaMagra")
-                        .HasColumnType("real");
-
-                    b.Property<float?>("MassaMuscular")
-                        .HasColumnType("real");
-
-                    b.Property<float?>("MassaOssea")
-                        .HasColumnType("real");
-
-                    b.Property<float?>("MassaResidual")
-                        .HasColumnType("real");
-
                     b.Property<string>("Medicamentos")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Objetivos")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Observacoes")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<float?>("PercentualGordura")
+                    b.Property<float>("PercentualGordura")
                         .HasColumnType("real");
 
                     b.Property<float>("Peso")
@@ -359,12 +331,6 @@ namespace StayFit.Migrations
 
                     b.Property<string>("ProblemaSaude")
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<float?>("TempoEsteira")
-                        .HasColumnType("real");
-
-                    b.Property<float?>("VoMax")
-                        .HasColumnType("real");
 
                     b.HasKey("AvaliacaoId");
 

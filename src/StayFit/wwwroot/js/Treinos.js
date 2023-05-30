@@ -1,4 +1,4 @@
-﻿alert("       ");
+﻿
 document.getElementById("enviarTreino").addEventListener("click", enviar);
 document.getElementById("addTreino").addEventListener("click", adicionarLista);
 
