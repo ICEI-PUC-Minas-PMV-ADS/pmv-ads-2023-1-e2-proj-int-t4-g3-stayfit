@@ -45,16 +45,36 @@
                     <select asp-for="Sexo" class="form-control" asp-items="Html.GetEnumSelectList<Sexo>()"></select>
                     <span asp-validation-for="Sexo" class="text-danger"></span>
                 </div>
-                <div class="form-group">
-                    <label asp-for="Foto" class="control-label"></label>
-                    <input asp-for="Foto" class="form-control" />
-                    <span asp-validation-for="Foto" class="text-danger"></span>
-                </div>
+
+                    <div class="form-group">
+                        <label asp-for="DataNascimento" class="control-label"></label>
+                        <input asp-for="DataNascimento" class="form-control" />
+                        <span asp-validation-for="DataNascimento" class="text-danger"></span>
+                    </div>
+               
                 <div class="form-group">
                     <label asp-for="Telefone" class="control-label"></label>
                     <input asp-for="Telefone" class="form-control" />
                     <span asp-validation-for="Telefone" class="text-danger"></span>
                 </div>
+
+                    <div class="form-group">
+                        <label asp-for="Endereco" class="control-label"></label>
+                        <input asp-for="Endereco" class="form-control" />
+                        <span asp-validation-for="Endereco" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Bairro" class="control-label"></label>
+                        <input asp-for="Bairro" class="form-control" />
+                        <span asp-validation-for="Bairro" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Numero" class="control-label"></label>
+                        <input asp-for="Numero" class="form-control" />
+                        <span asp-validation-for="Numero" class="text-danger"></span>
+                    </div>
                
                 <br />
                 <div class="form-group">

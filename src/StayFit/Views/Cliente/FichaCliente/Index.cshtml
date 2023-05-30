@@ -1,7 +1,7 @@
 ﻿@model ClienteFichaViewModel
 
 <!-- Sidebar  -->
-<partial name="_SideMenu" />
+<partial name="_UserSideMenu" for="@Model.Usuario" />
 
 
 
@@ -15,92 +15,303 @@
             <div class="col-lg-12 col-md-12">
                 <div class="card" style="min-height: 485px">
                     <div class="card-header card-header-text">
-                        <h2 class="card-title">@Model.cliente.Nome</h2>
-                        <p class="category">Matricula: @Model.cliente.Matricula</p>
+                        <h2 class="card-title">@Model.Usuario.Nome</h2>
+                            @if(@Model.Usuario.Matricula != null){
+                             <p class="category">Matricula: @Model.Usuario.Matricula</p>
+                            }
+                    </div>
+                    <div class="box-start">
+                        <div class="box">
+                                <div class="box-col">
+                                <img class="watch"  src="~/site-imagens/watch.jpg" style="width:65px" />
+                            </div>
+                            <div class ="box-col">
+                                    <span>Próximo Treino:</span>
+                                     <span>Terça</span>
+                                 </div>
+                            <div class="box-col">
+                                <button class="btn btn-primary">
+                                    <img src="~/site-imagens/next.png" />
+                                    <span> Iniciar Treino</span></button>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="card-content table-responsive">
                         <table class="table">
                             <thead class="text-primary">
-                                 <tr>
+                                @* <tr>
                                     <th></th>
                                     <th>Exercício</th>
                                     <th>Repetições</th>
                                     <th>Series</th>
-                                </tr>
+                                </tr>*@
+
+                               
                             </thead>
                             <tbody>
 
                                 
                                 <nav>
                                     <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                                        <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Segunda</a>
-                                        <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Terça</a>
-                                        <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Quarta</a>
+                                        <a class="nav-item nav-link active" id="nav-dom-tab" data-toggle="tab" href="#nav-dom" role="tab" aria-controls="nav-dom" aria-selected="true">Domingo</a>
+                                        <a class="nav-item nav-link" id="nav-seg-tab" data-toggle="tab" href="#nav-seg" role="tab" aria-controls="nav-seg" aria-selected="false">Segunda</a>
+                                        <a class="nav-item nav-link" id="nav-ter-tab" data-toggle="tab" href="#nav-ter" role="tab" aria-controls="nav-ter" aria-selected="false">Terça</a>
+                                        <a class="nav-item nav-link" id="nav-qua-tab" data-toggle="tab" href="#nav-qua" role="tab" aria-controls="nav-qua" aria-selected="false">Quarta</a>
+                                        <a class="nav-item nav-link" id="nav-qui-tab" data-toggle="tab" href="#nav-qui" role="tab" aria-controls="nav-qui" aria-selected="false">Quinta</a>
+                                        <a class="nav-item nav-link" id="nav-sex-tab" data-toggle="tab" href="#nav-sex" role="tab" aria-controls="nav-sex" aria-selected="false">Sexta</a>
+                                        <a class="nav-item nav-link" id="nav-sab-tab" data-toggle="tab" href="#nav-sab" role="tab" aria-controls="nav-sab" aria-selected="false">Sabado</a>
+                                     
                                     </div>
                                 </nav>
                                 <div class="tab-content" id="nav-tabContent">
-                                    <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                                    <div class="tab-pane fade show active" id="nav-dom" role="tabpanel" aria-labelledby="nav-dom-tab">
+                                       
                                         @foreach (Ficha ficha in Model.fichas)
                                         {
-
-                                            if(ficha.DiaSemana == DiaSemana.Segunda){
-                                            <div class="card-header card-header-text">
-                                                <h4 class="card-title">@ficha.NomeAtividade - @ficha.DiaSemana</h4>
-                                            </div>
-                                               @* foreach (Treino treino in ficha.Treinos)
+                                            if (ficha.DiaSemana == DiaSemana.Domingo)
+                                            {
+                                                <div class="card-header card-header-text">
+                                                    <h4 class="card-title">@ficha.NomeAtividade - @ficha.DiaSemana</h4>
+                                                </div>
+                                                <div class="row m-1">
+                                                    <div class="col-lg-1 col-md-0 col-sm-0">
+                                                        Exercicio
+                                                    </div>
+                                                    <div class="col-sm">
+                                                        Nome Exercicio
+                                                    </div>
+                                                    <div class="col-sm">
+                                                        Número de Repetições
+                                                    </div>
+                                                    <div class="col-sm">
+                                                        Número de Series
+                                                    </div>
+                                                </div>
+                                                 foreach (Treino treino in ficha.Treinos)
                                                 {
-                                                    <partial name="_Exercicio" for="@treino" />                                               
-                                                }*@
+                                                     <partial name="_Exercicio" for="@treino" />
+                                                }
                                             }
 
                                         }
+                                       
                                     </div>
-                                    <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-
+                                    <div class="tab-pane fade" id="nav-seg" role="tabpanel" aria-labelledby="nav-seg-tab">
+                                        <div class="row m-1">
+                                            <div class="col-lg-1 col-md-0 col-sm-0">
+                                                Exercicio
+                                            </div>
+                                            <div class="col-sm">
+                                                Nome Exercicio
+                                            </div>
+                                            <div class="col-sm">
+                                                Número de Repetições
+                                            </div>
+                                            <div class="col-sm">
+                                                Número de Series
+                                            </div>
+                                        </div>
                                         @foreach (Ficha ficha in Model.fichas)
                                         {
+                                            if (ficha.DiaSemana == DiaSemana.Segunda)
+                                            {
+                                                <div class="card-header card-header-text">
+                                                    <h4 class="card-title">@ficha.NomeAtividade - @ficha.DiaSemana</h4>
+                                                </div>
+                                                foreach (Treino treino in ficha.Treinos)
+                                                {
+                                                    <partial name="_Exercicio" for="@treino" />
+                                                }
+                                            }
 
+                                        }
+
+                                    </div>
+                                    <div class="tab-pane fade" id="nav-ter" role="tabpanel" aria-labelledby="nav-ter-tab">
+                                        @foreach (Ficha ficha in Model.fichas)
+                                        {
                                             if (ficha.DiaSemana == DiaSemana.Terca)
                                             {
-                                            <div class="card-header card-header-text">
-                                                <h4 class="card-title">@ficha.NomeAtividade - @ficha.DiaSemana</h4>
-                                            </div>
-                                                @*foreach (Treino treino in ficha.Treinos)
+                                                <div class="card-header card-header-text">
+                                                    <h4 class="card-title">@ficha.NomeAtividade - @ficha.DiaSemana</h4>
+                                                </div>
+                                                <div class="row m-1">
+                                                    <div class="col-lg-1 col-md-0 col-sm-0">
+                                                        Exercicio
+                                                    </div>
+                                                    <div class="col-sm">
+                                                        Nome Exercicio
+                                                    </div>
+                                                    <div class="col-sm">
+                                                        Número de Repetições
+                                                    </div>
+                                                    <div class="col-sm">
+                                                        Número de Series
+                                                    </div>
+                                                </div>
+                                                foreach (Treino treino in ficha.Treinos)
                                                 {
+                                               
                                                     <partial name="_Exercicio" for="@treino" />
-                                                }*@
+                                                 
+                                                }
                                             }
 
                                         }
-
                                     </div>
-                                    <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+                                
 
-                                        @foreach (Ficha ficha in Model.fichas)
+                                <div class="tab-pane fade" id="nav-qua" role="tabpanel" aria-labelledby="nav-qua-tab">
+                                      
+                                    @foreach (Ficha ficha in Model.fichas)
+                                    {
+                                        if (ficha.DiaSemana == DiaSemana.Quarta)
                                         {
-
-                                            if (ficha.DiaSemana == DiaSemana.Quarta)
-                                            {
                                             <div class="card-header card-header-text">
                                                 <h4 class="card-title">@ficha.NomeAtividade - @ficha.DiaSemana</h4>
                                             </div>
-                                                @*foreach (Treino treino in ficha.Treinos)
-                                                {
-                                                    <partial name="_Exercicio" for="@treino" />
-                                                }*@
+                                                <div class="row m-1">
+                                                    <div class="col-lg-1 col-md-0 col-sm-0">
+                                                        Exercicio
+                                                    </div>
+                                                    <div class="col-sm">
+                                                        Nome Exercicio
+                                                    </div>
+                                                    <div class="col-sm">
+                                                        Número de Repetições
+                                                    </div>
+                                                    <div class="col-sm">
+                                                        Número de Series
+                                                    </div>
+                                                </div>
+                                            foreach (Treino treino in ficha.Treinos)
+                                            {
+                                                <partial name="_Exercicio" for="@treino" />
                                             }
-
                                         }
 
-                                    </div>
-                                </div>
+                                    }
 
+                                </div>
+                   
+
+                    <div class="tab-pane fade" id="nav-qui" role="tabpanel" aria-labelledby="nav-qui-tab">
+                                        <div class="row m-1">
+                                            <div class="col-lg-1 col-md-0 col-sm-0">
+                                                Exercicio
+                                            </div>
+                                            <div class="col-sm">
+                                                Nome Exercicio
+                                            </div>
+                                            <div class="col-sm">
+                                                Número de Repetições
+                                            </div>
+                                            <div class="col-sm">
+                                                Número de Series
+                                            </div>
+                                        </div>
+                        @foreach (Ficha ficha in Model.fichas)
+                        {
+                            if (ficha.DiaSemana == DiaSemana.Quinta)
+                            {
+                                <div class="card-header card-header-text">
+                                    <h4 class="card-title">@ficha.NomeAtividade - @ficha.DiaSemana</h4>
+                                </div>
+                                foreach (Treino treino in ficha.Treinos)
+                                {
+                                    <partial name="_Exercicio" for="@treino" />
+                                }
+                            }
+
+                        }
+
+                    </div>
+                 
+
+                <div class="tab-pane fade" id="nav-sex" role="tabpanel" aria-labelledby="nav-sex-tab">
+                                       
+                    @foreach (Ficha ficha in Model.fichas)
+                    {
+                        if (ficha.DiaSemana == DiaSemana.Sexta)
+                        {
+                            <div class="card-header card-header-text">
+                                <h4 class="card-title">@ficha.NomeAtividade - @ficha.DiaSemana</h4>
+                            </div>
+                                                <div class="row m-1">
+                                                    <div class="col-lg-1 col-md-0 col-sm-0">
+                                                        Exercicio
+                                                    </div>
+                                                    <div class="col-sm">
+                                                        Nome Exercicio
+                                                    </div>
+                                                    <div class="col-sm">
+                                                        Número de Repetições
+                                                    </div>
+                                                    <div class="col-sm">
+                                                        Número de Series
+                                                    </div>
+                                                </div>
+                            foreach (Treino treino in ficha.Treinos)
+                            {
+                                <partial name="_Exercicio" for="@treino" />
+                            }
+                        }
+
+                    }
+
+                </div>
+            
+
+            <div class="tab-pane fade" id="nav-sab" role="tabpanel" aria-labelledby="nav-sab-tab">
+                                        
+                @foreach (Ficha ficha in Model.fichas)
+                {
+                    if (ficha.DiaSemana == DiaSemana.Sabado)
+                    {
+                        <div class="card-header card-header-text">
+                            <h4 class="card-title">@ficha.NomeAtividade - @ficha.DiaSemana</h4>
+                        </div>
+                                                <div class="row m-1">
+                                                    <div class="col-lg-1 col-md-0 col-sm-0">
+                                                        Exercicio
+                                                    </div>
+                                                    <div class="col-sm">
+                                                        Nome Exercicio
+                                                    </div>
+                                                    <div class="col-sm">
+                                                        Número de Repetições
+                                                    </div>
+                                                    <div class="col-sm">
+                                                        Número de Series
+                                                    </div>
+                                                </div>
+                        foreach (Treino treino in ficha.Treinos)
+                        {
+                            <partial name="_Exercicio" for="@treino" />
+                        }
+                    }
+
+                }
+
+                                </div>
+                            </div>
                                
                             </tbody>
                         </table>
                     </div>
-
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
                 </div>
             </div>
 
@@ -116,8 +327,10 @@
             }
 
         }*@
-
+      
+      
       
 
     </div>
+
 </div>

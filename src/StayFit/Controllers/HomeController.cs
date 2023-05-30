@@ -18,12 +18,15 @@ namespace StayFit.Controllers
       
         public IActionResult Index()
         {
-            //if (User.Identity.IsAuthenticated == false)            
-            //  return RedirectToAction("Index", "Login");
+            if (User.Identity.IsAuthenticated == false)            
+              return RedirectToAction("Index", "Login");
 
             Usuario usuario = _usuarioRepository.GetUserByEmail(User.Identity.Name);
-            if(usuario!=null)
+            if(usuario!=null || usuario.TipoUsuario == TypeUser.Cliente)
              return View(usuario);
+
+            if(usuario != null || usuario.TipoUsuario == TypeUser.Instrutor)
+             return View("Instrutor", usuario);
 
             usuario.Nome = "Error";
             return View(usuario);

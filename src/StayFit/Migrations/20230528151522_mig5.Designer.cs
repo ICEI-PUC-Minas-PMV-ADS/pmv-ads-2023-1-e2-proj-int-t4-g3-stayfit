@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using StayFit.Context;
 
@@ -11,9 +12,11 @@ using StayFit.Context;
 namespace StayFit.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230528151522_mig5")]
+    partial class mig5
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -187,9 +190,6 @@ namespace StayFit.Migrations
                         .HasMaxLength(200)
                         .HasColumnType("nvarchar(200)");
 
-                    b.Property<int?>("InstrutorId")
-                        .HasColumnType("int");
-
                     b.Property<bool>("LockoutEnabled")
                         .HasColumnType("bit");
 
@@ -238,8 +238,6 @@ namespace StayFit.Migrations
 
                     b.HasIndex("ClienteId");
 
-                    b.HasIndex("InstrutorId");
-
                     b.HasIndex("NormalizedEmail")
                         .HasDatabaseName("EmailIndex");
 
@@ -251,131 +249,6 @@ namespace StayFit.Migrations
                     b.ToTable("AspNetUsers", (string)null);
                 });
 
-            modelBuilder.Entity("StayFit.Models.Avaliacao", b =>
-                {
-                    b.Property<int>("AvaliacaoId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("AvaliacaoId"));
-
-                    b.Property<float>("Altura")
-                        .HasColumnType("real");
-
-                    b.Property<float?>("CircunferenciaAbdomen")
-                        .HasColumnType("real");
-
-                    b.Property<float?>("CircunferenciaAnteBracoDir")
-                        .HasColumnType("real");
-
-                    b.Property<float?>("CircunferenciaAnteBracoEsq")
-                        .HasColumnType("real");
-
-                    b.Property<float?>("CircunferenciaBracoDir")
-                        .HasColumnType("real");
-
-                    b.Property<float?>("CircunferenciaBracoEsq")
-                        .HasColumnType("real");
-
-                    b.Property<float?>("CircunferenciaCintura")
-                        .HasColumnType("real");
-
-                    b.Property<float?>("CircunferenciaCoxaDir")
-                        .HasColumnType("real");
-
-                    b.Property<float?>("CircunferenciaCoxaEsq")
-                        .HasColumnType("real");
-
-                    b.Property<float?>("CircunferenciaPernaDir")
-                        .HasColumnType("real");
-
-                    b.Property<float?>("CircunferenciaPernaEsq")
-                        .HasColumnType("real");
-
-                    b.Property<float?>("CircunferenciaQuadril")
-                        .HasColumnType("real");
-
-                    b.Property<DateTime>("DataAvaliacao")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Deficiencia")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int?>("FrecCardM1")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("FrecCardM2")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("FrecCardM3")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("FrecCardMaxima")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("FrecCardRepouso")
-                        .HasColumnType("int");
-
-                    b.Property<bool?>("IsDeficiente")
-                        .HasColumnType("bit");
-
-                    b.Property<bool?>("IsFumante")
-                        .HasColumnType("bit");
-
-                    b.Property<bool?>("IsPraticante")
-                        .HasColumnType("bit");
-
-                    b.Property<bool?>("IsProblemaSaude")
-                        .HasColumnType("bit");
-
-                    b.Property<bool?>("IsTomaMedicamentos")
-                        .HasColumnType("bit");
-
-                    b.Property<float?>("MassaGorda")
-                        .HasColumnType("real");
-
-                    b.Property<float?>("MassaMagra")
-                        .HasColumnType("real");
-
-                    b.Property<float?>("MassaMuscular")
-                        .HasColumnType("real");
-
-                    b.Property<float?>("MassaOssea")
-                        .HasColumnType("real");
-
-                    b.Property<float?>("MassaResidual")
-                        .HasColumnType("real");
-
-                    b.Property<string>("Medicamentos")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Objetivos")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Observacoes")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<float?>("PercentualGordura")
-                        .HasColumnType("real");
-
-                    b.Property<float>("Peso")
-                        .HasColumnType("real");
-
-                    b.Property<string>("ProblemaSaude")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<float?>("TempoEsteira")
-                        .HasColumnType("real");
-
-                    b.Property<float?>("VoMax")
-                        .HasColumnType("real");
-
-                    b.HasKey("AvaliacaoId");
-
-                    b.ToTable("Avaliacoes");
-                });
-
             modelBuilder.Entity("StayFit.Models.Cliente", b =>
                 {
                     b.Property<int>("ClienteId")
@@ -384,28 +257,19 @@ namespace StayFit.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ClienteId"));
 
-                    b.Property<string>("Bairro")
-                        .IsRequired()
-                        .HasMaxLength(30)
-                        .HasColumnType("nvarchar(30)");
-
                     b.Property<string>("CPF")
                         .IsRequired()
                         .HasMaxLength(11)
                         .HasColumnType("nvarchar(11)");
-
-                    b.Property<DateTime?>("DataNascimento")
-                        .HasColumnType("datetime2");
 
                     b.Property<string>("Email")
                         .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.Property<string>("Endereco")
-                        .IsRequired()
-                        .HasMaxLength(70)
-                        .HasColumnType("nvarchar(70)");
+                    b.Property<string>("Foto")
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
 
                     b.Property<int?>("InstrutorId")
                         .HasColumnType("int");
@@ -419,12 +283,6 @@ namespace StayFit.Migrations
                         .IsRequired()
                         .HasMaxLength(70)
                         .HasColumnType("nvarchar(70)");
-
-                    b.Property<int>("Numero")
-                        .HasColumnType("int");
-
-                    b.Property<int>("NumeroDeTreinos")
-                        .HasColumnType("int");
 
                     b.Property<int?>("Pontuacao")
                         .HasColumnType("int");
@@ -651,9 +509,6 @@ namespace StayFit.Migrations
                         .HasMaxLength(200)
                         .HasColumnType("nvarchar(200)");
 
-                    b.Property<int?>("InstrutorId")
-                        .HasColumnType("int");
-
                     b.Property<int?>("Matricula")
                         .HasColumnType("int");
 
@@ -672,8 +527,6 @@ namespace StayFit.Migrations
                     b.HasKey("UsuarioId");
 
                     b.HasIndex("ClienteId");
-
-                    b.HasIndex("InstrutorId");
 
                     b.ToTable("Usuarios");
                 });
@@ -735,13 +588,7 @@ namespace StayFit.Migrations
                         .WithMany()
                         .HasForeignKey("ClienteId");
 
-                    b.HasOne("StayFit.Models.Instrutor", "Instrutor")
-                        .WithMany()
-                        .HasForeignKey("InstrutorId");
-
                     b.Navigation("Cliente");
-
-                    b.Navigation("Instrutor");
                 });
 
             modelBuilder.Entity("StayFit.Models.Cliente", b =>
@@ -781,13 +628,7 @@ namespace StayFit.Migrations
                         .WithMany()
                         .HasForeignKey("ClienteId");
 
-                    b.HasOne("StayFit.Models.Instrutor", "Instrutor")
-                        .WithMany()
-                        .HasForeignKey("InstrutorId");
-
                     b.Navigation("Cliente");
-
-                    b.Navigation("Instrutor");
                 });
 
             modelBuilder.Entity("StayFit.Models.Cliente", b =>

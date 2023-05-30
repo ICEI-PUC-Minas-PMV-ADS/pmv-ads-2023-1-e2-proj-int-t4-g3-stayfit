@@ -40,7 +40,7 @@
                 <div class="card-cli">
                     <div class="card-info">
                         <div class="img-area">
-                            <img src="@Cliente.Foto" alt="@Cliente.Nome" />
+                            <img src="/site-imagens/user.png" alt="@Cliente.Nome" />
                         </div>
                         <div class="card-body">
                             <div class="card-title-info">@Cliente.Nome</div>
@@ -52,6 +52,7 @@
                     </div>
 
                     <div class="card-actions">
+                        <a class="btn btn-success" asp-controller="Instrutor" asp-action="Avaliar" asp-route-cliente="@Cliente.ClienteId" role="button">Avaliacao</a>
                         <a class="btn btn-success" role="button">Editar Usuário</a>
                         <a class="btn btn-success" asp-controller="Ficha" asp-action="Create" asp-route-cliente="@Cliente.ClienteId" role="button">Ficha</a>
                     </div>

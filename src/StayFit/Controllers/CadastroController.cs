@@ -13,14 +13,16 @@ namespace StayFit.Controllers
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
 		private readonly IClienteRepository _clienteRepository;
+		private readonly IInsturtorRepository _insturtorRepository;
         private readonly ILoginRepository _loginRepository;
 		 
-		public CadastroController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, ILoginRepository loginRepository, IClienteRepository clienteRepository)
+		public CadastroController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, ILoginRepository loginRepository, IClienteRepository clienteRepository, IInsturtorRepository insturtorRepository)
 		{
 			_loginRepository = loginRepository;
 			_userManager = userManager;
 			_signInManager = signInManager;
 			_clienteRepository = clienteRepository;
+			_insturtorRepository = insturtorRepository;
 		} 
 
 		public IActionResult Index()
@@ -42,14 +44,20 @@ namespace StayFit.Controllers
 		public async Task<IActionResult> Create(Usuario usuario)
 		{		
 				Cliente cliente = _clienteRepository.GetClienteByCPF(usuario.CPF);
-				
+				Instrutor instrutor = _insturtorRepository.GetInstrutorByCPF(usuario.CPF);	
+
 				if (cliente != null) 
 				{
 					usuario.Cliente = cliente;
 				}
+				if (instrutor != null)
+				{
+					usuario.TipoUsuario = TypeUser.Instrutor;
+					usuario.Instrutor = instrutor;
+				}
 
-				var user = new ApplicationUser { UserName = usuario.Email, Nome = usuario.Nome,
-					CPF = usuario.CPF, Email = usuario.Email, Foto = usuario.Foto, Cliente = usuario.Cliente  };
+            var user = new ApplicationUser { UserName = usuario.Email, Nome = usuario.Nome,
+					CPF = usuario.CPF, Email = usuario.Email, Foto = usuario.Foto, Cliente = usuario.Cliente, Instrutor = usuario.Instrutor  };
 				
 				var result = await _userManager.CreateAsync(user, usuario.Senha);
 

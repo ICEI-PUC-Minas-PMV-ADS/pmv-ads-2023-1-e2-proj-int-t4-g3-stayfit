@@ -8,5 +8,7 @@ namespace StayFit.Controllers.Adm
         {
 			return View();
 		}
+
+
     }
 }

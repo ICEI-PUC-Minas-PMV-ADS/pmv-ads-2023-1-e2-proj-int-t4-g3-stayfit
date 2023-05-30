@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using StayFit.Context;
 
@@ -11,9 +12,11 @@ using StayFit.Context;
 namespace StayFit.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230529193915_mig11")]
+    partial class mig11
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -187,9 +190,6 @@ namespace StayFit.Migrations
                         .HasMaxLength(200)
                         .HasColumnType("nvarchar(200)");
 
-                    b.Property<int?>("InstrutorId")
-                        .HasColumnType("int");
-
                     b.Property<bool>("LockoutEnabled")
                         .HasColumnType("bit");
 
@@ -237,8 +237,6 @@ namespace StayFit.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("ClienteId");
-
-                    b.HasIndex("InstrutorId");
 
                     b.HasIndex("NormalizedEmail")
                         .HasDatabaseName("EmailIndex");
@@ -651,9 +649,6 @@ namespace StayFit.Migrations
                         .HasMaxLength(200)
                         .HasColumnType("nvarchar(200)");
 
-                    b.Property<int?>("InstrutorId")
-                        .HasColumnType("int");
-
                     b.Property<int?>("Matricula")
                         .HasColumnType("int");
 
@@ -672,8 +667,6 @@ namespace StayFit.Migrations
                     b.HasKey("UsuarioId");
 
                     b.HasIndex("ClienteId");
-
-                    b.HasIndex("InstrutorId");
 
                     b.ToTable("Usuarios");
                 });
@@ -735,13 +728,7 @@ namespace StayFit.Migrations
                         .WithMany()
                         .HasForeignKey("ClienteId");
 
-                    b.HasOne("StayFit.Models.Instrutor", "Instrutor")
-                        .WithMany()
-                        .HasForeignKey("InstrutorId");
-
                     b.Navigation("Cliente");
-
-                    b.Navigation("Instrutor");
                 });
 
             modelBuilder.Entity("StayFit.Models.Cliente", b =>
@@ -781,13 +768,7 @@ namespace StayFit.Migrations
                         .WithMany()
                         .HasForeignKey("ClienteId");
 
-                    b.HasOne("StayFit.Models.Instrutor", "Instrutor")
-                        .WithMany()
-                        .HasForeignKey("InstrutorId");
-
                     b.Navigation("Cliente");
-
-                    b.Navigation("Instrutor");
                 });
 
             modelBuilder.Entity("StayFit.Models.Cliente", b =>

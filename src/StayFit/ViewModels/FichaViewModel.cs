@@ -6,5 +6,6 @@ namespace StayFit.ViewModels
     {
         public Ficha Ficha;
         public IEnumerable<Ficha> FichaList;
+       
     }
 }

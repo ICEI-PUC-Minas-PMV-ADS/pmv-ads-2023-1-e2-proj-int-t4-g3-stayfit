@@ -42,6 +42,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Views\Instrutor\" />
     <Folder Include="wwwroot\imagens\exercicios\" />
     <Folder Include="wwwroot\PrivateFiles\users\imagens\" />
     <Folder Include="wwwroot\site-imagens\instrutor\" />

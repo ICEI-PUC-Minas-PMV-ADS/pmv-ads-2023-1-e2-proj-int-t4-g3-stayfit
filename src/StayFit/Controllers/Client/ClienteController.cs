@@ -58,20 +58,22 @@ namespace StayFit.Controllers.Client
                 if(usuario.Cliente != null)
                 {
                     Cliente cliente = _clienteRepository.GetCliente(usuario.Cliente.ClienteId);
-                    List<Ficha> fichas = _fichaRepository.GetFichasClient(usuario.Cliente.ClienteId).ToList();
-
+                    IEnumerable<Ficha> fichas = _fichaRepository.GetFichasClient(usuario.Cliente.ClienteId);
+                    IEnumerable<Treino> treinos = new List<Treino>();
                     foreach (Ficha ficha in fichas)
                     {
                         foreach (Treino t in ficha.Treinos)
                         {
+                            treinos.Append(t);
                             t.Exercicio = _exercicioRepository.GetExercicio(t.ExercicioId);
                         }
                     }
 
                     ClienteFichaViewModel clienteFichaViewModel = new ClienteFichaViewModel
                     {
-                        cliente = cliente,
+                        Usuario = usuario,
                         fichas = fichas,
+
                     };
 
                     return View("~/Views/Cliente/FichaCliente/Index.cshtml", clienteFichaViewModel);
