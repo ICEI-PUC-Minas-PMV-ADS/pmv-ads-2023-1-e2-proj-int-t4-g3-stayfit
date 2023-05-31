@@ -30,7 +30,14 @@ namespace StayFit.Controllers
             Usuario usuario = _usuarioRepository.GetUserByEmail(User.Identity.Name);
           
             if(usuario!=null && usuario.TipoUsuario == TypeUser.Cliente)
-             return View(usuario);
+            {
+                 UsuarioViewModel usuarioViewModel = new UsuarioViewModel
+                 {
+                     Usuario = usuario,
+                     NomeUsuario = usuario.Nome.Split(' ')[0],
+                 };
+                 return View(usuarioViewModel);
+            }
 
             if(usuario != null && usuario.TipoUsuario == TypeUser.Instrutor)
             {
