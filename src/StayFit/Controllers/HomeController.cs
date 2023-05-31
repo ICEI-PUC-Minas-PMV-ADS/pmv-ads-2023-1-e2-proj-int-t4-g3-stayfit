@@ -1,6 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using StayFit.Context;
 using StayFit.Models;
 using StayFit.Repositories.Interfaces;
+using StayFit.ViewModels;
+using System.Collections.Generic;
 using System.Diagnostics;
 
 namespace StayFit.Controllers
@@ -9,10 +12,13 @@ namespace StayFit.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly IUsuarioRepository _usuarioRepository;
-        public HomeController(ILogger<HomeController> logger, IUsuarioRepository usuarioRepository)
+        private readonly IClienteRepository _clienteRepository;
+        private readonly AppDbContext _context;
+        public HomeController(AppDbContext context, ILogger<HomeController> logger, IUsuarioRepository usuarioRepository, IClienteRepository clienteRepository)
         {
             _logger = logger;
             _usuarioRepository = usuarioRepository;
+            _context = context;
         }
 
       
@@ -22,12 +28,28 @@ namespace StayFit.Controllers
               return RedirectToAction("Index", "Login");
 
             Usuario usuario = _usuarioRepository.GetUserByEmail(User.Identity.Name);
-            System.Diagnostics.Debug.WriteLine("Tipo usuario: " +  usuario.TipoUsuario);
+          
             if(usuario!=null && usuario.TipoUsuario == TypeUser.Cliente)
-             return View(usuario);
+            {
+                 UsuarioViewModel usuarioViewModel = new UsuarioViewModel
+                 {
+                     Usuario = usuario,
+                     NomeUsuario = usuario.Nome.Split(' ')[0],
+                 };
+                 return View(usuarioViewModel);
+            }
 
             if(usuario != null && usuario.TipoUsuario == TypeUser.Instrutor)
-             return View("Instrutor", usuario);
+            {
+				 
+				InstrutorClienteViewModel viewModel = new InstrutorClienteViewModel
+                {
+                    Usuario = usuario,
+                    Clientes = _context.Clientes,
+			};
+             return View("Instrutor", viewModel);
+
+            }
 
             usuario.Nome = "Error";
             return View(usuario);
