@@ -22,10 +22,11 @@ namespace StayFit.Controllers
               return RedirectToAction("Index", "Login");
 
             Usuario usuario = _usuarioRepository.GetUserByEmail(User.Identity.Name);
-            if(usuario!=null || usuario.TipoUsuario == TypeUser.Cliente)
+            System.Diagnostics.Debug.WriteLine("Tipo usuario: " +  usuario.TipoUsuario);
+            if(usuario!=null && usuario.TipoUsuario == TypeUser.Cliente)
              return View(usuario);
 
-            if(usuario != null || usuario.TipoUsuario == TypeUser.Instrutor)
+            if(usuario != null && usuario.TipoUsuario == TypeUser.Instrutor)
              return View("Instrutor", usuario);
 
             usuario.Nome = "Error";

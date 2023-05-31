@@ -104,5 +104,12 @@ namespace StayFit.Controllers.Client
 
             return View("~/Views/Home/Index.cshtml", usuario);
         }
+
+
+        public ViewResult Avaliacao()
+        {
+            Usuario usuario = _usuarioRepository.GetUserByEmail(User.Identity.Name);
+            return View("~/Views/Cliente/ResultadoAvaliacao.cshtml", usuario);
+        }
     }
 }

@@ -44,19 +44,24 @@ namespace StayFit.Controllers
 		public async Task<IActionResult> Create(Usuario usuario)
 		{		
 				Cliente cliente = _clienteRepository.GetClienteByCPF(usuario.CPF);
-				Instrutor instrutor = _insturtorRepository.GetInstrutorByCPF(usuario.CPF);	
+				Instrutor instrutor = _insturtorRepository.GetInstrutorByCPF(usuario.CPF);
+				TypeUser tipo = TypeUser.Cliente;
+			
 
-				if (cliente != null) 
+                if (cliente != null) 
 				{
+					usuario.TipoUsuario = TypeUser.Cliente;
 					usuario.Cliente = cliente;
+					 
 				}
 				if (instrutor != null)
 				{
 					usuario.TipoUsuario = TypeUser.Instrutor;
 					usuario.Instrutor = instrutor;
-				}
+					 tipo = TypeUser.Instrutor;
+            }
 
-            var user = new ApplicationUser { UserName = usuario.Email, Nome = usuario.Nome,
+            var user = new ApplicationUser { UserName = usuario.Email, Nome = usuario.Nome, TipoUsuario = tipo,
 					CPF = usuario.CPF, Email = usuario.Email, Foto = usuario.Foto, Cliente = usuario.Cliente, Instrutor = usuario.Instrutor  };
 				
 				var result = await _userManager.CreateAsync(user, usuario.Senha);
