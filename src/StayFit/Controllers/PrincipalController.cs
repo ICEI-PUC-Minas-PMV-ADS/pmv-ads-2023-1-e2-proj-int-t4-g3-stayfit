@@ -23,6 +23,12 @@ namespace StayFit.Controllers
             return View();
         }
 
+
+        public ViewResult Ajuda()
+        {
+            return View();
+        }
+
         [HttpPost]
         public async Task<ViewResult> Contato(Contato contato)
         {

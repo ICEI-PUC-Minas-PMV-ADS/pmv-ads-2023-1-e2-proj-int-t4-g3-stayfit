@@ -1,0 +1,117 @@
+﻿@model UsuarioAvaliacaoViewModel
+@using Microsoft.AspNetCore.Identity
+
+
+<link href="~/css/adminhome.css" rel="stylesheet" />
+
+<div class="wrapper">
+
+
+    <div class="body-overlay"></div>
+
+
+    <!-- Sidebar  -->
+    <partial name="_UserSideMenu" for="@Model.Usuario" />
+
+    <!-- Page Content  -->
+    <div id="content">
+
+        <partial name="_Header" for="@Model.Usuario" />
+
+        <div class="main-content">
+
+            <div class="row">
+                <div class="col-lg-12 col-md-12">
+                    <div class="card" style="min-height: 685px">
+                        <div class="row align-content-center">
+
+                            <div class="row m-4">
+
+                                <div class="col">
+                                    <h3> @Model.Usuario.Nome </h3>
+                                </div>
+
+                            </div>
+                        </div>
+
+
+                        @*<div class="col-lg-2">
+                        <img src="@Model.Foto" style="width:120px; height:140px;" />
+                        </div>*@
+                        <div class="row">
+                            <div class="col-lg-8 mx-5">
+
+                                <div id="chart_div" style="width: 900px; height: 500px"></div>
+                               
+                            </div>
+
+                        </div>
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+    google.charts.load("current", { packages: ["corechart"] });
+    google.charts.setOnLoadCallback(drawChart);
+    function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+            ['Language', 'Speakers (in millions)'],
+            ['Massa Residual(kg)', 25.4],
+            ['Massa Gorda(kg)', 27.9],
+            ['Massa Muscular(kg)', 40.5],
+            ['Massa Óssea(kg)', 11.6]
+
+        ]);
+
+        var options = {
+            legend: 'none',
+            pieSliceText: 'label',
+            title: 'Composição Corporal',
+            pieStartAngle: 100,
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+        chart.draw(data, options);
+    }
+
+</script>
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+    google.charts.load("current", { packages: ["corechart"] });
+    google.charts.setOnLoadCallback(drawChart);
+    function drawChart() {
+        var data = google.visualization.arrayToDataTable
+            ([['X', 'Y'],
+            [0, 100],
+            [1, 100],
+            [2, 130],
+            [3, 160],
+            [4, 170],
+
+            ]);
+
+        var options = {
+            legend: 'none',
+            hAxis: { minValue: 0, maxValue: 9 },
+            colors: ['#795548'],
+            title: 'Frequência Cardiaca',
+            pointSize: 20,
+            pointShape: 'square'
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+    }
+</script>
