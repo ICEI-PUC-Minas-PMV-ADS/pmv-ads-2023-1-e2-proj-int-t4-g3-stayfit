@@ -109,7 +109,16 @@ namespace StayFit.Controllers.Client
         public ViewResult Avaliacao()
         {
             Usuario usuario = _usuarioRepository.GetUserByEmail(User.Identity.Name);
-            return View("~/Views/Cliente/ResultadoAvaliacao.cshtml", usuario);
+            int? nasc = usuario.Cliente?.DataNascimento?.Year;
+            String[] Nome = usuario.Nome.Split(' ');
+            UsuarioAvaliacaoViewModel usuarioAvaliacaoVM = new UsuarioAvaliacaoViewModel
+            {
+                Usuario = usuario,
+                idade = DateTime.Now.Year - nasc,
+                primeiroNome = Nome[0],
+            };
+
+            return View("~/Views/Cliente/ResultadoAvaliacao.cshtml", usuarioAvaliacaoVM);
         }
     }
 }

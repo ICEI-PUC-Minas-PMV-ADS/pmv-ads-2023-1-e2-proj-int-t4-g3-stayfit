@@ -1,4 +1,4 @@
-﻿@model StayFit.Models.Usuario
+﻿@model UsuarioAvaliacaoViewModel
 @using Microsoft.AspNetCore.Identity
 
 
@@ -11,83 +11,324 @@
 
 
     <!-- Sidebar  -->
-    <partial name="_UserSideMenu" for="@Model" />
+    <partial name="_UserSideMenu" for="@Model.Usuario" />
 
     <!-- Page Content  -->
     <div id="content">
 
-        <partial name="_Header" for="@Model" />
+        <partial name="_Header" for="@Model.Usuario" />
 
         <div class="main-content">
 
-                   <div class="row">
+              <div class="row">
                 <div class="col-lg-12 col-md-12">
                     <div class="card" style="min-height: 685px">
                         <div class="row align-content-center">
-
-                            
-                            <div class="row m-5">
+                                                        
+                            <div class="row m-4">
+                                    
+                                        <div class="col">
+                                            <h3> @Model.Usuario.Nome </h3>
+                                        </div>
+                                     
+                            </div>
+                        </div>
                                 @*<div class="col-lg-2">
                                     <img src="@Model.Foto" style="width:120px; height:140px;" />
                                 </div>*@
-                                <div class="col-lg-8 m-3">
-                                    <div class="row">
-                                        <div class="col">
-                                            <h3> @Model.Nome </h3>
-                                        </div>
-                                     </div>
+                            <div class="row">
+                                <div class="col-lg-8 mx-5">
 
                                     <div class="row">
-                                        <div class="col">
-                                            Peso: <strong>75,50</strong> 
+                                        <div class="col-lg-2">
+                                            Idade: <strong>@Model.idade</strong>
                                         </div>
-                                        <div class="col">
-                                          Altura: <strong> 1,75</strong>
+                                            <div class="col-lg-2">
+                                                Peso: <strong>75,50</strong> 
+                                            </div>
+                                           <div class="col-lg-2">
+                                              Altura: <strong> 1,75</strong>
+                                            </div>
                                         </div>
-                                        <div class="col">
-                                            One of three columns
+                                        <div class="row">
+                                       
                                         </div>
-                                        <div class="col">
-                                            One of three columns
-                                        </div>
-                                        <div class="col">
-                                            One of three columns
-                                        </div>
+                                  </div>
+
+                            </div>
+
+                       
+                        <div class="row mx-5 mt-3">
+                            <div class="col-md-4 ">
+
+
+                                    <table class="table">
+                                    <h4>Composição Corporal</h4>
+
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row">Percentual de Gordura</th>
+                                                <td>
+                                                   <strong>26,4</strong>
+                                                </td>
+                                            </tr>
+
+                                        <tr>
+                                            <th scope="row">Classificação</th>
+                                            <td>
+                                                <strong>Alta</strong>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Massa Magra(kg)</th>
+                                            <td>
+                                                <strong>77,6</strong>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Massa Gorda(kg)</th>
+                                            <td>
+                                                <strong>24,9</strong>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <th scope="row">Massa Muscular(kg)</th>
+                                            <td>
+                                                <strong>40,5</strong>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <th scope="row">Massa Óssea(kg)</th>
+                                            <td>
+                                                <strong>11,6</strong>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <th scope="row">Massa Residual(kg)</th>
+                                            <td>
+                                                <strong>26,4</strong>
+                                            </td>
+                                        </tr>
+                                           
+                                        </tbody>
+                                    </table>
+  
+                            </div>
+                            <div class="col-md-4">
+
+                                <div class="col">
+                                    <div id="piechart" style="width: 900px; height: 500px;"></div>
+
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <div class="row mx-5 mt-2">
+                            <div class="col-lg-8 m-3">
+
+                                <div class="row">
+                                    <div class="col-lg-10">
+                                        Classificação do Teste: <strong>Regular</strong>
                                     </div>
+                                    <div class="col-lg-5">
+                                        Peso: <strong>75,50</strong>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                      
+
+
+                        <div class="row mx-2 mt-2">
+                            <div class="col-md-6 pb-5">
+
+
+                                <table class="table">
+                                    <h4>Resistencia Aeróbica</h4>
+
+                                    <div class="row">
+                                        <div class="col-lg-8">
+
+                                            <div class="row">
+                                                <div class="col-lg-10">
+                                                    Classificação do Teste: <strong>Regular</strong>
+                                                </div>
+                                                <div class="col-lg-5">
+                                                    Peso: <strong>75,50</strong>
+                                                </div>
+                                               
+                                            </div>
+                                           
+                                        </div>
+
+                                    </div>
+
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">Freq. Cardiaca 1º Momento</th>
+                                            <td>
+                                                <strong>130 Bpm</strong>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <th scope="row">Freq. Cardiaca 2º Momento</th>
+                                            <td>
+                                                <strong>160 Bpm</strong>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Freq. Cardiaca 3º Momento</th>
+                                            <td>
+                                                <strong>170 Bpm</strong>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Freq. Máxima</th>
+                                            <td>
+                                                <strong>204 Bpm</strong>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <th scope="row">Freq. Cardiaca Repouso</th>
+                                            <td>
+                                                <strong>76 Bpm</strong>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <th scope="row">Vo2 Max</th>
+                                            <td>
+                                                <strong>25,8 ml/Kg.min</strong>
+                                            </td>
+                                        </tr>
+
+                                       
+
+                                    </tbody>
+                                </table>
+
+
+
+                            </div>
+                            <div class="col-md-4">
+
+                                <div class="col">
+                                    <div id="chart_div" style="width: 900px; height: 500px"></div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                        </div>
+
+                        <div class="row mx-5 mt-2">
+                            <div class="col-md-4 ">
+
+
+                                <table class="table">
+                                    <h4>Resistencia Aeróbica</h4>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">Freq. Cardiaca 1º Momento</th>
+                                            <td>
+                                                <strong>130 Bpm</strong>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <th scope="row">Freq. Cardiaca 2º Momento</th>
+                                            <td>
+                                                <strong>160 Bpm</strong>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Freq. Cardiaca 3º Momento</th>
+                                            <td>
+                                                <strong>170 Bpm</strong>
+                                            </td>
+                                        </tr>
+                                       
+
+
+                                    </tbody>
+                                </table>
+
+
+
+                            </div>                      
+                        </div>
+
 
 
                         </div>
-
                     </div>
                 </div>
-
             </div>
-        </div>
 
 
-    </div>
-</div>
-
-
-
-@*    -->
-        <div class="chart-grid">
-            <div class="chart-follow">
-                <div class="chart-head">
-                    <h3>Followers</h3>
-                    <div class="la la-cog"></div>
-                </div>
-                <div id="myfirstchart" style="height: 350px;"></div>
-            </div>
-            <div class="chart-sales">
-                <div class="chart-head">
-                    <h3>Sales</h3>
-                    <div class="la la-ellipsis-h"></div>
-                </div>
-                <div id="donut-example" style="height: 350px;"></div>
-            </div>
         </div>
     </div>
 
-    <label class="close-mobile-menu" for="menu-toggle"></label>
-*@
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load("current", { packages: ["corechart"] });
+        google.charts.setOnLoadCallback(drawChart);
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+                ['Language', 'Speakers (in millions)'],
+                ['Massa Residual(kg)', 25.4],
+                ['Massa Gorda(kg)', 27.9],
+                ['Massa Muscular(kg)', 40.5],
+                ['Massa Óssea(kg)', 11.6]
+                
+            ]);
+
+            var options = {
+                legend: 'none',
+                pieSliceText: 'label',
+                title: 'Composição Corporal',
+                pieStartAngle: 100,
+            };
+
+            var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+            chart.draw(data, options);
+        }
+
+    </script>
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+    google.charts.load("current", { packages: ["corechart"] });
+    google.charts.setOnLoadCallback(drawChart);
+    function drawChart() {
+        var data = google.visualization.arrayToDataTable
+            ([['X', 'Y'],
+            [0, 100],
+            [1, 100],
+            [2, 130],
+            [3, 160],
+            [4, 170],
+           
+            ]);
+
+        var options = {
+            legend: 'none',
+            hAxis: { minValue: 0, maxValue: 9 },
+            colors: ['#795548'],            
+            title: 'Frequência Cardiaca',
+            pointSize: 20,
+            pointShape: 'square'
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+    }
+</script>
