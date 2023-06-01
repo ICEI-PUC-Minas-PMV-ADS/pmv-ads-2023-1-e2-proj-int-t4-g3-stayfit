@@ -28,7 +28,7 @@ namespace StayFit.Repositories
 
         public Avaliacao UpdateAnamnese(Avaliacao avaliacao)
         {
-            Avaliacao av = GetAvaliacao(1);
+            Avaliacao av = GetAvaliacao(2);
            
 
             av.Peso = avaliacao.Peso;

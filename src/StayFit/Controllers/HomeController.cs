@@ -45,7 +45,7 @@ namespace StayFit.Controllers
 				InstrutorClienteViewModel viewModel = new InstrutorClienteViewModel
                 {
                     Usuario = usuario,
-                    Clientes = _context.Clientes,
+                    Clientes = _context.Clientes.Where(c => c.Matricula != 120002),
 			};
              return View("Instrutor", viewModel);
 

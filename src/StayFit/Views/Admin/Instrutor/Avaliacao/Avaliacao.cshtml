@@ -49,7 +49,7 @@
                                 <div class="tab-pane fade show active" id="nav-dom" role="tabpanel" aria-labelledby="nav-dom-tab">
 
                                     <div class="row m-2 ">
-                                        <div class="col-md-6 pb-5">
+                                        <div class="col-md-12 px-5 ">
 
                                             <div class="row">
                                                 <div class="col-sm-2">
@@ -74,9 +74,9 @@
                                                         <tr>
                                                             <th scope="row"> Pratica Alguma atividade física?</th>
                                                           
-                                                            <td>
+                                                            <td style="width:60%">
                                                                 <div class="form-group">                                                                    
-                                                                    <input type="checkbox" id="IsPraticante" class="form-control" />
+                                                                    <select type="checkbox" id="IsPraticante" asp-items="@Html.GetEnumSelectList<TrueFalse>()" class="form-control" ></select>
                                                                     <span asp-validation-for="IsPraticante" class="text-danger"></span>
                                                                 </div>
                                                             </td>
@@ -85,7 +85,7 @@
                                                         <tr>
                                                             <th scope="row">Faz uso de medicamentos?</th>
                                                             <td>
-                                                                <input type="checkbox" id="IsTomaMedicamentos" class="form-control" />
+                                                                <select type="checkbox" asp-items="@Html.GetEnumSelectList<TrueFalse>()" id="IsTomaMedicamentos" class="form-control" ></select>
                                                                 <span asp-validation-for="IsTomaMedicamentos" class="text-danger"></span>
                                                             </td>                                                           
                                                         </tr>
@@ -104,7 +104,7 @@
                                                             <th scope="row">É fumante?</th>
                                                             <td>
                                                                 <div class="form-group">                                                                  
-                                                                    <input type="checkbox" id="IsFumante" class="form-control" />
+                                                                    <select asp-items="@Html.GetEnumSelectList<TrueFalse>()" type="checkbox" id="IsFumante" class="form-control" ></select>
                                                                     <span asp-validation-for="IsFumante" class="text-danger"></span>
                                                                 </div>
                                                             </td>
@@ -115,7 +115,7 @@
                                                             <th scope="row">Tem algum problema de saúde?</th>
                                                             <td>
                                                                 <div class="form-group">
-                                                                    <input type="checkbox" id="IsProblemaSaude" class="form-control" />
+                                                                    <select type="checkbox" asp-items="@Html.GetEnumSelectList<TrueFalse>()" id="IsProblemaSaude" class="form-control" ></select>
                                                                     <span asp-validation-for="IsProblemaSaude" class="text-danger"></span>
                                                                 </div>
                                                             </td>
@@ -134,10 +134,40 @@
                                                         
 
                                                         <tr>
-                                                            <th scope="row">É deficiente?</th>
+                                                            <th scope="row">Tem alguma deficiência?</th>
                                                             <td>
                                                                 <div class="form-group">
-                                                                    <input type="checkbox" id="IsDeficiente" class="form-control" />
+                                                                    <select type="checkbox" asp-items="@Html.GetEnumSelectList<TrueFalse>()" id="IsDeficiente" class="form-control"></select>
+                                                                    <span asp-validation-for="IsDeficiente" class="text-danger"></span>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+
+                                                        <tr>
+                                                            <th scope="row">Qual deficiência?</th>
+                                                            <td>
+                                                                <div class="form-group">
+                                                                    @Html.TextAreaFor(m => m.Deficiencia, 5, 10, new {id="Deficiencia", @class = "form-control" })
+                                                                    <span asp-validation-for="IsDeficiente" class="text-danger"></span>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+
+                                                         <tr>
+                                                            <th scope="row">Objetivos do Cliente</th>
+                                                            <td>
+                                                                <div class="form-group">
+                                                                    @Html.TextAreaFor(m => m.Objetivos, 5, 10, new {id="Objetivos", @class = "form-control" })
+                                                                    <span asp-validation-for="IsDeficiente" class="text-danger"></span>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+
+                                                        <tr>
+                                                            <th scope="row">Observações</th>
+                                                            <td style="width:60%">
+                                                                <div class="form-group">
+                                                                    @Html.TextAreaFor(m => m.Observacoes, 5, 10, new {id="Observacoes", @class = "form-control" })
                                                                     <span asp-validation-for="IsDeficiente" class="text-danger"></span>
                                                                 </div>
                                                             </td>
@@ -150,33 +180,12 @@
                                               
                                             </div>
 
+                                        <div class="d-flex justify-content-end">
+                                            <button class="btn btn-outline-primary" onclick="updateAnamnese()" id="updateAnamnese">Atualizar Avaliação</button>
                                         </div>
-                                        <div class="col-md-6 pb-5">
-                                                                                            
-                                                <div class="form-group">
-                                                    <label asp-for="Objetivos" class="control-label"></label>
-                                                @Html.TextAreaFor(m => m.Objetivos, 5, 10, new {id="Objetivos", @class = "form-control" })
-                                                    <span asp-validation-for="Objetivos" class="text-danger"></span>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label asp-for="Observacoes" class="control-label"></label>
-                                                @Html.TextAreaFor(m => m.Observacoes, 5, 10, new {id="Observacoes", @class = "form-control" })
-                                                    <span asp-validation-for="Observacoes" class="text-danger"></span>
-                                                </div>
+                                        </div>
 
-                                            <div class="form-group">
-                                                <label asp-for="Deficiencia" class="control-label"></label>
-                                                @Html.TextAreaFor(m => m.Deficiencia, 5, 10, new {id="Deficiencia", @class = "form-control" })
-                                                <span asp-validation-for="Deficiencia" class="text-danger"></span>
-                                            </div>
-                                                    <div>
-                                                          <button class="btn btn-outline-primary" onclick="updateAnamnese()" id="updateAnamnese">Atualizar Avaliação</button>
-                                                    </div>
-                                               
-                                           
-                                        </div>
                                     </div>
-
 
                                 </div>
                                 <!--Fim Tab-->
@@ -347,7 +356,7 @@
                                             </div>
 
 
-                                            <div>
+                                            <div >
                                                 <button class="btn btn-outline-primary" type="submit" id="sendMessageButton">Atualizar</button>
                                             </div>
 
@@ -448,7 +457,7 @@
                                                     </div>
                                                    *@
 
-                                                <div>
+                                                <div >
                                                     <button class="btn btn-outline-primary" type="submit" id="sendMessageButton">Atualizar</button>
                                                 </div>
 
@@ -642,6 +651,134 @@
 
 
 @section Scripts {
-    <script src="@Url.Content("~/js/Avaliacao.js")"></script>
+    
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
+
+<script>
+            function updateAnamnese() {
+
+            let Altura = document.getElementById("Altura").value;
+            let Peso = document.getElementById("Peso").value;
+            let IsTomaMedicamentos = document.getElementById("IsTomaMedicamentos");
+            let objetivos = document.getElementById("Objetivos").value;
+            let medicamentos = document.getElementById("Medicamentos").value;
+            let observacoes = document.getElementById("Observacoes").value;
+            let deficiencia = document.getElementById("Deficiencia").value;
+            let isProblemaSaude = document.getElementById("IsProblemaSaude");
+            let isDeficiente = document.getElementById("IsDeficiente");
+            let isFumante = document.getElementById("IsFumante");
+            let isPraticante = document.getElementById("IsPraticante");
+            let problemaSaude = document.getElementById("ProblemaSaude").value;
+
+                  
+
+                    let isMed = IsTomaMedicamentos.options[IsTomaMedicamentos.selectedIndex].value;
+                    let isFum = isFumante.options[isFumante.selectedIndex].value;
+                    let isDef = isDeficiente.options[isDeficiente.selectedIndex].value;
+                    let isPrat = isPraticante.options[isPraticante.selectedIndex].value;
+                    let isPSau = isProblemaSaude.options[isProblemaSaude.selectedIndex].value;
+
+                    let avaliacao = {
+                        "objetivos": objetivos,
+                        "peso": Peso,
+                        "altura": Altura,
+                        "isPraticante": Number(isPrat),
+                        "isTomaMedicamentos": Number(isMed),
+                        "medicamentos": medicamentos,
+                        "isFumante": Number(isFum),
+                        "isProblemaSaude": Number(isPSau),
+                        "problemaSaude": problemaSaude,
+                        "isDeficiente": Number(isDef),
+                        "deficiencia": deficiencia,
+                        "observacoes": observacoes,
+
+                    };
+
+
+            //let avalia = {
+            //    "objetivos": "TESTE",
+            //    "peso": 150,
+            //    "altura": 190,
+            //    "isPraticante": false,
+            //    "isTomaMedicamentos": null,
+            //    "medicamentos": null,
+            //    "isFumante": null,
+            //    "isProblemaSaude": null,
+            //    "problemaSaude": null,
+            //    "isDeficiente": null,
+            //    "deficiencia": null,
+            //    "observacoes": null,
+            //    "circunferenciaBracoDir": null,
+            //    "circunferenciaBracoEsq": null,
+            //    "circunferenciaAnteBracoDir": null,
+            //    "circunferenciaAnteBracoEsq": null,
+            //    "circunferenciaAbdomen": null,
+            //    "circunferenciaQuadril": null,
+            //    "circunferenciaCintura": null,
+            //    "circunferenciaCoxaEsq": null,
+            //    "circunferenciaCoxaDir": null,
+            //    "circunferenciaPernaEsq": null,
+            //    "circunferenciaPernaDir": null,
+            //    "percentualGordura": null,
+            //    "massaMagra": null,
+            //    "massaGorda": null,
+            //    "massaMuscular": null,
+            //    "massaOssea": null,
+            //    "massaResidual": null,
+            //    "frecCardRepouso": null,
+            //    "frecCardM1": null,
+            //    "frecCardM2": null,
+            //    "frecCardM3": null,
+            //    "frecCardMaxima": null,
+            //    "voMax": null,
+            //    "tempoEsteira": null
+
+            //};
+
+            
+
+            fetch('/Instrutor/UpdateAnamnese', {
+            method: 'POST',
+            headers: {
+            'Content-type': 'application/json',
+            },
+            body: JSON.stringify(avaliacao)
+            }).then(function (response) {
+            if (response.ok) {
+            alert("teste " + response);
+            alert(isFumante);
+            return response.json();
+            }
+            return Promise.reject(response);
+            }).then(data => {
+            let dados = JSON.parse(data);
+            console.log('Success:', dados);
+            if (data) {
+
+            //window.location.replace('http://localhost:5247/Instrutor/Av');
+            }
+            }).catch(function (error) {
+            console.warn(error);
+            });
+
+            }
+
+            function ListarTreino() {
+            let place_treinos = '';
+            let data = JSON.parse(localStorage.getItem("TreinosLocal"));
+            let dataEx = JSON.parse(localStorage.getItem("NomeExercicios"));
+            if (data !== null) {
+            data.forEach((treino, index) => {
+            place_treinos += `
+            <div>
+                <h4><span>${dataEx[index]} </span></h4>
+                <h5><span>Repeticoes: ${treino.repetitionNumber} </span><span>Series: ${treino.series}</span> </h5>
+            </div>`
+            });
+            }
+
+            document.querySelector('.treinos-card').innerHTML = place_treinos;
+            place_treinos = ''
+            }
+            </script>

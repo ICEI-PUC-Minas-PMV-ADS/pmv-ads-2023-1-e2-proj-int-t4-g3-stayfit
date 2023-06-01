@@ -3,34 +3,39 @@ function updateAnamnese() {
    
     let Altura = document.getElementById("Altura").value;
     let Peso = document.getElementById("Peso").value;    
-    let IsTomaMedicamentos = document.getElementById("IsTomaMedicamentos").checked;
+    let IsTomaMedicamentos = document.getElementById("IsTomaMedicamentos");
     let objetivos = document.getElementById("Objetivos").value;
     let medicamentos = document.getElementById("Medicamentos").value;
     let observacoes = document.getElementById("Observacoes").value;
     let deficiencia = document.getElementById("Deficiencia").value;
-    let isProblemaSaude = document.getElementById("IsProblemaSaude").checked;
-    let isDeficiente = document.getElementById("IsDeficiente").checked;
-    let isFumante = document.getElementById("IsFumante").checked;
-    let isPraticante = document.getElementById("IsPraticante").checked;
+    let isProblemaSaude = document.getElementById("IsProblemaSaude");
+    let isDeficiente = document.getElementById("IsDeficiente");
+    let isFumante = document.getElementById("IsFumante");
+    let isPraticante = document.getElementById("IsPraticante");
     let problemaSaude = document.getElementById("ProblemaSaude").value;
 
-
-
+    let isMed = isTomaMedicamentos.options[isTomaMedicamentos.selectedIndex].value;
+    let isFum = isFumante.options[isFumante.selectedIndex].value;
+    let isDef = isDeficiente.options[isDeficiente.selectedIndex].value;
+    let isPrat = isPraticante.options[isPraticante.selectedIndex].value;
+    let isPSau = isProblemaSaude.options[isProblemaSaude.selectedIndex].value;
+     
     let avaliacao = {
         "objetivos": objetivos,
         "peso": Peso,
         "altura": Altura,
-        "isPraticante": isPraticante,
-        "isTomaMedicamentos": IsTomaMedicamentos,
+        "isPraticante": isPrat,
+        "isTomaMedicamentos": 0,
         "medicamentos": medicamentos,
-        "isFumante": isFumante,
-        "isProblemaSaude": isProblemaSaude,
+        "isFumante": 1,
+        "isProblemaSaude": 0,
         "problemaSaude": problemaSaude,
-        "isDeficiente": isDeficiente,
+        "isDeficiente": isDef,
         "deficiencia": deficiencia,
         "observacoes": observacoes,
 
     };
+
 
     //let avalia = {
     //    "objetivos": "TESTE",
@@ -71,7 +76,7 @@ function updateAnamnese() {
     //    "tempoEsteira": null
 
     //};
-
+  
     console.log(avaliacao);
 
     fetch('/Instrutor/UpdateAnamnese', {
@@ -83,6 +88,7 @@ function updateAnamnese() {
     }).then(function (response) {
         if (response.ok) {
             alert("teste " + response);
+            alert(isFumante);
             return response.json();
         }
         return Promise.reject(response);
