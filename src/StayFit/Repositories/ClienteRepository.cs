@@ -36,7 +36,7 @@ namespace StayFit.Repositories
             return cliente;
         }
 
-        public IEnumerable<Cliente> Clientes => _context.Clientes;
+        public IEnumerable<Cliente> Clientes => _context.Clientes.Where(c => c.Matricula != 120002);
 
     }
 }

@@ -49,5 +49,49 @@ namespace StayFit.Controllers.Instructor
                                  new { controller = "Treino", action = "Create" ,ficha.FichaId}));
         }
 
+        [HttpPost]
+        public IActionResult CadTreinosIniciante(int clienteId)
+        {
+            System.Diagnostics.Debug.WriteLine("CadTreinoIniciate ==> " + clienteId);
+            int fichaId = 2;
+            IEnumerable<Ficha> fichas = _fichaRepository.GetFichasClient(fichaId);
+
+            foreach(Ficha ficha in fichas)
+            {
+                Ficha f = new Ficha();
+                f.DataInicio = ficha.DataInicio;
+                f.DataFim = ficha.DataFim;
+                f.NomeAtividade = ficha.NomeAtividade;
+                f.ClienteId = clienteId;
+                f.DiaSemana = ficha.DiaSemana;
+                f.Treinos = ficha.Treinos;
+
+            
+
+                 _fichaRepository.Create(f);
+                //Ficha f = _fichaRepository.
+                //foreach(Treino t in ficha.Treinos)
+                //{
+                //    Treino treino = new Treino();
+                //    treino.FichaId = ;
+                //    treino.ExercicioId = t.ExercicioId;
+                //    treino.Distance = t.Distance;
+                //    treino.RestBetween = t.RestBetween;
+                //    treino.Series = t.Series;
+                //    treino.Exercicio = t.Exercicio;
+                //    treino.RepetitionNumber = t.RepetitionNumber;
+                //    treino.RestTime = t.RestTime;
+                //    treino.Weight = t.Weight;
+
+                //   // _treinoRepository.Create(treino);
+               // }
+            }
+
+            
+
+            return RedirectToAction("ListClient", new RouteValueDictionary(
+                                  new { controller = "AdminCliente" }));
+        }
+
     }
 }

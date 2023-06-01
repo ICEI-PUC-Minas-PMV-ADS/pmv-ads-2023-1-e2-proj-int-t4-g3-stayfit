@@ -2,6 +2,7 @@
 {
     public enum DiaSemana
     {
+         Todos,
          Domingo,
          Segunda,
          Terca,

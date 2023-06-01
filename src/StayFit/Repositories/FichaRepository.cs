@@ -14,7 +14,17 @@ namespace StayFit.Repositories
             _context = context;
         } 
 
-
+        public async Task<bool> save()
+        {
+            try
+            {
+                await _context.SaveChangesAsync();
+                return true;
+            }catch (Exception ex)
+            {
+                return false;
+            }
+        }
        public Ficha Create(Ficha ficha)
         {
             _context.Ficha.Add(ficha);

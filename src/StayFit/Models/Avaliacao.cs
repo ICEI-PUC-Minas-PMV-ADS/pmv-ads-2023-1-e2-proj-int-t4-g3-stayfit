@@ -6,7 +6,7 @@ namespace StayFit.Models
     {
         public Avaliacao()
         {
-            IsPraticante = false;
+           
             DataAvaliacao = DateTime.Now;
             Objetivos = "Emagrecer";
             Peso = 0;
@@ -25,13 +25,13 @@ namespace StayFit.Models
 
         [Required(ErrorMessage = "Informe a Altura do Cliente")]
         public float Altura { get; set; }
-        public Boolean? IsPraticante { get; set; }
-        public bool? IsTomaMedicamentos { get; set; }
+        public TrueFalse? IsPraticante { get; set; }
+        public TrueFalse? IsTomaMedicamentos { get; set; }
         public String? Medicamentos { get; set; }
-        public bool? IsFumante { get; set; }
-        public bool? IsProblemaSaude{ get; set; }
+        public TrueFalse? IsFumante { get; set; }
+        public TrueFalse? IsProblemaSaude{ get; set; }
         public String? ProblemaSaude { get; set; }      
-        public bool? IsDeficiente { get; set; }
+        public TrueFalse? IsDeficiente { get; set; }
         public String? Deficiencia { get; set; }
         public String? Observacoes { get; set; }
 

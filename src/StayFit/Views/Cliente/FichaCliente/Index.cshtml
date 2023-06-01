@@ -69,7 +69,7 @@
                                        
                                         @foreach (Ficha ficha in Model.fichas)
                                         {
-                                            if (ficha.DiaSemana == DiaSemana.Domingo)
+                                            if (ficha.DiaSemana == DiaSemana.Domingo || ficha.DiaSemana == DiaSemana.Todos)
                                             {
                                                 <div class="card-header card-header-text">
                                                     <h4 class="card-title">@ficha.NomeAtividade - @ficha.DiaSemana</h4>
@@ -114,7 +114,7 @@
                                         </div>
                                         @foreach (Ficha ficha in Model.fichas)
                                         {
-                                            if (ficha.DiaSemana == DiaSemana.Segunda)
+                                            if (ficha.DiaSemana == DiaSemana.Segunda || ficha.DiaSemana == DiaSemana.Todos)
                                             {
                                                 <div class="card-header card-header-text">
                                                     <h4 class="card-title">@ficha.NomeAtividade - @ficha.DiaSemana</h4>
@@ -166,7 +166,7 @@
                                       
                                     @foreach (Ficha ficha in Model.fichas)
                                     {
-                                        if (ficha.DiaSemana == DiaSemana.Quarta)
+                                            if (ficha.DiaSemana == DiaSemana.Quarta || ficha.DiaSemana == DiaSemana.Todos)
                                         {
                                             <div class="card-header card-header-text">
                                                 <h4 class="card-title">@ficha.NomeAtividade - @ficha.DiaSemana</h4>

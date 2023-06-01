@@ -25,8 +25,8 @@ namespace StayFit.Controllers.Instructor
 
         public ViewResult Avaliar()
         {
-            //Avaliacao avaliacao = new Avaliacao();
-            //_avalicaoFisicaRepository.Create(avaliacao);
+           // Avaliacao avaliacao = new Avaliacao();
+          //  _avalicaoFisicaRepository.Create(avaliacao);
             return View("~/Views/Admin/Instrutor/Avaliacao/Avaliacao.cshtml");
         }
 
