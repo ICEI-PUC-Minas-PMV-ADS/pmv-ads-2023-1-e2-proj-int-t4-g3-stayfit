@@ -101,8 +101,13 @@ namespace StayFit.Controllers.Client
 
             }
             usuario = _usuarioRepository.EditUsuario(usuario, User.Identity.Name);
+            UsuarioViewModel usuarioViewModel = new UsuarioViewModel
+            {
+                Usuario = usuario,
+                NomeUsuario = usuario.Nome.Split(' ')[0],
+            };
 
-            return View("~/Views/Home/Index.cshtml", usuario);
+            return View("~/Views/Home/Index.cshtml", usuarioViewModel);
         }
 
 
