@@ -67,7 +67,6 @@ namespace StayFit.Controllers.Instructor
                 f.Treinos = ficha.Treinos;
 
             
-
                  _fichaRepository.Create(f);
                 //Ficha f = _fichaRepository.
                 //foreach(Treino t in ficha.Treinos)
