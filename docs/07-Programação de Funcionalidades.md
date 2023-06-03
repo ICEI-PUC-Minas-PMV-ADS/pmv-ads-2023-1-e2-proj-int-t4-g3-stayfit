@@ -134,4 +134,18 @@
 
   <img src="img/funcionalidades/CadastrarCliente.png" width="900">
 
-  ##### _Figura 9 - Cadastrar Cliente
+  ##### _Figura 9 - Cadastrar Cliente_
+
+
+ ## Listar Clientes
+
+<p>
+    O instrutor poderá listar seus clientes.
+    <br/> É necessario estar logado no sistema...
+    <br/>Usuário de teste: teste2@gmail.com , senha: 123123
+     https://appstayfit.azurewebsites.net/Admin/Cliente
+</p>
+
+  <img src="img/funcionalidades/CadastrarCliente.png" width="900">
+
+  ##### _Figura 10 - Cadastrar Cliente_
