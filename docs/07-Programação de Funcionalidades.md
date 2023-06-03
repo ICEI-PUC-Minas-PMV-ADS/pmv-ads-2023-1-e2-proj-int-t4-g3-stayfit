@@ -146,6 +146,6 @@
      https://appstayfit.azurewebsites.net/Admin/Cliente
 </p>
 
-  <img src="img/funcionalidades/ListasUsuarios.png" width="900">
+  <img src="img/funcionalidades/ListarUsuarios.png" width="900">
 
-  ##### _Figura 10 - Cadastrar Cliente_
+  ##### _Figura 10 - Listar Clientes_
