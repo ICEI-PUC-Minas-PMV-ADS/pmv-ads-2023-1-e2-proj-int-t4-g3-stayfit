@@ -13,16 +13,6 @@
 
   ##### _Figura 1 - Cadastro no Sistema_ 
   
-## Login de usuário
-
-<p>
-    O usuário poderá realizar o Login no sistema preenchendo o formulario de cadastro disponivel em:
-    https://appstayfit.azurewebsites.net/cadastro
-</p>
-
-  <img src="img/funcionalidades/Login.png" width="900">
-
-  ##### _Figura 2 - Login no Sistema_ 
 
 
 ## Login de usuário
