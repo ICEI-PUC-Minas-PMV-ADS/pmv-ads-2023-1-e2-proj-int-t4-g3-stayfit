@@ -64,28 +64,36 @@ namespace StayFit.Controllers.Instructor
                 f.NomeAtividade = ficha.NomeAtividade;
                 f.ClienteId = clienteId;
                 f.DiaSemana = ficha.DiaSemana;
-                f.Treinos = ficha.Treinos;
+                              
+                _fichaRepository.Create(f);
+                
+             }
 
-            
-                 _fichaRepository.Create(f);
-                //Ficha f = _fichaRepository.
-                //foreach(Treino t in ficha.Treinos)
-                //{
-                //    Treino treino = new Treino();
-                //    treino.FichaId = ;
-                //    treino.ExercicioId = t.ExercicioId;
-                //    treino.Distance = t.Distance;
-                //    treino.RestBetween = t.RestBetween;
-                //    treino.Series = t.Series;
-                //    treino.Exercicio = t.Exercicio;
-                //    treino.RepetitionNumber = t.RepetitionNumber;
-                //    treino.RestTime = t.RestTime;
-                //    treino.Weight = t.Weight;
+            IEnumerable<Ficha> fichasdb = _fichaRepository.GetFichasClient(clienteId);
 
-                //   // _treinoRepository.Create(treino);
-               // }
+            foreach (Ficha ficha in fichas)
+            {
+                var i = 0;
+                 IEnumerable<Treino> treinos = _treinoRepository.GetTreinosFicha(ficha.FichaId);
+              
+                foreach (Treino t in treinos)
+                {
+                    System.Diagnostics.Debug.WriteLine(treinos.Count());
+                    Treino treino = new Treino();
+                    treino.ExercicioId = t.ExercicioId;
+                    treino.Distance = t.Distance;
+                    treino.RestBetween = t.RestBetween;
+                    treino.Series = t.Series;                   
+                    treino.RepetitionNumber = t.RepetitionNumber;
+                    treino.RestTime = t.RestTime;
+                    treino.Weight = t.Weight;
+                    treino.FichaId = fichasdb.ElementAt(i).FichaId;
+                    
+                     _treinoRepository.Create(treino);
+
+                }
+                i++;
             }
-
             
 
             return RedirectToAction("ListClient", new RouteValueDictionary(

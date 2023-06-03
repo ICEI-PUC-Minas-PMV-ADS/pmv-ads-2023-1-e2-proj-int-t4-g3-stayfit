@@ -48,7 +48,7 @@ namespace StayFit.Repositories
 
         private void Save()
         {
-            _context.SaveChanges();
+           _context.SaveChanges();
         }
     }
 }
