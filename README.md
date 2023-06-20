@@ -19,6 +19,12 @@ O objetivo geral do site é desenvolver uma aplicação com recursos para auxili
 ## Orientador
 
 * Carlos Alberto Marques Pietrobon
+* 
+# Apresentação
+
+
+https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-1-e2-proj-int-t4-g3-stayfit/assets/11765315/49389b0c-ddf0-489e-a8ae-40098c6da64e
+
 
 ## Instruções de utilização
 O sistema está disponivel em:
@@ -45,11 +51,6 @@ https://appstayfit.azurewebsites.net/
 # Código
 
 <li><a href="src/README.md"> Código Fonte</a></li>
-
-# Apresentação
-
-
-https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-1-e2-proj-int-t4-g3-stayfit/assets/11765315/49389b0c-ddf0-489e-a8ae-40098c6da64e
 
 
 <li><a href="presentation/README.md"> Apresentação da solução</a></li>
